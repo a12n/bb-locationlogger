@@ -1,7 +1,7 @@
 import bb.cascades 1.4
 
 Page {
-    id: settingsPage
+    id: root
 
     property string method
     property int period
@@ -32,7 +32,7 @@ Page {
             ]
             onSelectedIndexChanged: {
                 var opts = ["all", "satellite", "nonSatellite"]
-                settingsPage.method = opts[selectedIndex]
+                root.method = opts[selectedIndex]
             }
             selectedIndex: 0
         }
@@ -60,7 +60,7 @@ Page {
             ]
             onSelectedIndexChanged: {
                 var opts = [1, 2, 5, 10, 30, 60]
-                settingsPage.period = opts[selectedIndex]
+                root.period = opts[selectedIndex]
             }
             selectedIndex: 2
         }
