@@ -86,7 +86,7 @@ NavigationPane {
                 id: saveToast
             }
         ]
-        
+
         actions: [
             ActionItem {
                 id: startAction
@@ -98,7 +98,7 @@ NavigationPane {
                     gpx.open(fileName)
                     saveToast.body = fileName
                     startAction.enabled = false
-                    stopAction.enabled = true                    
+                    stopAction.enabled = true
                 }
                 imageSource: "asset:///images/ic_location.png"
             },
