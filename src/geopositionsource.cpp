@@ -28,11 +28,6 @@ double GeoPositionSource::period() const
     return src->property("period").toDouble();
 }
 
-QString GeoPositionSource::provider() const
-{
-    return src->property("provider").toString();
-}
-
 QString GeoPositionSource::method() const
 {
     return curMethod;
@@ -79,12 +74,6 @@ void GeoPositionSource::setPeriod(double period)
 {
     src->setProperty("period", period);
     emit periodChanged();
-}
-
-void GeoPositionSource::setProvider(const QString& provider)
-{
-    src->setProperty("provider", provider);
-    emit providerChanged();
 }
 
 void GeoPositionSource::setMethod(const QString& method)

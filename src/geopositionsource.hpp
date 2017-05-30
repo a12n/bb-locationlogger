@@ -20,7 +20,6 @@ class GeoPositionSource : public QObject
     Q_PROPERTY(double period READ period WRITE setPeriod NOTIFY periodChanged)
     Q_PROPERTY(double accuracy) // TODO
     Q_PROPERTY(double responseTime) // TODO
-    Q_PROPERTY(QString provider READ provider WRITE setProvider NOTIFY providerChanged)
     Q_PROPERTY(QString method READ method WRITE setMethod NOTIFY methodChanged)
     Q_PROPERTY(bool stationaryDetectionEnabled READ isStationaryDetectionEnabled WRITE setStationaryDetectionEnabled NOTIFY stationaryDetectionEnabledChanged)
     Q_PROPERTY(bool locationServicesEnabled)    // TODO
@@ -34,7 +33,6 @@ public:
 
     bool isActive() const;
     double period() const;
-    QString provider() const;
     QString method() const;
     bool isStationaryDetectionEnabled() const;
 
@@ -46,7 +44,6 @@ public:
 signals:
     void activeChanged();
     void periodChanged();
-    void providerChanged();
     void methodChanged();
     void stationaryDetectionEnabledChanged();
     void positionChanged();
@@ -54,7 +51,6 @@ signals:
 public slots:
     void setActive(bool active);
     void setPeriod(double period);
-    void setProvider(const QString& provider);
     void setMethod(const QString& method);
     void setStationaryDetectionEnabled(bool enabled);
 
