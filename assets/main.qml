@@ -76,11 +76,12 @@ NavigationPane {
                     latLabel.text = latitude.toFixed(6) + "°"
                     lonLabel.text = longitude.toFixed(6) + "°"
                     altLabel.text = altitude + " m"
-                    gpx.addTrackPoint(timestamp, latitude, longitude, altitude)
+                    gpx.writeTrackPoint(timestamp, latitude, longitude, altitude)
                 }
             },
-            GpxFile {
+            GpxFileWriter {
                 id: gpx
+                open: false
             },
             SystemToast {
                 id: saveToast
@@ -94,9 +95,8 @@ NavigationPane {
                 ActionBar.placement: ActionBarPlacement.Signature
                 enabled: true
                 onTriggered: {
-                    var fileName = mainPage.gpxFileName(new Date)
-                    gpx.open(fileName)
-                    saveToast.body = fileName
+                    gpx.fileName = mainPage.gpxFileName(new Date)
+                    gpx.open = true
                     startAction.enabled = false
                     stopAction.enabled = true
                 }
@@ -108,7 +108,8 @@ NavigationPane {
                 ActionBar.placement: ActionBarPlacement.OnBar
                 enabled: false
                 onTriggered: {
-                    gpx.close()
+                    gpx.open = false
+                    saveToast.body = gpx.fileName
                     saveToast.show()
                     startAction.enabled = true
                     stopAction.enabled = false                    
