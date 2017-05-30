@@ -66,7 +66,7 @@ NavigationPane {
                 onPositionChanged: {
                     latLabel.text = latitude.toFixed(6) + "°"
                     lonLabel.text = longitude.toFixed(6) + "°"
-                    altLabel.text = altitude + " m"
+                    altLabel.text = altitude.toFixed(2) + " m"
                     gpx.writeTrackPoint(timestamp, latitude, longitude, altitude)
                 }
             },
