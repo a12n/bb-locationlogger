@@ -33,6 +33,11 @@ QString GeoPositionSource::provider() const
     return src->property("provider").toString();
 }
 
+QString GeoPositionSource::method() const
+{
+    return curMethod;
+}
+
 bool GeoPositionSource::isStationaryDetectionEnabled() const
 {
     return src->property("stationaryDetectionEnabled").toBool();
@@ -80,6 +85,41 @@ void GeoPositionSource::setProvider(const QString& provider)
 {
     src->setProperty("provider", provider);
     emit providerChanged();
+}
+
+void GeoPositionSource::setMethod(const QString& method)
+{
+    if (curMethod == method)
+        return;
+
+    if (method == "all") {
+        src->setPreferredPositioningMethods(QGeoPositionInfoSource::AllPositioningMethods);
+    } else if (method == "nonSatellite") {
+        src->setPreferredPositioningMethods(QGeoPositionInfoSource::NonSatellitePositioningMethods);
+    } else if (method == "satellite") {
+        src->setPreferredPositioningMethods(QGeoPositionInfoSource::SatellitePositioningMethods);
+    } else if (method == "gps") {
+        src->setProperty("provider", "gnss");
+        src->setProperty("fixType", "gps_autonomous");
+    } else if (method == "cellular") {
+        src->setProperty("provider", "network");
+        src->setProperty("fixType", "cellsite");
+    } else if (method == "wifi") {
+        src->setProperty("provider", "network");
+        src->setProperty("fixType", "wifi");
+    } else if (method == "msb") {
+        src->setProperty("provider", "gnss");
+        src->setProperty("fixType", "gps_ms_based");
+    } else if (method == "msa") {
+        src->setProperty("provider", "gnss");
+        src->setProperty("fixType", "gps_ms_assisted");
+    } else {
+        // Invalid method
+        return;
+    }
+
+    curMethod = method;
+    emit methodChanged();
 }
 
 void GeoPositionSource::setStationaryDetectionEnabled(bool enabled)
