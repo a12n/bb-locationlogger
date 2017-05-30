@@ -21,7 +21,6 @@ class GeoPositionSource : public QObject
     Q_PROPERTY(QString provider READ provider WRITE setProvider NOTIFY providerChanged)
     Q_PROPERTY(bool stationaryDetectionEnabled READ isStationaryDetectionEnabled WRITE setStationaryDetectionEnabled NOTIFY stationaryDetectionEnabledChanged)
     Q_PROPERTY(bool locationServicesEnabled)    // TODO
-    Q_PROPERTY(QDeclarativePropertyMap* position READ position NOTIFY positionChanged)
     Q_PROPERTY(QDateTime timestamp READ timestamp NOTIFY positionChanged)
     Q_PROPERTY(double latitude READ latitude NOTIFY positionChanged)
     Q_PROPERTY(double longitude READ longitude NOTIFY positionChanged)
@@ -33,7 +32,6 @@ public:
     double period() const;
     QString provider() const;
     bool isStationaryDetectionEnabled() const;
-    QDeclarativePropertyMap* position();
 
     QDateTime timestamp() const;
     double latitude() const;
@@ -59,7 +57,6 @@ private slots:
 
 private:
     QGeoPositionInfoSource *m_src;
-    QDeclarativePropertyMap* m_pos;
     bool m_active;
 };
 

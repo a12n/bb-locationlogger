@@ -3,7 +3,6 @@
 GeoPositionSource::GeoPositionSource(QObject *parent) :
     QObject(parent),
     m_src(QGeoPositionInfoSource::createDefaultSource(this)),
-    m_pos(),
     m_active(false)
 {
     m_src->setProperty("canRunInBackground", true);
@@ -37,11 +36,6 @@ QString GeoPositionSource::provider() const
 bool GeoPositionSource::isStationaryDetectionEnabled() const
 {
     return m_src->property("stationaryDetectionEnabled").toBool();
-}
-
-QDeclarativePropertyMap* GeoPositionSource::position()
-{
-    return m_pos;
 }
 
 QDateTime GeoPositionSource::timestamp() const
@@ -96,18 +90,6 @@ void GeoPositionSource::setStationaryDetectionEnabled(bool enabled)
 
 void GeoPositionSource::positionUpdated(const QGeoPositionInfo& pos)
 {
-    if (m_pos) {
-        m_pos->deleteLater();
-        m_pos = 0;
-    }
-    if (pos.isValid()) {
-        m_pos = new QDeclarativePropertyMap(this);
-        m_pos->insert("timestamp", pos.timestamp());
-        m_pos->insert("latitude", pos.coordinate().latitude());
-        m_pos->insert("longitude", pos.coordinate().longitude());
-        if (pos.coordinate().type() == QGeoCoordinate::Coordinate3D)
-            m_pos->insert("altitude", pos.coordinate().altitude());
-    }
     emit positionChanged();
 }
 
