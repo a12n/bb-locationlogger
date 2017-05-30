@@ -1,6 +1,7 @@
 import bb.cascades 1.4
 import bb.system 1.0
 import a12n.geoPosition 0.1
+import a12n.gpx 0.1
 
 NavigationPane {
     id: navPane
@@ -75,7 +76,11 @@ NavigationPane {
                     latLabel.text = latitude.toFixed(6) + " °"
                     lonLabel.text = longitude.toFixed(6) + " °"
                     altLabel.text = altitude + " m"
+                    gpx.addTrackPoint(timestamp, latitude, longitude, altitude)
                 }
+            },
+            GpxFile {
+                id: gpx
             },
             SystemToast {
                 id: saveToast
@@ -89,7 +94,9 @@ NavigationPane {
                 ActionBar.placement: ActionBarPlacement.Signature
                 enabled: true
                 onTriggered: {
-                    saveToast.body = mainPage.gpxFileName(new Date())
+                    var fileName = mainPage.gpxFileName(new Date)
+                    gpx.open(fileName)
+                    saveToast.body = fileName
                     startAction.enabled = false
                     stopAction.enabled = true                    
                 }
@@ -101,6 +108,7 @@ NavigationPane {
                 ActionBar.placement: ActionBarPlacement.OnBar
                 enabled: false
                 onTriggered: {
+                    gpx.close()
                     saveToast.show()
                     startAction.enabled = true
                     stopAction.enabled = false                    
