@@ -60,7 +60,7 @@ NavigationPane {
             GeoPositionSource {
                 id: posSrc
                 active: true
-                provider: settingsPage.provider
+                method: settingsPage.method
                 period: settingsPage.period
                 stationaryDetectionEnabled: settingsPage.stationaryDetection
                 onPositionChanged: {

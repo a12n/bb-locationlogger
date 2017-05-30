@@ -3,7 +3,7 @@ import bb.cascades 1.4
 Page {
     id: settingsPage
 
-    property string provider
+    property string method
     property int period
     property alias stationaryDetection: statDetectCheckBox.checked
 
@@ -31,8 +31,8 @@ Page {
                 }
             ]
             onSelectedIndexChanged: {
-                var opts = ["hybrid", "gnss", "network"]
-                settingsPage.provider = opts[selectedIndex]
+                var opts = ["all", "satellite", "nonSatellite"]
+                settingsPage.method = opts[selectedIndex]
             }
             selectedIndex: 0
         }
