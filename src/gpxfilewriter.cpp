@@ -30,7 +30,7 @@ void GpxFileWriter::writeTrackPoint(const QDateTime& timestamp, double latitude,
     xml.writeAttribute("lat", QString::number(latitude, 'f'));
     xml.writeAttribute("lon", QString::number(longitude, 'f'));
     xml.writeTextElement("time", timestamp.toString(Qt::ISODate));
-    xml.writeTextElement("ele", QString::number(altitude, 'f'));
+    xml.writeTextElement("ele", QString::number(altitude, 'f', 2));
     xml.writeEndElement();
 }
 
