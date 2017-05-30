@@ -3,8 +3,8 @@ import bb.cascades 1.4
 Page {
     id: root
 
-    property string method
-    property int period
+    property string method: "all"
+    property int period: 5
     property alias stationaryDetection: statDetectCheckBox.checked
 
     titleBar: TitleBar {
