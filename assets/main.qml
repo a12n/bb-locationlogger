@@ -73,8 +73,8 @@ NavigationPane {
                 stationaryDetectionEnabled: settingsPage.stationaryDetection
                 onPositionChanged: {
                     tsLabel.text = Qt.formatDateTime(timestamp, "yyyy-MM-ddThh:mm:ssZ")
-                    latLabel.text = latitude.toFixed(6) + " °"
-                    lonLabel.text = longitude.toFixed(6) + " °"
+                    latLabel.text = latitude.toFixed(6) + "°"
+                    lonLabel.text = longitude.toFixed(6) + "°"
                     altLabel.text = altitude + " m"
                     gpx.addTrackPoint(timestamp, latitude, longitude, altitude)
                 }
@@ -134,7 +134,7 @@ NavigationPane {
             }
             Label {
                 id: latLabel
-                text: "N/A °"
+                text: "N/A°"
                 textStyle.fontSize: FontSize.XXLarge
                 horizontalAlignment: HorizontalAlignment.Fill
                 textStyle.textAlign: TextAlign.Center
@@ -142,7 +142,7 @@ NavigationPane {
             }
             Label {
                 id: lonLabel
-                text: "N/A °"
+                text: "N/A°"
                 textStyle.fontSize: FontSize.XXLarge
                 horizontalAlignment: HorizontalAlignment.Fill
                 textStyle.textAlign: TextAlign.Center
