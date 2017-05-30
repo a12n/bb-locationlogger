@@ -47,12 +47,14 @@ config_pri_source_group1 {
         $$quote($$BASEDIR/src/applicationui.cpp) \
         $$quote($$BASEDIR/src/geopositionsource.cpp) \
         $$quote($$BASEDIR/src/gpxfile.cpp) \
+        $$quote($$BASEDIR/src/gpxfilewriter.cpp) \
         $$quote($$BASEDIR/src/main.cpp)
 
     HEADERS += \
         $$quote($$BASEDIR/src/applicationui.hpp) \
         $$quote($$BASEDIR/src/geopositionsource.hpp) \
-        $$quote($$BASEDIR/src/gpxfile.hpp)
+        $$quote($$BASEDIR/src/gpxfile.hpp) \
+        $$quote($$BASEDIR/src/gpxfilewriter.hpp)
 }
 
 CONFIG += precompile_header
