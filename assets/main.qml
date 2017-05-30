@@ -64,7 +64,6 @@ NavigationPane {
                 period: settingsPage.period
                 stationaryDetectionEnabled: settingsPage.stationaryDetection
                 onPositionChanged: {
-                    tsLabel.text = Qt.formatDateTime(timestamp, "yyyy-MM-ddThh:mm:ssZ")
                     latLabel.text = latitude.toFixed(6) + "°"
                     lonLabel.text = longitude.toFixed(6) + "°"
                     altLabel.text = altitude + " m"
@@ -119,15 +118,6 @@ NavigationPane {
             leftPadding: topPadding
             rightPadding: leftPadding
             bottomPadding: topPadding
-            Label {
-                id: tsLabel
-                text: "N/A"
-                textStyle.fontSize: FontSize.Large
-                textStyle.textAlign: TextAlign.Center
-                horizontalAlignment: HorizontalAlignment.Fill
-                textStyle.fontFamily: "Monospace"
-                verticalAlignment: VerticalAlignment.Center
-            }
             Label {
                 id: latLabel
                 text: "N/A°"
