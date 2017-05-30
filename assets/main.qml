@@ -120,9 +120,9 @@ NavigationPane {
         Container {
             horizontalAlignment: HorizontalAlignment.Fill
             topPadding: ui.du(2.0)
-            leftPadding: ui.du(2.0)
-            rightPadding: ui.du(2.0)
-            bottomPadding: ui.du(2.0)
+            leftPadding: topPadding
+            rightPadding: leftPadding
+            bottomPadding: topPadding
             Label {
                 id: tsLabel
                 text: "N/A"
