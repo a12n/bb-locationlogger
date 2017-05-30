@@ -14,7 +14,9 @@ using namespace QtMobilitySubset;
 class GeoPositionSource : public QObject
 {
     Q_OBJECT
+    // Property to start/stop position updates
     Q_PROPERTY(bool active READ isActive WRITE setActive NOTIFY activeChanged)
+    // Position info source properties
     Q_PROPERTY(double period READ period WRITE setPeriod NOTIFY periodChanged)
     Q_PROPERTY(double accuracy) // TODO
     Q_PROPERTY(double responseTime) // TODO
@@ -22,6 +24,7 @@ class GeoPositionSource : public QObject
     Q_PROPERTY(QString method READ method WRITE setMethod NOTIFY methodChanged)
     Q_PROPERTY(bool stationaryDetectionEnabled READ isStationaryDetectionEnabled WRITE setStationaryDetectionEnabled NOTIFY stationaryDetectionEnabledChanged)
     Q_PROPERTY(bool locationServicesEnabled)    // TODO
+    // Position properties
     Q_PROPERTY(QDateTime timestamp READ timestamp NOTIFY positionChanged)
     Q_PROPERTY(double latitude READ latitude NOTIFY positionChanged)
     Q_PROPERTY(double longitude READ longitude NOTIFY positionChanged)
