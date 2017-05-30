@@ -25,10 +25,6 @@ NavigationPane {
     Page {
         id: mainPage
 
-        function formatDateTime(dateTime) {
-            return Qt.formatDateTime(dateTime, "yyyyMMdd_HHmmss")
-        }
-
         function dateTimeDifference(beginTs, endTs) {
             var diff = endTs.valueOf() - beginTs.valueOf()
             var ans = {}
@@ -60,10 +56,6 @@ NavigationPane {
             return ans
         }
 
-        function gpxFileName(startTimestamp) {
-            return formatDateTime(startTimestamp) + ".gpx"
-        }
-
         attachedObjects: [
             GeoPositionSource {
                 id: posSrc
@@ -82,6 +74,9 @@ NavigationPane {
             GpxFileWriter {
                 id: gpx
                 open: false
+                function generateFileName(startTime) {
+                    return Qt.formatDateTime(startTime, "yyyyMMdd_HHmmss") + ".gpx"
+                }
             },
             SystemToast {
                 id: saveToast
@@ -95,7 +90,7 @@ NavigationPane {
                 ActionBar.placement: ActionBarPlacement.Signature
                 enabled: true
                 onTriggered: {
-                    gpx.fileName = mainPage.gpxFileName(new Date)
+                    gpx.fileName = gpx.generateFileName(new Date)
                     gpx.open = true
                     startAction.enabled = false
                     stopAction.enabled = true
