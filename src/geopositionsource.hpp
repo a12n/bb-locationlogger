@@ -60,4 +60,4 @@ private:
     bool m_active;
 };
 
-#endif /* GEOPOSITIONSOURCE_HPP_ */
+#endif
