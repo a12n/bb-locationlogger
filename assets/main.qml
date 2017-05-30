@@ -107,7 +107,7 @@ NavigationPane {
                     saveToast.body = gpx.fileName
                     saveToast.show()
                     startAction.enabled = true
-                    stopAction.enabled = false                    
+                    stopAction.enabled = false
                 }
                 imageSource: "asset:///images/ic_stop.png"
             }
