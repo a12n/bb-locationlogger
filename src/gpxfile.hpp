@@ -1,4 +1,4 @@
-#ifndef GPXDATA_HPP_
+#ifndef GPXFILE_HPP_
 #define GPXFILE_HPP_
 
 #include <QObject>
