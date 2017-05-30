@@ -56,8 +56,8 @@ private slots:
     void updateTimeout();
 
 private:
-    QGeoPositionInfoSource *m_src;
-    bool m_active;
+    QGeoPositionInfoSource *src;
+    bool active;
 };
 
 #endif
