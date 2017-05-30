@@ -8,7 +8,7 @@ GpxFileWriter::GpxFileWriter(QObject *parent) :
     file(new QFile(this))
 {
     xml.setAutoFormatting(true);
-    xml.setAutoFormattingIndent(2);
+    xml.setAutoFormattingIndent(1);
 }
 
 QString GpxFileWriter::fileName() const
