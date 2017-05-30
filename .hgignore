@@ -4,3 +4,4 @@ arm/
 x86/
 
 translations/*.qm
+assets/.assets.index
