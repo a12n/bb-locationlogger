@@ -6,6 +6,8 @@
 
 #include <QtLocationSubset/QGeoPositionInfo>
 #include <QtLocationSubset/QGeoPositionInfoSource>
+#include <QtLocationSubset/QGeoSatelliteInfo>
+#include <QtLocationSubset/QGeoSatelliteInfoSource>
 
 using namespace QtMobilitySubset;
 
