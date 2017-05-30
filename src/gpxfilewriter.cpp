@@ -64,7 +64,7 @@ void GpxFileWriter::writeStartGpx()
     xml.writeStartElement("gpx");
     xml.writeDefaultNamespace("http://www.topografix.com/GPX/1/1");
     xml.writeAttribute("version", "1.1");
-    xml.writeAttribute("creator", "Position Logger");
+    xml.writeAttribute("creator", "positionlogger");
     xml.writeStartElement("trk");
     xml.writeStartElement("trkseg");
 }
