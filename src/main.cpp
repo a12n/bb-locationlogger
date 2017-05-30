@@ -15,6 +15,9 @@ Q_DECL_EXPORT int main(int argc, char **argv)
 {
     Application app(argc, argv);
 
+    app.setOrganizationName("a12n");
+    app.setApplicationName("positionlogger");
+
     qmlRegisterType<GeoPositionSource>("a12n.geoPosition", 0, 1, "GeoPositionSource");
     qmlRegisterType<GpxFileWriter>("a12n.gpx", 0, 1, "GpxFileWriter");
 
