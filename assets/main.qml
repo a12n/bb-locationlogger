@@ -152,6 +152,17 @@ NavigationPane {
                 horizontalAlignment: HorizontalAlignment.Fill
                 textStyle.fontFamily: "Monospace"
             }
+            Divider {
+                horizontalAlignment: HorizontalAlignment.Fill
+            }
+            Label {
+                // TODO: update
+                id: trackTimeLabel
+                text: "00:00:00"
+                textStyle.fontSize: FontSize.XXLarge
+                horizontalAlignment: HorizontalAlignment.Fill
+                textStyle.textAlign: TextAlign.Center
+            }
         }
     }
 }
