@@ -1,6 +1,5 @@
 #include "applicationui.hpp"
 #include "geopositionsource.hpp"
-#include "gpxfile.hpp"
 #include "gpxfilewriter.hpp"
 
 #include <bb/cascades/Application>
@@ -17,7 +16,6 @@ Q_DECL_EXPORT int main(int argc, char **argv)
     Application app(argc, argv);
 
     qmlRegisterType<GeoPositionSource>("a12n.geoPosition", 0, 1, "GeoPositionSource");
-    qmlRegisterType<GpxFile>("a12n.gpx", 0, 1, "GpxFile");
     qmlRegisterType<GpxFileWriter>("a12n.gpx", 0, 1, "GpxFileWriter");
 
     ApplicationUI appui;
