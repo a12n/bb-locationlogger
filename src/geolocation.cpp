@@ -44,3 +44,23 @@ void GeoLocation::stopUpdates()
     geolocation_stop_events(0);
     // TODO: check return value
 }
+
+void GeoLocation::setAccuracy(unsigned int accuracy)
+{
+    geolocation_set_accuracy(accuracy);
+}
+
+void GeoLocation::setPeriod(unsigned int period)
+{
+    geolocation_set_period(period);
+}
+
+void GeoLocation::setResponseTime(unsigned int responseTime)
+{
+    geolocation_set_response_time(responseTime);
+}
+
+void GeoLocation::setStationaryDetection(bool enabled)
+{
+    geolocation_set_stationary(enabled);
+}
