@@ -16,6 +16,8 @@ class GeoLocation : public QObject, public bb::AbstractBpsEventHandler
     Q_PROPERTY(double horizAccuracy READ horizAccuracy NOTIFY dataChanged)
     Q_PROPERTY(double vertAccuracy READ vertAccuracy NOTIFY dataChanged)
     Q_PROPERTY(QDateTime timestamp READ timestamp NOTIFY dataChanged)
+    Q_PROPERTY(unsigned int numSatellitesUsed READ numSatellitesUsed NOTIFY dataChanged)
+    Q_PROPERTY(unsigned int numSatellitesTotal READ numSatellitesTotal NOTIFY dataChanged)
 
 public:
     explicit GeoLocation(QObject *parent = 0);
@@ -57,6 +59,16 @@ public:
         return timestamp_;
     }
 
+    unsigned int numSatellitesUsed() const
+    {
+        return numSatellitesUsed_;
+    }
+
+    unsigned int numSatellitesTotal() const
+    {
+        return numSatellitesTotal_;
+    }
+
 signals:
     void dataChanged();
 
@@ -78,6 +90,8 @@ private:
     double horizAccuracy_;
     double vertAccuracy_;
     QDateTime timestamp_;
+    unsigned int numSatellitesUsed_;
+    unsigned int numSatellitesTotal_;
 };
 
 #endif
