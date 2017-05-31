@@ -9,10 +9,10 @@ using namespace bb::cascades;
 
 ApplicationUI::ApplicationUI() :
     QObject(),
-    m_translator(new QTranslator(this)),
-    m_localeHandler(new LocaleHandler(this))
+    translator(new QTranslator(this)),
+    localeHandler(new LocaleHandler(this))
 {
-    bool ok = QObject::connect(m_localeHandler, SIGNAL(systemLanguageChanged()), this, SLOT(onSystemLanguageChanged()));
+    bool ok = QObject::connect(localeHandler, SIGNAL(systemLanguageChanged()), this, SLOT(onSystemLanguageChanged()));
     // This is only available in Debug builds
     Q_ASSERT(ok);
     // Since the variable is not used in the app, this is added to avoid a
@@ -35,11 +35,11 @@ ApplicationUI::ApplicationUI() :
 
 void ApplicationUI::onSystemLanguageChanged()
 {
-    QCoreApplication::instance()->removeTranslator(m_translator);
+    QCoreApplication::instance()->removeTranslator(translator);
     // Initiate, load and install the application translation files.
     QString localeString = QLocale().name();
     QString fileName = QString("positionlogger_%1").arg(localeString);
-    if (m_translator->load(fileName, "app/native/qm")) {
-        QCoreApplication::instance()->installTranslator(m_translator);
+    if (translator->load(fileName, "app/native/qm")) {
+        QCoreApplication::instance()->installTranslator(translator);
     }
 }

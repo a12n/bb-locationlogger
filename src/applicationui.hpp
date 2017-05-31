@@ -24,8 +24,8 @@ private slots:
     void onSystemLanguageChanged();
 
 private:
-    QTranslator *m_translator;
-    bb::cascades::LocaleHandler *m_localeHandler;
+    QTranslator *translator;
+    bb::cascades::LocaleHandler *localeHandler;
 };
 
 #endif
