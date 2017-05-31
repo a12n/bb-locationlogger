@@ -1,4 +1,5 @@
 #include "applicationui.hpp"
+#include "gpxfile.hpp"
 
 #include <bb/cascades/Application>
 #include <bb/cascades/QmlDocument>
@@ -28,6 +29,8 @@ ApplicationUI::ApplicationUI() :
 
     // Create root object for the UI
     AbstractPane *root = qml->createRootObject<AbstractPane>();
+
+    qml->setContextProperty("_gpxFile", new GpxFile(this));
 
     // Set created root object as the application scene
     Application::instance()->setScene(root);
