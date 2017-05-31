@@ -1,4 +1,4 @@
-#ifndef ApplicationUI_HPP_
+#ifndef APPLICATIONUI_HPP_
 #define APPLICATIONUI_HPP_
 
 #include <QObject>
