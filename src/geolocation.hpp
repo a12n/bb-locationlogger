@@ -17,6 +17,9 @@ public:
     Q_INVOKABLE void startUpdates();
     Q_INVOKABLE void stopUpdates();
 
+signals:
+    void dataChanged();
+
 public slots:
     // Configuration properties
     Q_INVOKABLE void setAccuracy(unsigned int accuracy);
