@@ -18,11 +18,11 @@
        <platformArchitecture>x86</platformArchitecture>
        <asset path="x86/o-g/gnsslogger" entry="true" type="Qnx/Elf">gnsslogger</asset>
     </configuration>
-    <name>Position Logger</name>
+    <name>GNSS Logger</name>
     <versionNumber>0.0.1</versionNumber>
     <buildId>1</buildId>
     <!-- <versionLabel></versionLabel> -->
-    <description>Logs device geo position to a file.</description>
+    <description>Logs device coordinates and altitude to a GPX file.</description>
     <!-- <copyright></copyright> -->
     <author>a12n</author>
     <!-- <authorId>ABC1234YjsnUk235h</authorId> -->
