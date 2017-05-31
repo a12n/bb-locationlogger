@@ -30,9 +30,9 @@ NavigationPane {
         }
 
         function onDataChanged() {
-            latLabel.text = _geoLocation.latitude + "°"
-            lonLabel.text = _geoLocation.longitude + "°"
-            altLabel.text = _geoLocation.altitude + " m"
+            latLabel.text = _geoLocation.latitude.toFixed(8) + "°"
+            lonLabel.text = _geoLocation.longitude.toFixed(8) + "°"
+            altLabel.text = _geoLocation.altitude.toFixed(2) + " m"
             numSatLabel.text = _geoLocation.numSatellitesUsed + "/" + _geoLocation.numSatellitesTotal
         }
 
