@@ -11,7 +11,8 @@ GeoLocation::GeoLocation(QObject *parent) :
     longitude_(NAN),
     altitude_(NAN),
     horizAccuracy_(NAN),
-    vertAccuracy_(NAN)
+    vertAccuracy_(NAN),
+    timestamp_()
 {
     subscribe(geolocation_get_domain());
     bps_initialize();
@@ -83,6 +84,7 @@ void GeoLocation::errorEvent(bps_event_t *event)
 
 void GeoLocation::infoEvent(bps_event_t *event)
 {
+    timestamp_.setMSecsSinceEpoch(geolocation_event_get_utc_time(event));
     latitude_ = geolocation_event_get_latitude(event);
     longitude_ = geolocation_event_get_longitude(event);
     altitude_ = geolocation_event_get_altitude(event);

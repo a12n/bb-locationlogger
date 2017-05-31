@@ -3,6 +3,7 @@
 
 #include <bb/AbstractBpsEventHandler>
 
+#include <QDateTime>
 #include <QObject>
 
 class GeoLocation : public QObject, public bb::AbstractBpsEventHandler
@@ -14,6 +15,7 @@ class GeoLocation : public QObject, public bb::AbstractBpsEventHandler
     Q_PROPERTY(double altitude READ altitude NOTIFY dataChanged)
     Q_PROPERTY(double horizAccuracy READ horizAccuracy NOTIFY dataChanged)
     Q_PROPERTY(double vertAccuracy READ vertAccuracy NOTIFY dataChanged)
+    Q_PROPERTY(QDateTime timestamp READ timestamp NOTIFY dataChanged)
 
 public:
     explicit GeoLocation(QObject *parent = 0);
@@ -50,6 +52,11 @@ public:
         return vertAccuracy_;
     }
 
+    QDateTime timestamp() const
+    {
+        return timestamp_;
+    }
+
 signals:
     void dataChanged();
 
@@ -70,6 +77,7 @@ private:
     double altitude_;
     double horizAccuracy_;
     double vertAccuracy_;
+    QDateTime timestamp_;
 };
 
 #endif
