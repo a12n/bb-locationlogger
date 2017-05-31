@@ -89,6 +89,8 @@ public:
 
 signals:
     void dataChanged();
+    void error(const QString& err);
+    void warning(const QString& warn);
 
 public slots:
     // Configuration properties
