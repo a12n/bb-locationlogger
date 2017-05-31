@@ -122,6 +122,7 @@ void GeoLocation::errorEvent(bps_event_t *event)
 void GeoLocation::infoEvent(bps_event_t *event)
 {
     timestamp_.setMSecsSinceEpoch(geolocation_event_get_utc_time(event));
+    timestamp_.setTimeSpec(Qt::UTC);
     latitude_ = geolocation_event_get_latitude(event);
     longitude_ = geolocation_event_get_longitude(event);
     altitude_ = geolocation_event_get_altitude(event);
