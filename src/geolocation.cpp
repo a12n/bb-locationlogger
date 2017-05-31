@@ -3,6 +3,8 @@
 #include <bps/bps.h>
 #include <bps/geolocation.h>
 
+#include <QDebug>
+
 #include "geolocation.hpp"
 
 GeoLocation::GeoLocation(QObject *parent) :
@@ -94,6 +96,10 @@ void GeoLocation::infoEvent(bps_event_t *event)
     vertAccuracy_ = geolocation_event_get_altitude_accuracy(event);
     numSatellitesUsed_ = geolocation_event_get_num_satellites_used(event);
     numSatellitesTotal_ = geolocation_event_get_num_satellites_total(event);
+    qDebug() << "timestamp " << timestamp_;
+    qDebug() << "coordinate " << latitude_ << " " << longitude_ << " " << altitude_;
+    qDebug() << "accuracy " << horizAccuracy_ << " " << vertAccuracy_;
+    qDebug() << "num satellites " << numSatellitesUsed_ << "/" << numSatellitesTotal_;
     emit dataChanged();
 }
 
