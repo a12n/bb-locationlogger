@@ -1,4 +1,5 @@
 #include "applicationui.hpp"
+#include "geolocation.hpp"
 #include "gpxfile.hpp"
 
 #include <bb/cascades/Application>
@@ -30,6 +31,7 @@ ApplicationUI::ApplicationUI() :
     // Create root object for the UI
     AbstractPane *root = qml->createRootObject<AbstractPane>();
 
+    qml->setContextProperty("_geoLocation", new GeoLocation(this));
     qml->setContextProperty("_gpxFile", new GpxFile(this));
 
     // Set created root object as the application scene
