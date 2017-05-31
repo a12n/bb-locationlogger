@@ -60,6 +60,7 @@ private slots:
 
 private:
     QGeoPositionInfoSource *src;
+    QGeoPositionInfo pos;
     QString curMethod;
     bool active;
 };

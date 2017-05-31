@@ -45,22 +45,22 @@ bool GeoPositionSource::isStationaryDetectionEnabled() const
 
 QDateTime GeoPositionSource::timestamp() const
 {
-    return src->lastKnownPosition().timestamp();
+    return pos.timestamp();
 }
 
 double GeoPositionSource::latitude() const
 {
-    return src->lastKnownPosition().coordinate().latitude();
+    return pos.coordinate().latitude();
 }
 
 double GeoPositionSource::longitude() const
 {
-    return src->lastKnownPosition().coordinate().longitude();
+    return pos.coordinate().longitude();
 }
 
 double GeoPositionSource::altitude() const
 {
-    return src->lastKnownPosition().coordinate().altitude();
+    return pos.coordinate().altitude();
 }
 
 void GeoPositionSource::setActive(bool active)
@@ -124,6 +124,7 @@ void GeoPositionSource::setStationaryDetectionEnabled(bool enabled)
 
 void GeoPositionSource::positionUpdated(const QGeoPositionInfo& pos)
 {
+    this->pos = pos;
     emit positionChanged();
 }
 
