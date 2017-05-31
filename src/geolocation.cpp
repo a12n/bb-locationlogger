@@ -26,10 +26,13 @@ void GeoLocation::event(bps_event_t *event)
 
     switch (bps_event_get_code(event)) {
         case GEOLOCATION_INFO :
-            // TODO
+            infoEvent(event);
             break;
         case GEOLOCATION_ERROR :
-            // TODO
+            errorEvent(event);
+            break;
+        case GEOLOCATION_STATUS :
+            statusEvent(event);
             break;
     }
 }
@@ -64,4 +67,19 @@ void GeoLocation::setResponseTime(unsigned int responseTime)
 void GeoLocation::setStationaryDetection(bool enabled)
 {
     geolocation_set_stationary(enabled);
+}
+
+void GeoLocation::errorEvent(bps_event_t *event)
+{
+    Q_UNUSED(event);
+}
+
+void GeoLocation::infoEvent(bps_event_t *event)
+{
+    Q_UNUSED(event);
+}
+
+void GeoLocation::statusEvent(bps_event_t *event)
+{
+    Q_UNUSED(event);
 }
