@@ -57,19 +57,19 @@ void GpxFile::writeNumSatellitesUsed(int num)
 
 void GpxFile::writeHdop(double hdop)
 {
-    xml.writeTextElement("hdop", QString::number(hdop, 'f'));
+    xml.writeTextElement("hdop", QString::number(hdop, 'f', 3));
     checkError();
 }
 
 void GpxFile::writeVdop(double vdop)
 {
-    xml.writeTextElement("vdop", QString::number(vdop, 'f'));
+    xml.writeTextElement("vdop", QString::number(vdop, 'f', 3));
     checkError();
 }
 
 void GpxFile::writePdop(double pdop)
 {
-    xml.writeTextElement("pdop", QString::number(pdop, 'f'));
+    xml.writeTextElement("pdop", QString::number(pdop, 'f', 3));
     checkError();
 }
 
