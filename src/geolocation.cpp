@@ -130,10 +130,10 @@ void GeoLocation::infoEvent(bps_event_t *event)
     vdop_ = geolocation_event_get_vdop(event);
     pdop_ = geolocation_event_get_pdop(event);
     geoidHeight_ = geolocation_event_get_geoid_height(event);
-    qDebug() << "timestamp " << timestamp_;
-    qDebug() << "coordinate " << latitude_ << " " << longitude_ << " " << altitude_;
-    qDebug() << "accuracy " << horizAccuracy_ << " " << vertAccuracy_;
-    qDebug() << "num satellites " << numSatellitesUsed_ << "/" << numSatellitesTotal_;
+    qDebug() << "timestamp" << timestamp_;
+    qDebug() << "coordinate" << latitude_ << longitude_ << altitude_;
+    qDebug() << "accuracy" << horizAccuracy_ << vertAccuracy_;
+    qDebug() << "num satellites" << numSatellitesUsed_ << "/" << numSatellitesTotal_;
     emit dataChanged();
 }
 
