@@ -1,7 +1,5 @@
 import bb.cascades 1.4
 import bb.system 1.0
-import a12n.geoPosition 0.1
-import a12n.gpx 0.1
 
 NavigationPane {
     id: navPane
@@ -24,6 +22,19 @@ NavigationPane {
 
     Page {
         id: mainPage
+
+        onCreationCompleted: {
+            _geoLocation.dataChanged.connect(onDataChanged)
+            _geoLocation.setPeriod(5)            
+            _geoLocation.startUpdates()
+        }
+        
+        function onDataChanged() {
+            latLabel.text = _geoLocation.latitude + "°"
+            lonLabel.text = _geoLocation.longitude + "°"
+            altLabel.text = _geoLocation.altitude + " m"
+            numSatLabel.text = _geoLocation.numSatellitesUsed + "/" + _geoLocation.numSatellitesTotal
+        }
 
         function dateTimeDifference(beginTs, endTs) {
             var diff = endTs.valueOf() - beginTs.valueOf()
@@ -57,26 +68,6 @@ NavigationPane {
         }
 
         attachedObjects: [
-            GeoPositionSource {
-                id: posSrc
-                active: true
-                method: settingsPage.method
-                period: settingsPage.period
-                stationaryDetectionEnabled: settingsPage.stationaryDetection
-                onPositionChanged: {
-                    latLabel.text = latitude.toFixed(6) + "°"
-                    lonLabel.text = longitude.toFixed(6) + "°"
-                    altLabel.text = altitude.toFixed(2) + " m"
-                    gpx.writeTrackPoint(timestamp, latitude, longitude, altitude)
-                }
-            },
-            GpxFileWriter {
-                id: gpx
-                open: false
-                function generateFileName(startTime) {
-                    return Qt.formatDateTime(startTime, "yyyyMMdd_HHmmss") + ".gpx"
-                }
-            },
             SystemToast {
                 id: saveToast
             }
@@ -88,9 +79,12 @@ NavigationPane {
                 title: qsTr("Record")
                 ActionBar.placement: ActionBarPlacement.Signature
                 enabled: true
+                function generateFileName(startTime) {
+                    return Qt.formatDateTime(startTime, "yyyyMMdd_HHmmss") + ".gpx"
+                }
                 onTriggered: {
-                    gpx.fileName = gpx.generateFileName(new Date)
-                    gpx.open = true
+                    saveToast.body = generateFileName(new Date)
+                    _gpxFile.open(saveToast.body)
                     startAction.enabled = false
                     stopAction.enabled = true
                 }
@@ -102,8 +96,7 @@ NavigationPane {
                 ActionBar.placement: ActionBarPlacement.OnBar
                 enabled: false
                 onTriggered: {
-                    gpx.open = false
-                    saveToast.body = gpx.fileName
+                    _gpxFile.close()
                     saveToast.show()
                     startAction.enabled = true
                     stopAction.enabled = false
@@ -141,6 +134,14 @@ NavigationPane {
                 textStyle.textAlign: TextAlign.Center
                 horizontalAlignment: HorizontalAlignment.Fill
                 textStyle.fontFamily: "Monospace"
+            }
+            Label {
+                id: numSatLabel
+                text: "0/0"
+                textStyle.fontSize: FontSize.Large
+                textStyle.textAlign: TextAlign.Center
+                horizontalAlignment: HorizontalAlignment.Fill
+                textStyle.fontFamily: "Monospace"                
             }
             Divider {
                 horizontalAlignment: HorizontalAlignment.Fill
