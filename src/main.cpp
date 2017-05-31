@@ -23,7 +23,7 @@ Q_DECL_EXPORT int main(int argc, char **argv)
     qInstallMsgHandler(stderrMsgHandler);
 
     app.setOrganizationName("a12n");
-    app.setApplicationName("positionlogger");
+    app.setApplicationName("gnsslogger");
 
     ApplicationUI appui;
 

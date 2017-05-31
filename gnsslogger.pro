@@ -1,4 +1,4 @@
-APP_NAME = positionlogger
+APP_NAME = gnsslogger
 
 CONFIG += qt warn_on cascades10
 LIBS += -lQtLocationSubset

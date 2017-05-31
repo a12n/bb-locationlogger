@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <qnx xmlns="http://www.qnx.com/schemas/application/1.0">
-    <id>org.bitbucket.a12n.bb.positionlogger</id>
+    <id>org.bitbucket.a12n.bb.gnsslogger</id>
     <configuration name="Device-Debug">
        <platformArchitecture>armle-v7</platformArchitecture>
-       <asset path="arm/o.le-v7-g/positionlogger" entry="true" type="Qnx/Elf">positionlogger</asset>
+       <asset path="arm/o.le-v7-g/gnsslogger" entry="true" type="Qnx/Elf">gnsslogger</asset>
     </configuration>
     <configuration name="Device-Release">
        <entryPointType>Qnx/Cascades</entryPointType>
        <platformArchitecture>armle-v7</platformArchitecture>
-       <asset path="arm/o.le-v7/positionlogger.so" entry="true" type="Qnx/Elf">positionlogger.so</asset>
+       <asset path="arm/o.le-v7/gnsslogger.so" entry="true" type="Qnx/Elf">gnsslogger.so</asset>
     </configuration>
     <configuration name="Device-Profile">
        <platformArchitecture>armle-v7</platformArchitecture>
-       <asset path="arm-p/o.le-v7-g/positionlogger" entry="true" type="Qnx/Elf">positionlogger</asset>
+       <asset path="arm-p/o.le-v7-g/gnsslogger" entry="true" type="Qnx/Elf">gnsslogger</asset>
     </configuration>
     <configuration name="Simulator-Debug">
        <platformArchitecture>x86</platformArchitecture>
-       <asset path="x86/o-g/positionlogger" entry="true" type="Qnx/Elf">positionlogger</asset>
+       <asset path="x86/o-g/gnsslogger" entry="true" type="Qnx/Elf">gnsslogger</asset>
     </configuration>
     <name>Position Logger</name>
     <versionNumber>0.0.1</versionNumber>
