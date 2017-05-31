@@ -8,6 +8,9 @@ GeoLocation::GeoLocation(QObject *parent) :
 {
     subscribe(geolocation_get_domain());
     bps_initialize();
+    // TODO: check return values
+    geolocation_set_provider(GEOLOCATION_PROVIDER_GNSS);
+    geolocation_set_background(true);
 }
 
 GeoLocation::~GeoLocation()
