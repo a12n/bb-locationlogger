@@ -11,6 +11,7 @@ class GeoLocation : public QObject, public bb::AbstractBpsEventHandler
     // Data properties
     Q_PROPERTY(double latitude READ latitude NOTIFY dataChanged)
     Q_PROPERTY(double longitude READ longitude NOTIFY dataChanged)
+    Q_PROPERTY(double altitude READ altitude NOTIFY dataChanged)
 
 public:
     explicit GeoLocation(QObject *parent = 0);
@@ -32,6 +33,11 @@ public:
         return longitude_;
     }
 
+    double altitude() const
+    {
+        return altitude_;
+    }
+
 signals:
     void dataChanged();
 
@@ -49,6 +55,7 @@ private:
 
     double latitude_;
     double longitude_;
+    double altitude_;
 };
 
 #endif
