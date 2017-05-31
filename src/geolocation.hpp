@@ -89,6 +89,14 @@ private:
     double altitude_;
     double horizAccuracy_;
     double vertAccuracy_;
+//    double heading_;
+//    double speed_;
+//    double vertSpeed_;
+//    unsigned int ttff_;
+//    double hdop_;
+//    double vdop_;
+//    double pdop_;
+//    double geoidHeight_;
     QDateTime timestamp_;
     unsigned int numSatellitesUsed_;
     unsigned int numSatellitesTotal_;
