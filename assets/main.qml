@@ -25,8 +25,18 @@ NavigationPane {
 
         onCreationCompleted: {
             _geoLocation.dataChanged.connect(onDataChanged)
+            _geoLocation.error.connect(onError)
+            _geoLocation.warning.connect(onWarning)
             _geoLocation.setPeriod(5)
             _geoLocation.startUpdates()
+        }
+
+        function onError(err) {
+            errLabel.text = err
+        }
+
+        function onWarning(warn) {
+            warnLabel.text = warn
         }
 
         function onDataChanged() {
@@ -150,6 +160,16 @@ NavigationPane {
                 textStyle.textAlign: TextAlign.Center
                 horizontalAlignment: HorizontalAlignment.Fill
                 textStyle.fontFamily: "Monospace"
+            }
+            Label {
+                id: errLabel
+                text: "N/A"
+                textStyle.color: Color.Red
+            }
+            Label {
+                id: warnLabel
+                text: "N/A"
+                textStyle.color: Color.Yellow
             }
             Divider {
                 horizontalAlignment: HorizontalAlignment.Fill
