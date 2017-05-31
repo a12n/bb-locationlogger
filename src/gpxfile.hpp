@@ -8,10 +8,12 @@
 class GpxFile : public QObject
 {
     Q_OBJECT
+
 public:
     explicit GpxFile(QObject *parent = 0);
 
     Q_INVOKABLE void open(const QString& baseName);
+    Q_INVOKABLE bool isOpen() const;
     Q_INVOKABLE void writeStartTrackPoint(const QDateTime& timestamp, double latitude, double longitude);
     Q_INVOKABLE void writeAltitude(double altitude);
     Q_INVOKABLE void writeGeoidHeight(double height);

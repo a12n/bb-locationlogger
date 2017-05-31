@@ -24,6 +24,11 @@ void GpxFile::open(const QString& baseName)
     checkError();
 }
 
+bool GpxFile::isOpen() const
+{
+    return file->isOpen();
+}
+
 void GpxFile::writeStartTrackPoint(const QDateTime& timestamp, double latitude, double longitude)
 {
     if (!file->isOpen())
