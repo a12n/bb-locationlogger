@@ -1,4 +1,6 @@
 #include <QDateTime>
+#include <QDebug>
+#include <QDir>
 
 #include "gpxfile.hpp"
 
@@ -15,7 +17,8 @@ void GpxFile::open(const QString& baseName)
 {
     close();
 
-    file->setFileName("shared/misc/" + baseName);
+    file->setFileName(fileName(baseName));
+    qDebug() << "opening" << file->fileName();
     if (file->open(QIODevice::WriteOnly | QIODevice::Text)) {
         xml.setDevice(file);
         writeStartGpx();
@@ -160,5 +163,18 @@ void GpxFile::checkError()
         default :
             emit error("unknown");
             break;
+    }
+}
+
+QString GpxFile::fileName(const QString& baseName)
+{
+    // XXX: looks like sdcard directory path is undocumented
+    QDir device("shared/misc");
+    QDir sdcard("../../removable/sdcard/misc");
+
+    if (sdcard.mkpath(".")) {
+        return sdcard.filePath(baseName);
+    } else {
+        return device.filePath(baseName);
     }
 }

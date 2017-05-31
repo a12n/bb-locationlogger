@@ -32,6 +32,8 @@ private:
     void writeEndGpx();
     void checkError();
 
+    static QString fileName(const QString& baseName);
+
     QFile *file;
     QXmlStreamWriter xml;
 };
