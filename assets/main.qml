@@ -49,7 +49,7 @@ NavigationPane {
             if (!isNaN(_geoLocation.altitude)) _gpxFile.writeAltitude(_geoLocation.altitude)
             if (!isNaN(_geoLocation.hdop)) _gpxFile.writeHdop(_geoLocation.hdop)
             if (!isNaN(_geoLocation.vdop)) _gpxFile.writeVdop(_geoLocation.vdop)
-            if (!isNaN(_geoLocation.pdop)) _gpxFile.writeVdop(_geoLocation.pdop)
+            if (!isNaN(_geoLocation.pdop)) _gpxFile.writePdop(_geoLocation.pdop)
             if (_geoLocation.numSatellitesUsed > 0) _gpxFile.writeNumSatellitesUsed(_geoLocation.numSatellitesUsed)
             _gpxFile.writeEndTrackPoint()
         }
