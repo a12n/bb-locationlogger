@@ -45,6 +45,7 @@ config_pri_assets {
 config_pri_source_group1 {
     SOURCES += \
         $$quote($$BASEDIR/src/applicationui.cpp) \
+        $$quote($$BASEDIR/src/geolocation.cpp) \
         $$quote($$BASEDIR/src/geopositionsource.cpp) \
         $$quote($$BASEDIR/src/gpxfile.cpp) \
         $$quote($$BASEDIR/src/gpxfilewriter.cpp) \
@@ -52,6 +53,7 @@ config_pri_source_group1 {
 
     HEADERS += \
         $$quote($$BASEDIR/src/applicationui.hpp) \
+        $$quote($$BASEDIR/src/geolocation.hpp) \
         $$quote($$BASEDIR/src/geopositionsource.hpp) \
         $$quote($$BASEDIR/src/gpxfile.hpp) \
         $$quote($$BASEDIR/src/gpxfilewriter.hpp)
