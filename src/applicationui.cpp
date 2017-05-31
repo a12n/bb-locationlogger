@@ -28,11 +28,11 @@ ApplicationUI::ApplicationUI() :
     // to ensure the document gets destroyed properly at shut down.
     QmlDocument *qml = QmlDocument::create("asset:///main.qml").parent(this);
 
-    // Create root object for the UI
-    AbstractPane *root = qml->createRootObject<AbstractPane>();
-
     qml->setContextProperty("_geoLocation", new GeoLocation(this));
     qml->setContextProperty("_gpxFile", new GpxFile(this));
+
+    // Create root object for the UI
+    AbstractPane *root = qml->createRootObject<AbstractPane>();
 
     // Set created root object as the application scene
     Application::instance()->setScene(root);
