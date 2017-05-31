@@ -11,6 +11,7 @@ GeoLocation::GeoLocation(QObject *parent) :
     // TODO: check return values
     geolocation_set_provider(GEOLOCATION_PROVIDER_GNSS);
     geolocation_set_background(true);
+    geolocation_set_report_satellite_info(true);
 }
 
 GeoLocation::~GeoLocation()
