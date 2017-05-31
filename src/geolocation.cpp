@@ -80,7 +80,9 @@ void GeoLocation::errorEvent(bps_event_t *event)
 
 void GeoLocation::infoEvent(bps_event_t *event)
 {
-    Q_UNUSED(event);
+    latitude_ = geolocation_event_get_latitude(event);
+    longitude_ = geolocation_event_get_longitude(event);
+    emit dataChanged();
 }
 
 void GeoLocation::statusEvent(bps_event_t *event)
