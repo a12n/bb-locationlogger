@@ -40,7 +40,7 @@ void GpxFile::writeStartTrackPoint(const QDateTime& timestamp, double latitude, 
     xml.writeStartElement("trkpt");
     xml.writeAttribute("lat", QString::number(latitude, 'f', 8));
     xml.writeAttribute("lon", QString::number(longitude, 'f', 8));
-    xml.writeTextElement("time", timestamp.toString(Qt::ISODate));
+    xml.writeTextElement("time", timestamp.toUTC().toString(Qt::ISODate));
 
     checkError();
 }
