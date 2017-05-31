@@ -8,6 +8,10 @@
 class GeoLocation : public QObject, public bb::AbstractBpsEventHandler
 {
     Q_OBJECT
+    // Data properties
+    Q_PROPERTY(double latitude READ latitude NOTIFY dataChanged)
+    Q_PROPERTY(double longitude READ longitude NOTIFY dataChanged)
+
 public:
     explicit GeoLocation(QObject *parent = 0);
     virtual ~GeoLocation();
@@ -16,6 +20,17 @@ public:
 
     Q_INVOKABLE void startUpdates();
     Q_INVOKABLE void stopUpdates();
+
+    // Data properties
+    double latitude() const
+    {
+        return latitude_;
+    }
+
+    double longitude() const
+    {
+        return longitude_;
+    }
 
 signals:
     void dataChanged();
@@ -31,6 +46,9 @@ private:
     void errorEvent(bps_event_t *event);
     void infoEvent(bps_event_t *event);
     void statusEvent(bps_event_t *event);
+
+    double latitude_;
+    double longitude_;
 };
 
 #endif

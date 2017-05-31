@@ -1,10 +1,14 @@
+#include <cmath>
+
 #include <bps/bps.h>
 #include <bps/geolocation.h>
 
 #include "geolocation.hpp"
 
 GeoLocation::GeoLocation(QObject *parent) :
-    QObject(parent)
+    QObject(parent),
+    latitude_(NAN),
+    longitude_(NAN)
 {
     subscribe(geolocation_get_domain());
     bps_initialize();
