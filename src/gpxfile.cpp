@@ -31,7 +31,7 @@ bool GpxFile::isOpen() const
 
 void GpxFile::writeStartTrackPoint(const QDateTime& timestamp, double latitude, double longitude)
 {
-    if (!file->isOpen())
+    if (!isOpen())
         return;
 
     xml.writeStartElement("trkpt");
@@ -44,49 +44,77 @@ void GpxFile::writeStartTrackPoint(const QDateTime& timestamp, double latitude, 
 
 void GpxFile::writeAltitude(double altitude)
 {
+    if (!isOpen())
+        return;
+
     xml.writeTextElement("ele", QString::number(altitude, 'f', 2));
+
     checkError();
 }
 
 void GpxFile::writeGeoidHeight(double height)
 {
+    if (!isOpen())
+        return;
+
     xml.writeTextElement("geoidheight", QString::number(height, 'f', 2));
+
     checkError();
 }
 
 void GpxFile::writeNumSatellitesUsed(int num)
 {
+    if (!isOpen())
+        return;
+
     xml.writeTextElement("sat", QString::number(num));
+
     checkError();
 }
 
 void GpxFile::writeHdop(double hdop)
 {
+    if (!isOpen())
+        return;
+
     xml.writeTextElement("hdop", QString::number(hdop, 'f', 3));
+
     checkError();
 }
 
 void GpxFile::writeVdop(double vdop)
 {
+    if (!isOpen())
+        return;
+
     xml.writeTextElement("vdop", QString::number(vdop, 'f', 3));
+
     checkError();
 }
 
 void GpxFile::writePdop(double pdop)
 {
+    if (!isOpen())
+        return;
+
     xml.writeTextElement("pdop", QString::number(pdop, 'f', 3));
+
     checkError();
 }
 
 void GpxFile::writeEndTrackPoint()
 {
+    if (!isOpen())
+        return;
+
     xml.writeEndElement(); // trkpt
+
     checkError();
 }
 
 void GpxFile::close()
 {
-    if (!file->isOpen())
+    if (!isOpen())
         return;
 
     writeEndGpx();
@@ -111,6 +139,7 @@ void GpxFile::writeEndGpx()
     xml.writeEndElement(); // trk
     xml.writeEndElement(); // gpx
     xml.writeEndDocument();
+
     checkError();
 }
 
