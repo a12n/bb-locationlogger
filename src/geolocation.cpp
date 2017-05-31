@@ -17,6 +17,9 @@ GeoLocation::~GeoLocation()
 
 void GeoLocation::event(bps_event_t *event)
 {
+    if (!event)
+        return;
+
     switch (bps_event_get_code(event)) {
         case GEOLOCATION_INFO :
             // TODO
