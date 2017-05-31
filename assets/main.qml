@@ -44,14 +44,18 @@ NavigationPane {
             lonLabel.text = _geoLocation.longitude.toFixed(8) + "°"
             altLabel.text = _geoLocation.altitude.toFixed(2) + " m"
             numSatLabel.text = _geoLocation.numSatellitesUsed + "/" + _geoLocation.numSatellitesTotal
-
-            _gpxFile.writeStartTrackPoint(_geoLocation.timestamp, _geoLocation.latitude, _geoLocation.longitude)
-            if (!isNaN(_geoLocation.altitude)) _gpxFile.writeAltitude(_geoLocation.altitude)
-            if (!isNaN(_geoLocation.hdop)) _gpxFile.writeHdop(_geoLocation.hdop)
-            if (!isNaN(_geoLocation.vdop)) _gpxFile.writeVdop(_geoLocation.vdop)
-            if (!isNaN(_geoLocation.pdop)) _gpxFile.writePdop(_geoLocation.pdop)
-            if (_geoLocation.numSatellitesUsed > 0) _gpxFile.writeNumSatellitesUsed(_geoLocation.numSatellitesUsed)
-            _gpxFile.writeEndTrackPoint()
+            if (_gpxFile.isOpen() &&
+                !isNaN(_geoLocation.latitude) &&
+                !isNaN(_geoLocation.latitude))
+            {
+                _gpxFile.writeStartTrackPoint(_geoLocation.timestamp, _geoLocation.latitude, _geoLocation.longitude)
+                if (!isNaN(_geoLocation.altitude)) _gpxFile.writeAltitude(_geoLocation.altitude)
+                if (!isNaN(_geoLocation.hdop)) _gpxFile.writeHdop(_geoLocation.hdop)
+                if (!isNaN(_geoLocation.vdop)) _gpxFile.writeVdop(_geoLocation.vdop)
+                if (!isNaN(_geoLocation.pdop)) _gpxFile.writePdop(_geoLocation.pdop)
+                if (_geoLocation.numSatellitesUsed > 0) _gpxFile.writeNumSatellitesUsed(_geoLocation.numSatellitesUsed)
+                _gpxFile.writeEndTrackPoint()
+            }
         }
 
         function dateTimeDifference(beginTs, endTs) {
