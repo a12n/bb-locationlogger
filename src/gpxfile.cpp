@@ -20,15 +20,20 @@ void GpxFile::open(const QString& baseName)
         xml.setDevice(file);
         writeStartGpx();
     }
+
     checkError();
 }
 
 void GpxFile::writeStartTrackPoint(const QDateTime& timestamp, double latitude, double longitude)
 {
+    if (!file->isOpen())
+        return;
+
     xml.writeStartElement("trkpt");
     xml.writeAttribute("lat", QString::number(latitude, 'f'));
     xml.writeAttribute("lon", QString::number(longitude, 'f'));
     xml.writeTextElement("time", timestamp.toString(Qt::ISODate));
+
     checkError();
 }
 
