@@ -3,6 +3,7 @@
 GeoPositionSource::GeoPositionSource(QObject *parent) :
     QObject(parent),
     src(QGeoPositionInfoSource::createDefaultSource(this)),
+    curMethod("all"),
     active(false)
 {
     src->setProperty("canRunInBackground", true);
@@ -16,11 +17,6 @@ GeoPositionSource::GeoPositionSource(QObject *parent) :
     Q_ASSERT(ok);
 
     Q_UNUSED(ok);
-
-    setActive(false);
-    setPeriod(5);
-    setMethod("all");
-    setStationaryDetectionEnabled(false);
 }
 
 bool GeoPositionSource::isActive() const
