@@ -25,10 +25,10 @@ NavigationPane {
 
         onCreationCompleted: {
             _geoLocation.dataChanged.connect(onDataChanged)
-            _geoLocation.setPeriod(5)            
+            _geoLocation.setPeriod(5)
             _geoLocation.startUpdates()
         }
-        
+
         function onDataChanged() {
             latLabel.text = _geoLocation.latitude + "°"
             lonLabel.text = _geoLocation.longitude + "°"
@@ -141,7 +141,7 @@ NavigationPane {
                 textStyle.fontSize: FontSize.Large
                 textStyle.textAlign: TextAlign.Center
                 horizontalAlignment: HorizontalAlignment.Fill
-                textStyle.fontFamily: "Monospace"                
+                textStyle.fontFamily: "Monospace"
             }
             Divider {
                 horizontalAlignment: HorizontalAlignment.Fill
