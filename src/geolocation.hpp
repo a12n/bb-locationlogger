@@ -1,8 +1,9 @@
 #ifndef GEOLOCATION_HPP_
 #define GEOLOCATION_HPP_
 
-#include <QObject>
 #include <bb/AbstractBpsEventHandler>
+
+#include <QObject>
 
 class GeoLocation : public QObject, public bb::AbstractBpsEventHandler
 {
