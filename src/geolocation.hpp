@@ -21,6 +21,7 @@ class GeoLocation : public QObject, public bb::AbstractBpsEventHandler
     Q_PROPERTY(double hdop READ hdop NOTIFY dataChanged)
     Q_PROPERTY(double vdop READ hdop NOTIFY dataChanged)
     Q_PROPERTY(double pdop READ hdop NOTIFY dataChanged)
+    Q_PROPERTY(double geoidHeight READ geoidHeight NOTIFY dataChanged)
 
 public:
     explicit GeoLocation(QObject *parent = 0);
@@ -43,6 +44,7 @@ public:
     double hdop() const { return hdop_; }
     double vdop() const { return vdop_; }
     double pdop() const { return pdop_; }
+    double geoidHeight() const { return geoidHeight_; }
 
 signals:
     void dataChanged();
@@ -73,7 +75,7 @@ private:
     double hdop_;
     double vdop_;
     double pdop_;
-//    double geoidHeight_;
+    double geoidHeight_;
     QDateTime timestamp_;
     unsigned int numSatellitesUsed_;
     unsigned int numSatellitesTotal_;
