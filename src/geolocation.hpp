@@ -32,60 +32,17 @@ public:
     Q_INVOKABLE void stopUpdates();
 
     // Data properties
-    double latitude() const
-    {
-        return latitude_;
-    }
-
-    double longitude() const
-    {
-        return longitude_;
-    }
-
-    double altitude() const
-    {
-        return altitude_;
-    }
-
-    double horizAccuracy() const
-    {
-        return horizAccuracy_;
-    }
-
-    double vertAccuracy() const
-    {
-        return vertAccuracy_;
-    }
-
-    QDateTime timestamp() const
-    {
-        return timestamp_;
-    }
-
-    unsigned int numSatellitesUsed() const
-    {
-        return numSatellitesUsed_;
-    }
-
-    unsigned int numSatellitesTotal() const
-    {
-        return numSatellitesTotal_;
-    }
-
-    double hdop() const
-    {
-        return hdop_;
-    }
-
-    double vdop() const
-    {
-        return vdop_;
-    }
-
-    double pdop() const
-    {
-        return pdop_;
-    }
+    double latitude() const { return latitude_; }
+    double longitude() const { return longitude_; }
+    double altitude() const { return altitude_; }
+    double horizAccuracy() const { return horizAccuracy_; }
+    double vertAccuracy() const { return vertAccuracy_; }
+    QDateTime timestamp() const { return timestamp_; }
+    unsigned int numSatellitesUsed() const { return numSatellitesUsed_; }
+    unsigned int numSatellitesTotal() const { return numSatellitesTotal_; }
+    double hdop() const { return hdop_; }
+    double vdop() const { return vdop_; }
+    double pdop() const { return pdop_; }
 
 signals:
     void dataChanged();
