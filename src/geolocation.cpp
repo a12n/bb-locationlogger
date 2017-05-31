@@ -84,6 +84,8 @@ void GeoLocation::setStationaryDetection(bool enabled)
 void GeoLocation::errorEvent(bps_event_t *event)
 {
     Q_UNUSED(event);
+    qDebug() << "error code " << geolocation_event_get_error_code(event);
+    qDebug() << "error message \"" << geolocation_event_get_error_message(event) << "\"";
 }
 
 void GeoLocation::infoEvent(bps_event_t *event)
