@@ -15,6 +15,7 @@ GeoLocation::GeoLocation(QObject *parent) :
     horizAccuracy_(NAN),
     vertAccuracy_(NAN),
     heading_(NAN),
+    speed_(NAN),
     hdop_(NAN),
     vdop_(NAN),
     pdop_(NAN),
@@ -126,6 +127,7 @@ void GeoLocation::infoEvent(bps_event_t *event)
     horizAccuracy_ = geolocation_event_get_accuracy(event);
     vertAccuracy_ = geolocation_event_get_altitude_accuracy(event);
     heading_ = geolocation_event_get_heading(event);
+    speed_ = geolocation_event_get_speed(event);
     numSatellitesUsed_ = geolocation_event_get_num_satellites_used(event);
     numSatellitesTotal_ = geolocation_event_get_num_satellites_total(event);
     hdop_ = geolocation_event_get_hdop(event);
@@ -134,6 +136,7 @@ void GeoLocation::infoEvent(bps_event_t *event)
     geoidHeight_ = geolocation_event_get_geoid_height(event);
     qDebug() << "timestamp" << timestamp_;
     qDebug() << "coordinate" << latitude_ << longitude_ << altitude_;
+    qDebug() << "heading and speed" << heading_ << speed_;
     qDebug() << "accuracy" << horizAccuracy_ << vertAccuracy_;
     qDebug() << "num satellites" << numSatellitesUsed_ << "/" << numSatellitesTotal_;
     emit dataChanged();
