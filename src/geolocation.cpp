@@ -10,7 +10,8 @@ GeoLocation::GeoLocation(QObject *parent) :
     latitude_(NAN),
     longitude_(NAN),
     altitude_(NAN),
-    horizAccuracy_(NAN)
+    horizAccuracy_(NAN),
+    vertAccuracy_(NAN)
 {
     subscribe(geolocation_get_domain());
     bps_initialize();
@@ -86,6 +87,7 @@ void GeoLocation::infoEvent(bps_event_t *event)
     longitude_ = geolocation_event_get_longitude(event);
     altitude_ = geolocation_event_get_altitude(event);
     horizAccuracy_ = geolocation_event_get_accuracy(event);
+    vertAccuracy_ = geolocation_event_get_altitude_accuracy(event);
     emit dataChanged();
 }
 
