@@ -56,8 +56,9 @@ NavigationPane {
                 !isNaN(_geoLocation.latitude) &&
                 !isNaN(_geoLocation.latitude))
             {
-                _gpxFile.writeStartTrackPoint(_geoLocation.timestamp, _geoLocation.latitude, _geoLocation.longitude)
+                _gpxFile.writeStartTrackPoint(_geoLocation.latitude, _geoLocation.longitude)
                 if (!isNaN(_geoLocation.altitude)) _gpxFile.writeAltitude(_geoLocation.altitude)
+                _gpxFile.writeTimestamp(_geoLocation.timestamp)
                 if (!isNaN(_geoLocation.hdop)) _gpxFile.writeHdop(_geoLocation.hdop)
                 if (!isNaN(_geoLocation.vdop)) _gpxFile.writeVdop(_geoLocation.vdop)
                 if (!isNaN(_geoLocation.pdop)) _gpxFile.writePdop(_geoLocation.pdop)
