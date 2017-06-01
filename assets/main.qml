@@ -28,6 +28,7 @@ NavigationPane {
             _geoLocation.error.connect(onError)
             _geoLocation.warning.connect(onWarning)
             _geoLocation.setPeriod(5)
+            _geoLocation.setStationaryDetection(true)
             _geoLocation.startUpdates()
             Application.autoExit = true
             Application.aboutToQuit.connect(_gpxFile.close)
