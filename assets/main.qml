@@ -29,6 +29,8 @@ NavigationPane {
             _geoLocation.warning.connect(onWarning)
             _geoLocation.setPeriod(5)
             _geoLocation.startUpdates()
+            Application.autoExit = true
+            Application.aboutToQuit.connect(_gpxFile.close)
         }
 
         function onError(err) {
