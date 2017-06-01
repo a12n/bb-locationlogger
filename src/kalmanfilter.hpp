@@ -24,8 +24,7 @@ public:
     double longitude() const { return longitude_; }
     double accuracy() const { return std::sqrt(variance_); }
 
-    void update(qint64 t, double lat, double lon, double acc)
-//    void update(qint64 t, double lat, double lon, double acc, double speed)
+    void update(qint64 t, double lat, double lon, double acc, double speed)
     {
         if (acc < 1.0) acc = 1.0;
         if (isnan(variance_)) {
