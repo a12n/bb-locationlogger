@@ -42,6 +42,8 @@ NavigationPane {
         function onDataChanged() {
             latLabel.text = _geoLocation.latitude.toFixed(8) + "°"
             lonLabel.text = _geoLocation.longitude.toFixed(8) + "°"
+            accuracyLabel.text = "±" + _geoLocation.horizAccuracy.toFixed(2) + " m"
+            speedLabel.text = _geoLocation.speed.toFixed(1) + " m/s"
             altLabel.text = _geoLocation.altitude.toFixed(2) + " m"
             numSatLabel.text = _geoLocation.numSatellitesUsed + "/" + _geoLocation.numSatellitesTotal
             if (_gpxFile.isOpen() &&
@@ -149,6 +151,24 @@ NavigationPane {
                 horizontalAlignment: HorizontalAlignment.Fill
                 textStyle.textAlign: TextAlign.Center
                 textStyle.fontFamily: "Monospace"
+            }
+            Label {
+                id: accuracyLabel
+                text: "±N/A m"
+                textStyle.textAlign: TextAlign.Center
+                horizontalAlignment: HorizontalAlignment.Fill
+                textStyle.fontFamily: "Monospace"
+            }
+            Label {
+                id: speedLabel
+                text: "N/A m/s"
+                textStyle.fontSize: FontSize.Large
+                textStyle.textAlign: TextAlign.Center
+                horizontalAlignment: HorizontalAlignment.Fill
+                textStyle.fontFamily: "Monospace"
+            }
+            Divider {
+                horizontalAlignment: HorizontalAlignment.Fill
             }
             Label {
                 id: altLabel
