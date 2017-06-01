@@ -90,6 +90,19 @@ void GeoLocation::setStationaryDetection(bool enabled)
     geolocation_set_stationary(enabled);
 }
 
+void GeoLocation::setSmoothData(bool enabled)
+{
+    if (enabled) {
+        if (!filter_)
+            filter_ = new KalmanFilter();
+    } else {
+        if (filter_) {
+            delete filter_;
+            filter_ = 0;
+        }
+    }
+}
+
 void GeoLocation::errorEvent(bps_event_t *event)
 {
     switch (geolocation_event_get_error_code(event)) {

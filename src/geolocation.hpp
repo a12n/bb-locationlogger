@@ -65,6 +65,7 @@ public slots:
     Q_INVOKABLE void setPeriod(unsigned int period);
     Q_INVOKABLE void setResponseTime(unsigned int responseTime);
     Q_INVOKABLE void setStationaryDetection(bool enabled);
+    Q_INVOKABLE void setSmoothData(bool enabled);
 
 private:
     void errorEvent(bps_event_t *event);
