@@ -105,6 +105,16 @@ void GpxFile::writePdop(double pdop)
     checkError();
 }
 
+void GpxFile::writeEndTrackPoint()
+{
+    if (!isOpen())
+        return;
+
+    xml.writeEndElement(); // trkpt
+
+    checkError();
+}
+
 void GpxFile::writeStartExtensions(const QString& ns)
 {
     if (!isOpen())
@@ -132,16 +142,6 @@ void GpxFile::writeEndExtensions()
         return;
 
     xml.writeEndElement(); // extensions
-
-    checkError();
-}
-
-void GpxFile::writeEndTrackPoint()
-{
-    if (!isOpen())
-        return;
-
-    xml.writeEndElement(); // trkpt
 
     checkError();
 }

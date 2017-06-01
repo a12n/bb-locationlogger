@@ -21,10 +21,10 @@ public:
     Q_INVOKABLE void writeHdop(double hdop);
     Q_INVOKABLE void writeVdop(double vdop);
     Q_INVOKABLE void writePdop(double pdop);
+    Q_INVOKABLE void writeEndTrackPoint();
     Q_INVOKABLE void writeStartExtensions(const QString& ns);
     Q_INVOKABLE void writeTextElement(const QString& name, const QString& text);
     Q_INVOKABLE void writeEndExtensions();
-    Q_INVOKABLE void writeEndTrackPoint();
     Q_INVOKABLE void close();
 
 signals:
