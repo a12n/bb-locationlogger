@@ -32,6 +32,7 @@ signals:
 public slots:
     Q_INVOKABLE void open(const QString& baseName);
     Q_INVOKABLE void close();
+    Q_INVOKABLE void setSaveOnMediaCard(bool enabled);
 
 private:
     void writeStartGpx();
@@ -42,6 +43,7 @@ private:
 
     QFile *file;
     QXmlStreamWriter xml;
+    bool saveOnMediaCard;
 };
 
 #endif

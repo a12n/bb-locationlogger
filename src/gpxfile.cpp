@@ -9,7 +9,8 @@
 GpxFile::GpxFile(QObject *parent) :
     QObject(parent),
     file(new QFile(this)),
-    xml()
+    xml(),
+    saveOnMediaCard(false)
 {
     xml.setAutoFormatting(true);
     xml.setAutoFormattingIndent(1);
@@ -166,6 +167,11 @@ void GpxFile::close()
     file->close();
 }
 
+void GpxFile::setSaveOnMediaCard(bool enabled)
+{
+    saveOnMediaCard = enabled;
+}
+
 void GpxFile::writeStartGpx()
 {
     xml.writeStartDocument("1.0");
@@ -214,7 +220,7 @@ QString GpxFile::fileName(const QString& baseName)
     QDir device("shared/misc");
     QDir sdcard("../../removable/sdcard/misc");
 
-    if (sdcard.mkpath(".")) {
+    if (saveOnMediaCard && sdcard.mkpath(".")) {
         return sdcard.filePath(baseName);
     } else {
         return device.filePath(baseName);
