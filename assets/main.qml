@@ -209,12 +209,12 @@ NavigationPane {
             Label {
                 id: errLabel
                 text: "N/A"
-                textStyle.color: Color.Red
+                textStyle.color: Color.create("#ffff3333")
             }
             Label {
                 id: warnLabel
                 text: "N/A"
-                textStyle.color: Color.Yellow
+                textStyle.color: Color.create("#ffdcd427")
             }
             Divider {
                 horizontalAlignment: HorizontalAlignment.Fill
