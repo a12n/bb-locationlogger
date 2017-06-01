@@ -1,4 +1,4 @@
-import bb.cascades 1.0
+import bb.cascades 1.3
 
 Container {
     property alias text: label.text
