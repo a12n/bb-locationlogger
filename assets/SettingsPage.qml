@@ -49,6 +49,7 @@ Page {
         LabelToggleButton {
             id: stationaryDetection
             text: qsTr("Stationary Detection")
+            horizontalAlignment: HorizontalAlignment.Fill
         }
         LabelToggleButton {
             id: smoothData
