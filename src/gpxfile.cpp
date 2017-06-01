@@ -105,6 +105,37 @@ void GpxFile::writePdop(double pdop)
     checkError();
 }
 
+void GpxFile::writeStartExtensions(const QString& ns)
+{
+    if (!isOpen())
+        return;
+
+    xml.writeStartElement("extensions");
+    xml.writeDefaultNamespace(ns);
+
+    checkError();
+}
+
+void GpxFile::writeTextElement(const QString& name, const QString& text)
+{
+    if (!isOpen())
+        return;
+
+    xml.writeTextElement(name, text);
+
+    checkError();
+}
+
+void GpxFile::writeEndExtensions()
+{
+    if (!isOpen())
+        return;
+
+    xml.writeEndElement(); // extensions
+
+    checkError();
+}
+
 void GpxFile::writeEndTrackPoint()
 {
     if (!isOpen())
