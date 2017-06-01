@@ -91,7 +91,7 @@ void GpxFile::writeHdop(double hdop)
     if (!isOpen())
         return;
 
-    xml.writeTextElement("hdop", QString::number(hdop, 'f', 3));
+    xml.writeTextElement("hdop", QString::number(hdop, 'f', 1));
 
     checkError();
 }
@@ -101,7 +101,7 @@ void GpxFile::writeVdop(double vdop)
     if (!isOpen())
         return;
 
-    xml.writeTextElement("vdop", QString::number(vdop, 'f', 3));
+    xml.writeTextElement("vdop", QString::number(vdop, 'f', 1));
 
     checkError();
 }
@@ -111,7 +111,7 @@ void GpxFile::writePdop(double pdop)
     if (!isOpen())
         return;
 
-    xml.writeTextElement("pdop", QString::number(pdop, 'f', 3));
+    xml.writeTextElement("pdop", QString::number(pdop, 'f', 1));
 
     checkError();
 }
