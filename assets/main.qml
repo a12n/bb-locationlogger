@@ -75,37 +75,6 @@ NavigationPane {
             }
         }
 
-        function dateTimeDifference(beginTs, endTs) {
-            var diff = endTs.valueOf() - beginTs.valueOf()
-            var ans = {}
-            ans.days = ~~(diff / 86400000)
-            diff %= 86400000
-            ans.hours = ~~(diff / 3600000)
-            diff %= 3600000
-            ans.minutes = ~~(diff / 60000)
-            diff %= 60000
-            ans.seconds = ~~(diff / 1000)
-            diff %= 1000
-            ans.milliseconds = diff
-            return ans
-        }
-
-        function durationString(beginTs, endTs) {
-            var d = dateTimeDifference(beginTs, endTs)
-            var ans = ""
-            if (d.days > 0) {
-                ans += d.days + "d"
-            }
-            if (d.hours > 0) {
-                ans += d.hours + "h"
-            }
-            if (d.minutes > 0) {
-                ans += d.minutes + "min"
-            }
-            ans += d.seconds + "s"
-            return ans
-        }
-
         attachedObjects: [
             SystemToast {
                 id: saveToast
