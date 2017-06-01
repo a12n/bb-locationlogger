@@ -12,7 +12,6 @@ class GpxFile : public QObject
 public:
     explicit GpxFile(QObject *parent = 0);
 
-    Q_INVOKABLE void open(const QString& baseName);
     Q_INVOKABLE bool isOpen() const;
     Q_INVOKABLE void writeStartTrackPoint(const QDateTime& timestamp, double latitude, double longitude);
     Q_INVOKABLE void writeAltitude(double altitude);
@@ -25,10 +24,13 @@ public:
     Q_INVOKABLE void writeStartExtensions(const QString& ns);
     Q_INVOKABLE void writeTextElement(const QString& name, const QString& text);
     Q_INVOKABLE void writeEndExtensions();
-    Q_INVOKABLE void close();
 
 signals:
     void error(const QString& err);
+
+public slots:
+    Q_INVOKABLE void open(const QString& baseName);
+    Q_INVOKABLE void close();
 
 private:
     void writeStartGpx();
