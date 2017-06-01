@@ -4,27 +4,11 @@
 <context>
     <name>SettingsPage</name>
     <message>
-        <source>All</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Satellite</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Stationary Detection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Non-Satellite</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Positioning Method</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

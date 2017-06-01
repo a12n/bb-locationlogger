@@ -3,7 +3,6 @@ import bb.cascades 1.4
 Page {
     id: root
 
-    property string method: "all"
     property int period: 5
     property alias stationaryDetection: statDetectCheckBox.checked
 
@@ -17,25 +16,6 @@ Page {
         leftPadding: topPadding
         rightPadding: leftPadding
         bottomPadding: topPadding
-        DropDown {
-            title: qsTr("Positioning Method")
-            options: [
-                Option {
-                    text: qsTr("All")
-                },
-                Option {
-                    text: qsTr("Satellite")
-                },
-                Option {
-                    text: qsTr("Non-Satellite")
-                }
-            ]
-            onSelectedIndexChanged: {
-                var opts = ["all", "satellite", "nonSatellite"]
-                root.method = opts[selectedIndex]
-            }
-            selectedIndex: 0
-        }
         DropDown {
             title: qsTr("Update Interval")
             options: [
