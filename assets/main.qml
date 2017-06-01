@@ -201,7 +201,6 @@ NavigationPane {
             }
             Label {
                 id: statusLabel
-                text: "No status"
                 horizontalAlignment: HorizontalAlignment.Fill
                 textStyle.textAlign: TextAlign.Center
             }
