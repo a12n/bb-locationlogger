@@ -25,6 +25,7 @@ public:
     double accuracy() const { return std::sqrt(variance_); }
 
     void update(qint64 t, double lat, double lon, double acc)
+//    void update(qint64 t, double lat, double lon, double acc, double speed)
     {
         if (acc < 1.0) acc = 1.0;
         if (isnan(variance_)) {
@@ -38,6 +39,7 @@ public:
         const qint64 tdiff = t - t_;
         if (tdiff > 0) {
             variance_ += tdiff * q_ * q_ / 1000.0;
+//            variance_ += tdiff * speed * speed / 1000.0;
             t_ = t;
         }
 
