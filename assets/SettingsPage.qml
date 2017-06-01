@@ -5,6 +5,7 @@ Page {
 
     property int period: 5
     property alias stationaryDetection: stationaryDetection.checked
+    property alias saveOnMediaCard: saveOnMediaCard.checked
 
     titleBar: TitleBar {
         title: qsTr("Settings")
@@ -47,6 +48,11 @@ Page {
         LabelToggleButton {
             id: stationaryDetection
             text: qsTr("Stationary detection")
+        }
+        LabelToggleButton {
+            id: saveOnMediaCard
+            text: qsTr("Save on Media Card")
+            horizontalAlignment: HorizontalAlignment.Fill
         }
     }
 }
