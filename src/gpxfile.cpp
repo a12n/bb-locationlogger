@@ -32,7 +32,7 @@ bool GpxFile::isOpen() const
     return file->isOpen();
 }
 
-void GpxFile::writeStartTrackPoint(const QDateTime& timestamp, double latitude, double longitude)
+void GpxFile::writeStartTrackPoint(double latitude, double longitude)
 {
     if (!isOpen())
         return;
@@ -40,7 +40,6 @@ void GpxFile::writeStartTrackPoint(const QDateTime& timestamp, double latitude, 
     xml.writeStartElement("trkpt");
     xml.writeAttribute("lat", QString::number(latitude, 'f', 8));
     xml.writeAttribute("lon", QString::number(longitude, 'f', 8));
-    xml.writeTextElement("time", timestamp.toUTC().toString(Qt::ISODate));
 
     checkError();
 }
@@ -51,6 +50,16 @@ void GpxFile::writeAltitude(double altitude)
         return;
 
     xml.writeTextElement("ele", QString::number(altitude, 'f', 2));
+
+    checkError();
+}
+
+void GpxFile::writeTimestamp(const QDateTime& timestamp)
+{
+    if (!isOpen())
+        return;
+
+    xml.writeTextElement("time", timestamp.toUTC().toString(Qt::ISODate));
 
     checkError();
 }

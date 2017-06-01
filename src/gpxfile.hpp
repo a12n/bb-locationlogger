@@ -13,15 +13,16 @@ public:
     explicit GpxFile(QObject *parent = 0);
 
     Q_INVOKABLE bool isOpen() const;
-    Q_INVOKABLE void writeStartTrackPoint(const QDateTime& timestamp, double latitude, double longitude);
-    Q_INVOKABLE void writeAltitude(double altitude);
-    Q_INVOKABLE void writeGeoidHeight(double height);
-    Q_INVOKABLE void writeNumSatellitesUsed(int num);
-    Q_INVOKABLE void writeHdop(double hdop);
-    Q_INVOKABLE void writeVdop(double vdop);
-    Q_INVOKABLE void writePdop(double pdop);
+    Q_INVOKABLE void writeStartTrackPoint(double latitude, double longitude); // 1
+    Q_INVOKABLE void writeAltitude(double altitude); // 2
+    Q_INVOKABLE void writeTimestamp(const QDateTime& timestamp); // 3
+    Q_INVOKABLE void writeGeoidHeight(double height);            // 4
+    Q_INVOKABLE void writeNumSatellitesUsed(int num);            // 5
+    Q_INVOKABLE void writeHdop(double hdop);                     // 6
+    Q_INVOKABLE void writeVdop(double vdop);                     // 7
+    Q_INVOKABLE void writePdop(double pdop);                     // 8
     Q_INVOKABLE void writeEndTrackPoint();
-    Q_INVOKABLE void writeStartExtensions(const QString& ns);
+    Q_INVOKABLE void writeStartExtensions(const QString& ns); // 9
     Q_INVOKABLE void writeTextElement(const QString& name, const QString& text);
     Q_INVOKABLE void writeEndExtensions();
 
