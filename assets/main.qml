@@ -64,7 +64,7 @@ NavigationPane {
                 if (!isNaN(_geoLocation.hdop)) _gpxFile.writeHdop(_geoLocation.hdop)
                 if (!isNaN(_geoLocation.vdop)) _gpxFile.writeVdop(_geoLocation.vdop)
                 if (!isNaN(_geoLocation.pdop)) _gpxFile.writePdop(_geoLocation.pdop)
-                _gpxFile.writeStartExtensions("urn:gnsslogger:trkpt")
+                _gpxFile.writeStartExtensions()
                 if (!isNaN(_geoLocation.heading)) _gpxFile.writeTextElement("heading", _geoLocation.heading.toFixed(1))
                 if (!isNaN(_geoLocation.speed)) _gpxFile.writeTextElement("speed", _geoLocation.speed.toFixed(1))
                 if (!isNaN(_geoLocation.vertSpeed)) _gpxFile.writeTextElement("vertSpeed", _geoLocation.vertSpeed.toFixed(1))
