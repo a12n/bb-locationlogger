@@ -22,7 +22,7 @@ public:
     Q_INVOKABLE void writeVdop(double vdop);                     // 7
     Q_INVOKABLE void writePdop(double pdop);                     // 8
     Q_INVOKABLE void writeEndTrackPoint();
-    Q_INVOKABLE void writeStartExtensions(const QString& ns); // 9
+    Q_INVOKABLE void writeStartExtensions(); // 9
     Q_INVOKABLE void writeTextElement(const QString& name, const QString& text);
     Q_INVOKABLE void writeEndExtensions();
 
