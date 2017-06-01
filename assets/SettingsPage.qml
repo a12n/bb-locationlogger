@@ -4,7 +4,7 @@ Page {
     id: root
 
     property int period: 5
-    property alias stationaryDetection: statDetectCheckBox.checked
+    property alias stationaryDetection: stationaryDetection.checked
 
     titleBar: TitleBar {
         title: qsTr("Settings")
@@ -44,9 +44,9 @@ Page {
             }
             selectedIndex: 2
         }
-        CheckBox {
-            id: statDetectCheckBox
-            text: qsTr("Stationary Detection")
+        LabelToggleButton {
+            id: stationaryDetection
+            text: qsTr("Stationary detection")
         }
     }
 }
