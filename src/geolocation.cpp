@@ -157,6 +157,16 @@ void GeoLocation::infoEvent(bps_event_t *event)
     qDebug() << "heading and speed" << heading_ << speed_ << vertSpeed_;
     qDebug() << "accuracy" << horizAccuracy_ << vertAccuracy_;
     qDebug() << "num satellites" << numSatellitesUsed_ << "/" << numSatellitesTotal_;
+    if (filter_) {
+        filter_->update(timestamp_.toMSecsSinceEpoch(), latitude_, longitude_, horizAccuracy_, speed_);
+        timestamp_.setMSecsSinceEpoch(filter_->t());
+        latitude_ = filter_->latitude();
+        longitude_ = filter_->longitude();
+        horizAccuracy_ = filter_->accuracy();
+        qDebug() << "filter timestamp" << timestamp_;
+        qDebug() << "filter cooridnate " << latitude_ << longitude_;
+        qDebug() << "filter accuracy" << horizAccuracy_;
+    }
     emit dataChanged();
 }
 
