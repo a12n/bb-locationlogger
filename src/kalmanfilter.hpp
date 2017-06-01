@@ -1,13 +1,58 @@
 #ifndef KALMANFILTER_HPP_
 #define KALMANFILTER_HPP_
 
+#include <cmath>
+
+#include <QtGlobal>
+
 // Based on https://stackoverflow.com/a/15657798
 class KalmanFilter
 {
 public:
-    KalmanFilter();
+    KalmanFilter(double q = 3.0) :
+        q_(q),
+        t_(),
+        latitude_(NAN),
+        longitude_(NAN),
+        variance_(NAN)
+    {
+    }
 
-    // TODO
+    double q() const { return q_; }
+    qint64 t() const { return t_; }
+    double latitude() const { return latitude_; }
+    double longitude() const { return longitude_; }
+    double accuracy() const { return std::sqrt(variance_); }
+
+    void update(qint64 t, double lat, double lon, double acc)
+    {
+        if (acc < 1.0) acc = 1.0;
+        if (isnan(variance_)) {
+            t_ = t;
+            latitude_ = lat;
+            longitude_ = lon;
+            variance_ = acc * acc;
+            return;
+        }
+
+        const qint64 tdiff = t - t_;
+        if (tdiff > 0) {
+            variance_ += tdiff * q_ * q_ / 1000.0;
+            t_ = t;
+        }
+
+        const double k = variance_ / (variance_ + acc * acc);
+        latitude_ += k * (lat - latitude_);
+        longitude_ += k * (lon - longitude_);
+        variance_ = (1.0 - k) * variance_;
+    }
+
+private:
+    const double q_;
+    qint64 t_;
+    double latitude_;
+    double longitude_;
+    double variance_;           // Uninitialized if negative
 };
 
 #endif
