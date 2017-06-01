@@ -58,5 +58,21 @@
         <source>Record</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>m</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>m/s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording is active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The application records location data to a GPX file. File will be finalized and closed.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
