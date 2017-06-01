@@ -4,7 +4,7 @@
 
 #include "gpxfile.hpp"
 
-#define GNSSLOGGER_NS "urn:gnsslogger:hdg=heading,s=speed,vs=vertSpeed,hacc=accuracy,vacc=vertAccuracy"
+#define GNSSLOGGER_NS "urn:gnsslogger:hdg=heading,s=speed,vs=vertSpeed,acc=accuracy,vacc=vertAccuracy"
 
 GpxFile::GpxFile(QObject *parent) :
     QObject(parent),
