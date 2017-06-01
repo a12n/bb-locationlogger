@@ -39,7 +39,7 @@ private:
     void writeEndGpx();
     void checkError();
 
-    static QString fileName(const QString& baseName);
+    QString fileName(const QString& baseName) const;
 
     QFile *file;
     QXmlStreamWriter xml;

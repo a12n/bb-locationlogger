@@ -214,7 +214,7 @@ void GpxFile::checkError()
     }
 }
 
-QString GpxFile::fileName(const QString& baseName)
+QString GpxFile::fileName(const QString& baseName) const
 {
     // XXX: looks like sdcard directory path is undocumented
     QDir device("shared/misc");
