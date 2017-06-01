@@ -12,7 +12,7 @@ GpxFile::GpxFile(QObject *parent) :
     xml()
 {
     xml.setAutoFormatting(true);
-    xml.setAutoFormattingIndent(-1);
+    xml.setAutoFormattingIndent(1);
 }
 
 void GpxFile::open(const QString& baseName)
