@@ -6,6 +6,8 @@
 #include <QDateTime>
 #include <QObject>
 
+#include "kalmanfilter.hpp"
+
 class GeoLocation : public QObject, public bb::AbstractBpsEventHandler
 {
     Q_OBJECT
@@ -85,6 +87,8 @@ private:
     QDateTime timestamp_;
     unsigned int numSatellitesUsed_;
     unsigned int numSatellitesTotal_;
+
+    KalmanFilter *filter_;
 };
 
 #endif

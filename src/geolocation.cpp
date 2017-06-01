@@ -23,7 +23,8 @@ GeoLocation::GeoLocation(QObject *parent) :
     geoidHeight_(NAN),
     timestamp_(),
     numSatellitesUsed_(0),
-    numSatellitesTotal_(0)
+    numSatellitesTotal_(0),
+    filter_(0)
 {
     subscribe(geolocation_get_domain());
     bps_initialize();
@@ -36,6 +37,7 @@ GeoLocation::GeoLocation(QObject *parent) :
 GeoLocation::~GeoLocation()
 {
     bps_shutdown();
+    delete filter_;
 }
 
 void GeoLocation::event(bps_event_t *event)
