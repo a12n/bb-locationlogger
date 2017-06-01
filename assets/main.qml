@@ -68,7 +68,7 @@ NavigationPane {
                 if (!isNaN(_geoLocation.heading)) _gpxFile.writeTextElement("hdg", _geoLocation.heading.toFixed(1))
                 if (!isNaN(_geoLocation.speed)) _gpxFile.writeTextElement("s", _geoLocation.speed.toFixed(1))
                 if (!isNaN(_geoLocation.vertSpeed)) _gpxFile.writeTextElement("vs", _geoLocation.vertSpeed.toFixed(1))
-                if (!isNaN(_geoLocation.horizAccuracy)) _gpxFile.writeTextElement("hacc", _geoLocation.horizAccuracy.toFixed(2))
+                if (!isNaN(_geoLocation.horizAccuracy)) _gpxFile.writeTextElement("acc", _geoLocation.horizAccuracy.toFixed(2))
                 if (!isNaN(_geoLocation.vertAccuracy)) _gpxFile.writeTextElement("vacc", _geoLocation.vertAccuracy.toFixed(2))
                 _gpxFile.writeEndExtensions()
                 _gpxFile.writeEndTrackPoint()
