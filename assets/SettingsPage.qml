@@ -5,6 +5,7 @@ Page {
 
     property int period: 5
     property alias stationaryDetection: stationaryDetection.checked
+    property alias smoothData: smoothData.checked
     property alias saveOnMediaCard: saveOnMediaCard.checked
 
     titleBar: TitleBar {
@@ -48,6 +49,11 @@ Page {
         LabelToggleButton {
             id: stationaryDetection
             text: qsTr("Stationary Detection")
+        }
+        LabelToggleButton {
+            id: smoothData
+            text: qsTr("Smooth Location Data")
+            horizontalAlignment: HorizontalAlignment.Fill
         }
         LabelToggleButton {
             id: saveOnMediaCard
