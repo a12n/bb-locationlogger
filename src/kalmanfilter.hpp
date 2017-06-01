@@ -50,11 +50,11 @@ public:
     }
 
 private:
-    const double q_;
-    qint64 t_;
+    const double q_;            // Speed factor (m/s)
+    qint64 t_;                  // Milliseconds since Epoch
     double latitude_;
     double longitude_;
-    double variance_;           // Uninitialized if negative
+    double variance_;
 };
 
 #endif
