@@ -4,6 +4,8 @@
 
 #include "gpxfile.hpp"
 
+#define GNSSLOGGER_NS "urn:gnsslogger:gpx"
+
 GpxFile::GpxFile(QObject *parent) :
     QObject(parent),
     file(new QFile(this)),
@@ -170,6 +172,7 @@ void GpxFile::writeStartGpx()
     xml.writeStartDocument("1.0");
     xml.writeStartElement("gpx");
     xml.writeDefaultNamespace("http://www.topografix.com/GPX/1/1");
+    xml.writeNamespace(GNSSLOGGER_NS, "x");
     xml.writeAttribute("version", "1.1");
     xml.writeAttribute("creator", "gnsslogger");
     xml.writeStartElement("trk");
