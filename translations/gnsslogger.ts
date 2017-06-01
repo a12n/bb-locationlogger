@@ -39,6 +39,14 @@
         <source>1 min</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Smooth Location Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save on Media Card</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>main</name>
