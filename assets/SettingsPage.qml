@@ -46,15 +46,21 @@ Page {
             }
             selectedIndex: 2
         }
+        Divider {
+        }
         LabelToggleButton {
             id: stationaryDetection
             text: qsTr("Stationary Detection")
             horizontalAlignment: HorizontalAlignment.Fill
         }
+        Divider {
+        }
         LabelToggleButton {
             id: smoothData
             text: qsTr("Smooth Location Data")
             horizontalAlignment: HorizontalAlignment.Fill
+        }
+        Divider {
         }
         LabelToggleButton {
             id: saveOnMediaCard
