@@ -32,11 +32,13 @@ NavigationPane {
         }
 
         function onError(err) {
-            errLabel.text = err
+            statusLabel.text = err
+            statusImage.filterColor = Color.create("#ffff3333")
         }
 
         function onWarning(warn) {
-            warnLabel.text = warn
+            statusLabel.text = warn
+            statusImage.filterColor = Color.create("#ffdcd427")
         }
 
         function onDataChanged() {
@@ -206,24 +208,18 @@ NavigationPane {
                 horizontalAlignment: HorizontalAlignment.Fill
                 textStyle.fontFamily: "Monospace"
             }
-            Label {
-                id: errLabel
-                text: "N/A"
-                textStyle.color: Color.create("#ffff3333")
-            }
-            Label {
-                id: warnLabel
-                text: "N/A"
-                textStyle.color: Color.create("#ffdcd427")
-            }
             Divider {
                 horizontalAlignment: HorizontalAlignment.Fill
             }
+            ImageView {
+                id: statusImage
+                imageSource: "asset:///images/ic_map.png"
+                scalingMethod: ScalingMethod.AspectFill
+                horizontalAlignment: HorizontalAlignment.Center
+            }
             Label {
-                // TODO: update
-                id: trackTimeLabel
-                text: "00:00:00"
-                textStyle.fontSize: FontSize.XXLarge
+                id: statusLabel
+                text: "No status"
                 horizontalAlignment: HorizontalAlignment.Fill
                 textStyle.textAlign: TextAlign.Center
             }
