@@ -61,6 +61,13 @@ NavigationPane {
                 if (!isNaN(_geoLocation.pdop)) _gpxFile.writePdop(_geoLocation.pdop)
                 if (!isNaN(_geoLocation.geoidHeight)) _gpxFile.writeGeoidHeight(_geoLocation.geoidHeight)
                 if (_geoLocation.numSatellitesUsed > 0) _gpxFile.writeNumSatellitesUsed(_geoLocation.numSatellitesUsed)
+                _gpxFile.writeStartExtensions("urn:gnsslogger:trkpt")
+                if (!isNaN(_geoLocation.heading)) _gpxFile.writeTextElement("heading", _geoLocation.heading.toFixed(1))
+                if (!isNaN(_geoLocation.speed)) _gpxFile.writeTextElement("speed", _geoLocation.speed.toFixed(1))
+                if (!isNaN(_geoLocation.vertSpeed)) _gpxFile.writeTextElement("vertSpeed", _geoLocation.vertSpeed.toFixed(1))
+                if (!isNaN(_geoLocation.horizAccuracy)) _gpxFile.writeTextElement("horizAccuracy", _geoLocation.horizAccuracy.toFixed(2))
+                if (!isNaN(_geoLocation.vertAccuracy)) _gpxFile.writeTextElement("vertAccuracy", _geoLocation.vertAccuracy.toFixed(2))
+                _gpxFile.writeEndExtensions()
                 _gpxFile.writeEndTrackPoint()
             }
         }
