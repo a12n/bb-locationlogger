@@ -45,6 +45,8 @@ NavigationPane {
             accuracyLabel.text = "±" + _geoLocation.horizAccuracy.toFixed(2) + " m"
             speedLabel.text = _geoLocation.speed.toFixed(1) + " m/s"
             altLabel.text = _geoLocation.altitude.toFixed(2) + " m"
+            vertAccuracyLabel.text = "±" + _geoLocation.vertAccuracy.toFixed(2) + " m"
+            vertSpeedLabel.text = _geoLocation.vertSpeed.toFixed(1) + " m/s"
             numSatLabel.text = _geoLocation.numSatellitesUsed + "/" + _geoLocation.numSatellitesTotal
             if (_gpxFile.isOpen() &&
                 !isNaN(_geoLocation.latitude) &&
@@ -177,6 +179,24 @@ NavigationPane {
                 textStyle.textAlign: TextAlign.Center
                 horizontalAlignment: HorizontalAlignment.Fill
                 textStyle.fontFamily: "Monospace"
+            }
+            Label {
+                id: vertAccuracyLabel
+                text: "±N/A m"
+                textStyle.textAlign: TextAlign.Center
+                horizontalAlignment: HorizontalAlignment.Fill
+                textStyle.fontFamily: "Monospace"
+            }
+            Label {
+                id: vertSpeedLabel
+                text: "N/A m/s"
+                textStyle.fontSize: FontSize.Large
+                textStyle.textAlign: TextAlign.Center
+                horizontalAlignment: HorizontalAlignment.Fill
+                textStyle.fontFamily: "Monospace"
+            }
+            Divider {
+                horizontalAlignment: HorizontalAlignment.Fill
             }
             Label {
                 id: numSatLabel
