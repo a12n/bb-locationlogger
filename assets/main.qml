@@ -46,11 +46,11 @@ NavigationPane {
         function onDataChanged() {
             latLabel.text = _geoLocation.latitude.toFixed(8) + "°"
             lonLabel.text = _geoLocation.longitude.toFixed(8) + "°"
-            accuracyLabel.text = "±" + _geoLocation.horizAccuracy.toFixed(2) + " m"
-            speedLabel.text = _geoLocation.speed.toFixed(1) + " m/s"
-            altLabel.text = _geoLocation.altitude.toFixed(2) + " m"
-            vertAccuracyLabel.text = "±" + _geoLocation.vertAccuracy.toFixed(2) + " m"
-            vertSpeedLabel.text = _geoLocation.vertSpeed.toFixed(1) + " m/s"
+            accuracyLabel.text = "±" + _geoLocation.horizAccuracy.toFixed(2) + " " + qsTr("m")
+            speedLabel.text = _geoLocation.speed.toFixed(1) + " " + qsTr("m/s")
+            altLabel.text = _geoLocation.altitude.toFixed(2) + " " + qsTr("m")
+            vertAccuracyLabel.text = "±" + _geoLocation.vertAccuracy.toFixed(2) + " " + qsTr("m")
+            vertSpeedLabel.text = _geoLocation.vertSpeed.toFixed(1) + " " + qsTr("m/s")
             numSatLabel.text = _geoLocation.numSatellitesUsed + "/" + _geoLocation.numSatellitesTotal
             if (_gpxFile.isOpen() &&
                 !isNaN(_geoLocation.latitude) &&
@@ -140,14 +140,14 @@ NavigationPane {
             }
             Label {
                 id: accuracyLabel
-                text: "±N/A m"
+                text: "±N/A " + qsTr("m")
                 textStyle.textAlign: TextAlign.Center
                 horizontalAlignment: HorizontalAlignment.Fill
                 textStyle.fontFamily: "Monospace"
             }
             Label {
                 id: speedLabel
-                text: "N/A m/s"
+                text: "N/A " + qsTr("m/s")
                 textStyle.fontSize: FontSize.Large
                 textStyle.textAlign: TextAlign.Center
                 horizontalAlignment: HorizontalAlignment.Fill
@@ -158,7 +158,7 @@ NavigationPane {
             }
             Label {
                 id: altLabel
-                text: "N/A m"
+                text: "N/A " + qsTr("m")
                 textStyle.fontSize: FontSize.Large
                 textStyle.textAlign: TextAlign.Center
                 horizontalAlignment: HorizontalAlignment.Fill
@@ -166,14 +166,14 @@ NavigationPane {
             }
             Label {
                 id: vertAccuracyLabel
-                text: "±N/A m"
+                text: "±N/A " + qsTr("m")
                 textStyle.textAlign: TextAlign.Center
                 horizontalAlignment: HorizontalAlignment.Fill
                 textStyle.fontFamily: "Monospace"
             }
             Label {
                 id: vertSpeedLabel
-                text: "N/A m/s"
+                text: "N/A " + qsTr("m/s")
                 textStyle.fontSize: FontSize.Large
                 textStyle.textAlign: TextAlign.Center
                 horizontalAlignment: HorizontalAlignment.Fill
