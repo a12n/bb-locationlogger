@@ -49,7 +49,6 @@ config_pri_source_group1 {
         $$quote($$BASEDIR/src/applicationui.cpp) \
         $$quote($$BASEDIR/src/geolocation.cpp) \
         $$quote($$BASEDIR/src/gpxfile.cpp) \
-        $$quote($$BASEDIR/src/kalmanfilter.cpp) \
         $$quote($$BASEDIR/src/main.cpp)
 
     HEADERS += \
