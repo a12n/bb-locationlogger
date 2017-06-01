@@ -47,7 +47,7 @@ Page {
         }
         LabelToggleButton {
             id: stationaryDetection
-            text: qsTr("Stationary detection")
+            text: qsTr("Stationary Detection")
         }
         LabelToggleButton {
             id: saveOnMediaCard
