@@ -125,6 +125,8 @@ NavigationPane {
                     _gpxFile.open(saveToast.body)
                     startAction.enabled = false
                     stopAction.enabled = true
+                    Application.setClosePrompt("Recording is active",
+                        "The application records location data to a GPX file. File will be finalized and closed.")
                 }
                 imageSource: "asset:///images/ic_location.png"
             },
@@ -138,6 +140,7 @@ NavigationPane {
                     saveToast.show()
                     startAction.enabled = true
                     stopAction.enabled = false
+                    Application.clearClosePrompt()
                 }
                 imageSource: "asset:///images/ic_stop.png"
             }
