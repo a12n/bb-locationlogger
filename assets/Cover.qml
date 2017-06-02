@@ -5,19 +5,27 @@ Container {
     id: root
     background: Color.Black
 
-    onVisibleChanged: {
+    onCreationCompleted: {
+        Application.fullscreen.connect(onNonThumbnail)
+        Application.invisible.connect(onNonThumbnail)
+        Application.thumbnail.connect(onThumbnail)
+    }
+
+    function onNonThumbnail() {
+        timer.running = false
+        _geoLocation.error.disconnect(onError)
+        _geoLocation.warning.disconnect(onWarning)
+    }
+
+    function onThumbnail() {
+        timer.running = true
         if (_gpxFile.isOpen()) {
             image.filterColor = Color.create("#ff0092cc")
         } else {
             image.filterColor.reset()
         }
-        if (visible) {
-            _geoLocation.error.connect(onError)
-            _geoLocation.warning.connect(onWarning)
-        } else {
-            _geoLocation.error.disconnect(onError)
-            _geoLocation.warning.disconnect(onWarning)
-        }
+        _geoLocation.error.connect(onError)
+        _geoLocation.warning.connect(onWarning)
     }
 
     function onError(err) {
@@ -34,7 +42,6 @@ Container {
             interval: 30000
             repeat: true
             triggeredOnStart: true
-            running: root.visible
             onTriggered: {
                 latLabel.text = _geoLocation.latitude.toFixed(3) + "°"
                 lonLabel.text = _geoLocation.longitude.toFixed(3) + "°"
