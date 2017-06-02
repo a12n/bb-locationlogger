@@ -58,13 +58,13 @@ Container {
         Label {
             id: latLabel
             text: "N/A°"
-            textStyle.fontSize: FontSize.XXLarge
+            textStyle.fontSize: FontSize.Large
             horizontalAlignment: HorizontalAlignment.Center
         }
         Label {
             id: lonLabel
             text: "N/A°"
-            textStyle.fontSize: FontSize.XXLarge
+            textStyle.fontSize: FontSize.Large
             horizontalAlignment: HorizontalAlignment.Center
         }
     }
