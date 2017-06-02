@@ -53,7 +53,6 @@ Container {
             imageSource: "asset:///images/ic_map.png"
             verticalAlignment: VerticalAlignment.Center
             horizontalAlignment: HorizontalAlignment.Center
-            scalingMethod: ScalingMethod.AspectFill
         }
         Label {
             id: latLabel
