@@ -11,7 +11,7 @@ class KalmanFilter
 public:
     KalmanFilter(double q = 3.0) :
         q_(q),
-        t_(),
+        timestamp_(),
         latitude_(NAN),
         longitude_(NAN),
         variance_(NAN)
@@ -19,7 +19,7 @@ public:
     }
 
     double q() const { return q_; }
-    qint64 t() const { return t_; }
+    qint64 timestamp() const { return timestamp_; }
     double latitude() const { return latitude_; }
     double longitude() const { return longitude_; }
     double accuracy() const { return std::sqrt(variance_); }
@@ -28,18 +28,18 @@ public:
     {
         if (acc < 1.0) acc = 1.0;
         if (isnan(variance_)) {
-            t_ = t;
+            timestamp_ = t;
             latitude_ = lat;
             longitude_ = lon;
             variance_ = acc * acc;
             return;
         }
 
-        const qint64 tdiff = t - t_;
+        const qint64 tdiff = t - timestamp_;
         if (tdiff > 0) {
             variance_ += tdiff * q_ * q_ / 1000.0;
 //            variance_ += tdiff * speed * speed / 1000.0;
-            t_ = t;
+            timestamp_ = t;
         }
 
         const double k = variance_ / (variance_ + acc * acc);
@@ -50,7 +50,7 @@ public:
 
 private:
     const double q_;            // Speed factor (m/s)
-    qint64 t_;                  // Milliseconds since Epoch
+    qint64 timestamp_;          // Milliseconds since Epoch
     double latitude_;
     double longitude_;
     double variance_;
