@@ -3,6 +3,7 @@ import QtQuick 1.0
 
 Container {
     id: root
+    background: Color.Black
 
     onVisibleChanged: {
         if (_gpxFile.isOpen()) {
