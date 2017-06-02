@@ -20,22 +20,22 @@
         <location filename="../assets/SettingsPage.qml" line="34"/>
         <location filename="../assets/SettingsPage.qml" line="37"/>
         <source>s</source>
-        <translation type="unfinished"></translation>
+        <translation>с</translation>
     </message>
     <message>
         <location filename="../assets/SettingsPage.qml" line="40"/>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>мин</translation>
     </message>
     <message>
         <location filename="../assets/SettingsPage.qml" line="53"/>
         <source>Stationary Detection</source>
-        <translation type="unfinished"></translation>
+        <translation>Исключать время остановок</translation>
     </message>
     <message>
         <location filename="../assets/SettingsPage.qml" line="60"/>
         <source>Smooth Location Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Сглаживать данные</translation>
     </message>
     <message>
         <location filename="../assets/SettingsPage.qml" line="67"/>
