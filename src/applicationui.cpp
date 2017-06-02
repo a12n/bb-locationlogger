@@ -45,6 +45,7 @@ ApplicationUI::ApplicationUI() :
     QmlDocument *qmlCover = QmlDocument::create("asset:///Cover.qml").parent(this);
 
     qmlCover->setContextProperty("_geoLocation", geoLocation);
+    qmlCover->setContextProperty("_gpxFile", gpxFile);
 
     // Create the QML Container from using the QMLDocument.
     Container *coverContainer = qmlCover->createRootObject<Container>();
