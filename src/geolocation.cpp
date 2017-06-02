@@ -60,38 +60,45 @@ void GeoLocation::event(bps_event_t *event)
 
 void GeoLocation::startUpdates()
 {
+    qDebug() << __FUNCTION__;
     geolocation_request_events(0);
     // TODO: check return value
 }
 
 void GeoLocation::stopUpdates()
 {
+    qDebug() << __FUNCTION__;
     geolocation_stop_events(0);
     // TODO: check return value
 }
 
 void GeoLocation::setAccuracy(unsigned int accuracy)
 {
+    qDebug() << __FUNCTION__ << accuracy;
     geolocation_set_accuracy(accuracy);
 }
 
 void GeoLocation::setPeriod(unsigned int period)
 {
+    qDebug() << __FUNCTION__ << period;
     geolocation_set_period(period);
 }
 
 void GeoLocation::setResponseTime(unsigned int responseTime)
 {
+    qDebug() << __FUNCTION__ << responseTime;
     geolocation_set_response_time(responseTime);
 }
 
 void GeoLocation::setStationaryDetection(bool enabled)
 {
+    qDebug() << __FUNCTION__ << enabled;
     geolocation_set_stationary(enabled);
 }
 
 void GeoLocation::setSmoothData(bool enabled)
 {
+    qDebug() << __FUNCTION__ << enabled;
     if (enabled) {
         if (!filter_)
             filter_ = new KalmanFilter();
