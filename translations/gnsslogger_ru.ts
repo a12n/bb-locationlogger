@@ -24,7 +24,7 @@
     <message>
         <location filename="../assets/MainPage.qml" line="85"/>
         <source>Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Пауза</translation>
     </message>
     <message>
         <location filename="../assets/MainPage.qml" line="95"/>
