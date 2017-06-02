@@ -35,8 +35,8 @@ Container {
             triggeredOnStart: true
             running: root.visible
             onTriggered: {
-                latLabel.text = _geoLocation.latitude + "°"
-                lonLabel.text = _geoLocation.longitude + "°"
+                latLabel.text = _geoLocation.latitude.toFixed(3) + "°"
+                lonLabel.text = _geoLocation.longitude.toFixed(3) + "°"
             }
         }
     ]
