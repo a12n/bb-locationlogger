@@ -2,6 +2,47 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="ru_RU">
 <context>
+    <name>MainPage</name>
+    <message>
+        <location filename="../assets/MainPage.qml" line="39"/>
+        <location filename="../assets/MainPage.qml" line="41"/>
+        <location filename="../assets/MainPage.qml" line="42"/>
+        <location filename="../assets/MainPage.qml" line="136"/>
+        <location filename="../assets/MainPage.qml" line="154"/>
+        <location filename="../assets/MainPage.qml" line="162"/>
+        <source>m</source>
+        <translation type="unfinished">м</translation>
+    </message>
+    <message>
+        <location filename="../assets/MainPage.qml" line="40"/>
+        <location filename="../assets/MainPage.qml" line="43"/>
+        <location filename="../assets/MainPage.qml" line="143"/>
+        <location filename="../assets/MainPage.qml" line="169"/>
+        <source>m/s</source>
+        <translation type="unfinished">м/с</translation>
+    </message>
+    <message>
+        <location filename="../assets/MainPage.qml" line="80"/>
+        <source>Record</source>
+        <translation type="unfinished">Запись</translation>
+    </message>
+    <message>
+        <location filename="../assets/MainPage.qml" line="90"/>
+        <source>Recording is active</source>
+        <translation type="unfinished">Идёт запись</translation>
+    </message>
+    <message>
+        <location filename="../assets/MainPage.qml" line="91"/>
+        <source>The application records location data to a GPX file. File will be finalized and closed.</source>
+        <translation type="unfinished">Приложение записывает данные в GPX файл. Запись будет остановлена и файл закрыт.</translation>
+    </message>
+    <message>
+        <location filename="../assets/MainPage.qml" line="97"/>
+        <source>Stop</source>
+        <translation type="unfinished">Стоп</translation>
+    </message>
+</context>
+<context>
     <name>SettingsPage</name>
     <message>
         <location filename="../assets/SettingsPage.qml" line="12"/>
@@ -46,42 +87,28 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../assets/main.qml" line="62"/>
-        <location filename="../assets/main.qml" line="64"/>
-        <location filename="../assets/main.qml" line="65"/>
-        <location filename="../assets/main.qml" line="159"/>
-        <location filename="../assets/main.qml" line="177"/>
-        <location filename="../assets/main.qml" line="185"/>
         <source>m</source>
-        <translation>м</translation>
+        <translation type="obsolete">м</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="63"/>
-        <location filename="../assets/main.qml" line="66"/>
-        <location filename="../assets/main.qml" line="166"/>
-        <location filename="../assets/main.qml" line="192"/>
         <source>m/s</source>
-        <translation>м/с</translation>
+        <translation type="obsolete">м/с</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="103"/>
         <source>Record</source>
-        <translation>Запись</translation>
+        <translation type="obsolete">Запись</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="113"/>
         <source>Recording is active</source>
-        <translation>Идёт запись</translation>
+        <translation type="obsolete">Идёт запись</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="114"/>
         <source>The application records location data to a GPX file. File will be finalized and closed.</source>
-        <translation>Приложение записывает данные в GPX файл. Запись будет остановлена и файл закрыт.</translation>
+        <translation type="obsolete">Приложение записывает данные в GPX файл. Запись будет остановлена и файл закрыт.</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="120"/>
         <source>Stop</source>
-        <translation>Стоп</translation>
+        <translation type="obsolete">Стоп</translation>
     </message>
 </context>
 </TS>
