@@ -4,6 +4,12 @@ import bb.system 1.0
 Page {
     id: root
 
+    // TODO: use enum
+    // 0 = stopped
+    // 1 = recording
+    // 2 = paused
+    property int state: 0
+
     onCreationCompleted: {
         _geoLocation.error.connect(onError)
         _geoLocation.warning.connect(onWarning)
@@ -76,34 +82,45 @@ Page {
 
     actions: [
         ActionItem {
-            id: startAction
+            title: qsTr("Pause")
+            ActionBar.placement: ActionBarPlacement.OnBar
+            enabled: state == 1
+            onTriggered: {
+                _geoLocation.dataChanged.disconnect(root.onDataChangedFile)
+                state = 2
+            }
+            imageSource: "asset:///images/ic_pause.png"
+        },
+        ActionItem {
             title: qsTr("Record")
             ActionBar.placement: ActionBarPlacement.Signature
-            enabled: true
+            enabled: state != 1
             onTriggered: {
-                var fileName = Qt.formatDateTime(new Date, "yyyyMMdd_HHmmss") + ".gpx"
-                saveToast.body = fileName
-                _gpxFile.open(fileName)
+                if (state == 0) {
+                    // Initial start
+                    var fileName = Qt.formatDateTime(new Date, "yyyyMMdd_HHmmss") + ".gpx"
+                    saveToast.body = fileName
+                    _gpxFile.open(fileName)
+                    Application.setClosePrompt(qsTr("Recording is active"),
+                        qsTr("The application records location data to a GPX file. File will be finalized and closed."))
+                } else if (state == 2) {
+                    // Resume after pause
+                }
                 _geoLocation.dataChanged.connect(root.onDataChangedFile)
-                startAction.enabled = false
-                stopAction.enabled = true
-                Application.setClosePrompt(qsTr("Recording is active"),
-                                           qsTr("The application records location data to a GPX file. File will be finalized and closed."))
+                state = 1
             }
             imageSource: "asset:///images/ic_location.png"
         },
         ActionItem {
-            id: stopAction
             title: qsTr("Stop")
             ActionBar.placement: ActionBarPlacement.OnBar
-            enabled: false
+            enabled: state != 0
             onTriggered: {
                 _geoLocation.dataChanged.disconnect(root.onDataChangedFile)
                 _gpxFile.close()
                 saveToast.show()
-                startAction.enabled = true
-                stopAction.enabled = false
                 Application.clearClosePrompt()
+                state = 0
             }
             imageSource: "asset:///images/ic_stop.png"
         }
