@@ -46,7 +46,7 @@ Page {
 
     function onDataChangedFile() {
         if (isNaN(_geoLocation.latitude) ||
-            isNaN(_geoLocation.latitude))
+            isNaN(_geoLocation.longitude))
         {
             return
         }
