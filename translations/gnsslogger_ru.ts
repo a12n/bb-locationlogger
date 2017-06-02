@@ -15,32 +15,16 @@
     </message>
     <message>
         <location filename="../assets/SettingsPage.qml" line="25"/>
-        <source>1 s</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../assets/SettingsPage.qml" line="28"/>
-        <source>2 s</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../assets/SettingsPage.qml" line="31"/>
-        <source>5 s</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../assets/SettingsPage.qml" line="34"/>
-        <source>10 s</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../assets/SettingsPage.qml" line="37"/>
-        <source>30 s</source>
+        <source>s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../assets/SettingsPage.qml" line="40"/>
-        <source>1 min</source>
+        <source>min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

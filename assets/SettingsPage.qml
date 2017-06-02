@@ -22,22 +22,22 @@ Page {
             title: qsTr("Update Interval")
             options: [
                 Option {
-                    text: qsTr("1 s")
+                    text: "1 " + qsTr("s")
                 },
                 Option {
-                    text: qsTr("2 s")
+                    text: "2 " + qsTr("s")
                 },
                 Option {
-                    text: qsTr("5 s")
+                    text: "5 " + qsTr("s")
                 },
                 Option {
-                    text: qsTr("10 s")
+                    text: "10 " + qsTr("s")
                 },
                 Option {
-                    text: qsTr("30 s")
+                    text: "30 " + qsTr("s")
                 },
                 Option {
-                    text: qsTr("1 min")
+                    text: "1 " + qsTr("min")
                 }
             ]
             onSelectedIndexChanged: {

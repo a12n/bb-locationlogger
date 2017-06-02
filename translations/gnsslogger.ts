@@ -16,35 +16,19 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>1 s</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>2 s</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>5 s</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>10 s</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>30 s</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>1 min</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Smooth Location Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Save on Media Card</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>min</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
