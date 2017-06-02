@@ -39,7 +39,6 @@ public:
         if (tdiff > 0) {
             timestamp_ = t;
             variance_ += tdiff * q_ * q_ / 1000.0;
-//            variance_ += tdiff * speed * speed / 1000.0;
         }
 
         const double k = variance_ / (variance_ + acc * acc);
