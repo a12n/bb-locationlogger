@@ -27,12 +27,15 @@ ApplicationUI::ApplicationUI() :
     // initial load
     onSystemLanguageChanged();
 
+    GeoLocation *geoLocation = new GeoLocation(this);
+    GpxFile *gpxFile = new GpxFile(this);
+
     // Create scene document from main.qml asset, the parent is set
     // to ensure the document gets destroyed properly at shut down.
     QmlDocument *qml = QmlDocument::create("asset:///main.qml").parent(this);
 
-    qml->setContextProperty("_geoLocation", new GeoLocation(this));
-    qml->setContextProperty("_gpxFile", new GpxFile(this));
+    qml->setContextProperty("_geoLocation", geoLocation);
+    qml->setContextProperty("_gpxFile", gpxFile);
 
     // Create root object for the UI set the application scene
     AbstractPane *root = qml->createRootObject<AbstractPane>();
@@ -40,6 +43,8 @@ ApplicationUI::ApplicationUI() :
 
     // Create application cover
     QmlDocument *qmlCover = QmlDocument::create("asset:///Cover.qml").parent(this);
+
+    qmlCover->setContextProperty("_geoLocation", geoLocation);
 
     // Create the QML Container from using the QMLDocument.
     Container *coverContainer = qmlCover->createRootObject<Container>();
