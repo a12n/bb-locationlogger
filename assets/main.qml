@@ -59,8 +59,7 @@ NavigationPane {
         }
 
         function onDataChangedFile() {
-            if (_gpxFile.isOpen() &&
-                !isNaN(_geoLocation.latitude) &&
+            if (!isNaN(_geoLocation.latitude) &&
                 !isNaN(_geoLocation.latitude))
             {
                 _gpxFile.writeStartTrackPoint(_geoLocation.latitude, _geoLocation.longitude)
