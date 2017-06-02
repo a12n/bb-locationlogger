@@ -31,11 +31,10 @@ ApplicationUI::ApplicationUI() :
     qml->setContextProperty("_geoLocation", new GeoLocation(this));
     qml->setContextProperty("_gpxFile", new GpxFile(this));
 
-    // Create root object for the UI
+    // Create root object for the UI set the application scene
     AbstractPane *root = qml->createRootObject<AbstractPane>();
-
-    // Set created root object as the application scene
     Application::instance()->setScene(root);
+
 }
 
 void ApplicationUI::onSystemLanguageChanged()
