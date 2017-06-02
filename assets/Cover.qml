@@ -11,6 +11,16 @@ Container {
         Application.thumbnail.connect(onThumbnail)
     }
 
+    function latitudeToString(lat) {
+        // TODO: format as degrees, minutes and seconds
+        return lat.toFixed(3) + "°"
+    }
+
+    function longitudeToString(lon) {
+        // TODO: format as degrees, minutes and seconds
+        return lon.toFixed(3) + "°"
+    }
+
     function onNonThumbnail() {
         timer.running = false
         _geoLocation.error.disconnect(onError)
@@ -43,8 +53,8 @@ Container {
             repeat: true
             triggeredOnStart: true
             onTriggered: {
-                latLabel.text = _geoLocation.latitude.toFixed(3) + "°"
-                lonLabel.text = _geoLocation.longitude.toFixed(3) + "°"
+                latLabel.text = latitudeToString(_geoLocation.latitude)
+                lonLabel.text = longitudeToString(_geoLocation.longitude)
             }
         }
     ]
