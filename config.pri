@@ -36,6 +36,7 @@ simulator {
 
 config_pri_assets {
     OTHER_FILES += \
+        $$quote($$BASEDIR/assets/Cover.qml) \
         $$quote($$BASEDIR/assets/LabelToggleButton.qml) \
         $$quote($$BASEDIR/assets/MainPage.qml) \
         $$quote($$BASEDIR/assets/SettingsPage.qml) \
