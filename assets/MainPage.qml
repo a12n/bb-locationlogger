@@ -87,6 +87,7 @@ Page {
             enabled: state == 1
             onTriggered: {
                 _geoLocation.dataChanged.disconnect(root.onDataChangedFile)
+                _gpxFile.writeComment("pause")
                 state = 2
             }
             imageSource: "asset:///images/ic_pause.png"

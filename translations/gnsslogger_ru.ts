@@ -7,17 +7,17 @@
         <location filename="../assets/MainPage.qml" line="45"/>
         <location filename="../assets/MainPage.qml" line="47"/>
         <location filename="../assets/MainPage.qml" line="48"/>
-        <location filename="../assets/MainPage.qml" line="153"/>
-        <location filename="../assets/MainPage.qml" line="171"/>
-        <location filename="../assets/MainPage.qml" line="179"/>
+        <location filename="../assets/MainPage.qml" line="154"/>
+        <location filename="../assets/MainPage.qml" line="172"/>
+        <location filename="../assets/MainPage.qml" line="180"/>
         <source>m</source>
         <translation>м</translation>
     </message>
     <message>
         <location filename="../assets/MainPage.qml" line="46"/>
         <location filename="../assets/MainPage.qml" line="49"/>
-        <location filename="../assets/MainPage.qml" line="160"/>
-        <location filename="../assets/MainPage.qml" line="186"/>
+        <location filename="../assets/MainPage.qml" line="161"/>
+        <location filename="../assets/MainPage.qml" line="187"/>
         <source>m/s</source>
         <translation>м/с</translation>
     </message>
@@ -27,22 +27,22 @@
         <translation>Пауза</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="95"/>
+        <location filename="../assets/MainPage.qml" line="96"/>
         <source>Record</source>
         <translation>Запись</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="104"/>
+        <location filename="../assets/MainPage.qml" line="105"/>
         <source>Recording is active</source>
         <translation>Идёт запись</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="105"/>
+        <location filename="../assets/MainPage.qml" line="106"/>
         <source>The application records location data to a GPX file. File will be finalized and closed.</source>
         <translation>Приложение записывает данные в GPX файл. Запись будет остановлена и файл закрыт.</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="115"/>
+        <location filename="../assets/MainPage.qml" line="116"/>
         <source>Stop</source>
         <translation>Стоп</translation>
     </message>
