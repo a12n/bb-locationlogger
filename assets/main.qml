@@ -28,13 +28,22 @@ NavigationPane {
         id: mainPage
 
         onCreationCompleted: {
-            _geoLocation.dataChanged.connect(onDataChangedUi)
             _geoLocation.error.connect(onError)
             _geoLocation.warning.connect(onWarning)
             _geoLocation.setPeriod(5)
             _geoLocation.startUpdates()
             Application.autoExit = true
             Application.aboutToQuit.connect(_gpxFile.close)
+            Application.fullscreen.connect(onFullscreen)
+            Application.thumbnail.connect(onThumbnail)
+        }
+
+        function onFullscreen() {
+            _geoLocation.dataChanged.connect(onDataChangedUi)
+        }
+
+        function onThumbnail() {
+            _geoLocation.dataChanged.disconnect(onDataChangedUi)
         }
 
         function onError(err) {
