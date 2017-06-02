@@ -4,40 +4,45 @@
 <context>
     <name>MainPage</name>
     <message>
-        <location filename="../assets/MainPage.qml" line="39"/>
-        <location filename="../assets/MainPage.qml" line="41"/>
-        <location filename="../assets/MainPage.qml" line="42"/>
-        <location filename="../assets/MainPage.qml" line="136"/>
-        <location filename="../assets/MainPage.qml" line="154"/>
-        <location filename="../assets/MainPage.qml" line="162"/>
+        <location filename="../assets/MainPage.qml" line="45"/>
+        <location filename="../assets/MainPage.qml" line="47"/>
+        <location filename="../assets/MainPage.qml" line="48"/>
+        <location filename="../assets/MainPage.qml" line="153"/>
+        <location filename="../assets/MainPage.qml" line="171"/>
+        <location filename="../assets/MainPage.qml" line="179"/>
         <source>m</source>
         <translation>м</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="40"/>
-        <location filename="../assets/MainPage.qml" line="43"/>
-        <location filename="../assets/MainPage.qml" line="143"/>
-        <location filename="../assets/MainPage.qml" line="169"/>
+        <location filename="../assets/MainPage.qml" line="46"/>
+        <location filename="../assets/MainPage.qml" line="49"/>
+        <location filename="../assets/MainPage.qml" line="160"/>
+        <location filename="../assets/MainPage.qml" line="186"/>
         <source>m/s</source>
         <translation>м/с</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="80"/>
+        <location filename="../assets/MainPage.qml" line="85"/>
+        <source>Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../assets/MainPage.qml" line="95"/>
         <source>Record</source>
         <translation>Запись</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="90"/>
+        <location filename="../assets/MainPage.qml" line="104"/>
         <source>Recording is active</source>
         <translation>Идёт запись</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="91"/>
+        <location filename="../assets/MainPage.qml" line="105"/>
         <source>The application records location data to a GPX file. File will be finalized and closed.</source>
         <translation>Приложение записывает данные в GPX файл. Запись будет остановлена и файл закрыт.</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="97"/>
+        <location filename="../assets/MainPage.qml" line="115"/>
         <source>Stop</source>
         <translation>Стоп</translation>
     </message>
