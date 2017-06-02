@@ -91,12 +91,10 @@ NavigationPane {
                 title: qsTr("Record")
                 ActionBar.placement: ActionBarPlacement.Signature
                 enabled: true
-                function generateFileName(startTime) {
-                    return Qt.formatDateTime(startTime, "yyyyMMdd_HHmmss") + ".gpx"
-                }
                 onTriggered: {
-                    saveToast.body = generateFileName(new Date)
-                    _gpxFile.open(saveToast.body)
+                    var fileName = Qt.formatDateTime(new Date, "yyyyMMdd_HHmmss") + ".gpx"
+                    saveToast.body = fileName
+                    _gpxFile.open(fileName)
                     startAction.enabled = false
                     stopAction.enabled = true
                     Application.setClosePrompt(qsTr("Recording is active"),
