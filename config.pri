@@ -37,9 +37,11 @@ simulator {
 config_pri_assets {
     OTHER_FILES += \
         $$quote($$BASEDIR/assets/LabelToggleButton.qml) \
+        $$quote($$BASEDIR/assets/MainPage.qml) \
         $$quote($$BASEDIR/assets/SettingsPage.qml) \
         $$quote($$BASEDIR/assets/images/ic_location.png) \
         $$quote($$BASEDIR/assets/images/ic_map.png) \
+        $$quote($$BASEDIR/assets/images/ic_pause.png) \
         $$quote($$BASEDIR/assets/images/ic_stop.png) \
         $$quote($$BASEDIR/assets/main.qml)
 }
