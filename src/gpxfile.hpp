@@ -25,6 +25,7 @@ public:
     Q_INVOKABLE void writeStartExtensions(); // 9
     Q_INVOKABLE void writeTextElement(const QString& name, const QString& text);
     Q_INVOKABLE void writeEndExtensions();
+    Q_INVOKABLE void writeComment(const QString& text);
 
 signals:
     void error(const QString& err);

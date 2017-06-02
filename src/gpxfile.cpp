@@ -157,6 +157,16 @@ void GpxFile::writeEndExtensions()
     checkError();
 }
 
+void GpxFile::writeComment(const QString& text)
+{
+    if (!isOpen())
+        return;
+
+    xml.writeComment(text);
+
+    checkError();
+}
+
 void GpxFile::close()
 {
     if (!isOpen())
