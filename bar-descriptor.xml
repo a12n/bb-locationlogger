@@ -18,11 +18,18 @@
        <platformArchitecture>x86</platformArchitecture>
        <asset path="x86/o-g/gnsslogger" entry="true" type="Qnx/Elf">gnsslogger</asset>
     </configuration>
-    <name>GNSS Logger</name>
+    <name>
+       GNSS Logger
+       <text xml:lang="ru">GNSS &#x440;&#x435;&#x433;&#x438;&#x441;&#x442;&#x440;&#x430;&#x442;&#x43e;&#x440;</text>
+    </name>
     <versionNumber>0.0.1</versionNumber>
     <buildId>1</buildId>
+    <packageLocale>ru</packageLocale>
     <!-- <versionLabel></versionLabel> -->
-    <description>Logs device coordinates and altitude to a GPX file.</description>
+    <description>
+       Logs device coordinates and altitude to a GPX file.
+       <text xml:lang="ru">&#x417;&#x430;&#x43f;&#x438;&#x441;&#x44b;&#x432;&#x430;&#x435;&#x442; &#x43a;&#x43e;&#x43e;&#x440;&#x434;&#x438;&#x43d;&#x430;&#x442;&#x44b; &#x443;&#x441;&#x442;&#x440;&#x43e;&#x439;&#x441;&#x442;&#x430; &#x432; GPX &#x444;&#x430;&#x439;&#x43b;.</text>
+    </description>
     <!-- <copyright></copyright> -->
     <author>a12n</author>
     <!-- <authorId>ABC1234YjsnUk235h</authorId> -->
