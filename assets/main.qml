@@ -28,7 +28,7 @@ NavigationPane {
         id: mainPage
 
         onCreationCompleted: {
-            _geoLocation.dataChanged.connect(onDataChanged)
+            _geoLocation.dataChanged.connect(onDataChangedUi)
             _geoLocation.error.connect(onError)
             _geoLocation.warning.connect(onWarning)
             _geoLocation.setPeriod(5)
@@ -47,7 +47,7 @@ NavigationPane {
             statusImage.filterColor = Color.create("#ffdcd427")
         }
 
-        function onDataChanged() {
+        function onDataChangedUi() {
             latLabel.text = _geoLocation.latitude.toFixed(8) + "°"
             lonLabel.text = _geoLocation.longitude.toFixed(8) + "°"
             accuracyLabel.text = "±" + _geoLocation.horizAccuracy.toFixed(2) + " " + qsTr("m")
@@ -56,6 +56,9 @@ NavigationPane {
             vertAccuracyLabel.text = "±" + _geoLocation.vertAccuracy.toFixed(2) + " " + qsTr("m")
             vertSpeedLabel.text = _geoLocation.vertSpeed.toFixed(1) + " " + qsTr("m/s")
             numSatLabel.text = _geoLocation.numSatellitesUsed + "/" + _geoLocation.numSatellitesTotal
+        }
+
+        function onDataChangedFile() {
             if (_gpxFile.isOpen() &&
                 !isNaN(_geoLocation.latitude) &&
                 !isNaN(_geoLocation.latitude))
@@ -95,6 +98,7 @@ NavigationPane {
                     var fileName = Qt.formatDateTime(new Date, "yyyyMMdd_HHmmss") + ".gpx"
                     saveToast.body = fileName
                     _gpxFile.open(fileName)
+                    _geoLocation.dataChanged.connect(mainPage.onDataChangedFile)
                     startAction.enabled = false
                     stopAction.enabled = true
                     Application.setClosePrompt(qsTr("Recording is active"),
@@ -108,6 +112,7 @@ NavigationPane {
                 ActionBar.placement: ActionBarPlacement.OnBar
                 enabled: false
                 onTriggered: {
+                    _geoLocation.dataChanged.disconnect(mainPage.onDataChangedFile)
                     _gpxFile.close()
                     saveToast.show()
                     startAction.enabled = true
