@@ -59,26 +59,27 @@ NavigationPane {
         }
 
         function onDataChangedFile() {
-            if (!isNaN(_geoLocation.latitude) &&
-                !isNaN(_geoLocation.latitude))
+            if (isNaN(_geoLocation.latitude) ||
+                isNaN(_geoLocation.latitude))
             {
-                _gpxFile.writeStartTrackPoint(_geoLocation.latitude, _geoLocation.longitude)
-                if (!isNaN(_geoLocation.altitude)) _gpxFile.writeAltitude(_geoLocation.altitude)
-                _gpxFile.writeTimestamp(_geoLocation.timestamp)
-                if (!isNaN(_geoLocation.geoidHeight)) _gpxFile.writeGeoidHeight(_geoLocation.geoidHeight)
-                if (_geoLocation.numSatellitesUsed > 0) _gpxFile.writeNumSatellitesUsed(_geoLocation.numSatellitesUsed)
-                if (!isNaN(_geoLocation.hdop)) _gpxFile.writeHdop(_geoLocation.hdop)
-                if (!isNaN(_geoLocation.vdop)) _gpxFile.writeVdop(_geoLocation.vdop)
-                if (!isNaN(_geoLocation.pdop)) _gpxFile.writePdop(_geoLocation.pdop)
-                _gpxFile.writeStartExtensions()
-                if (!isNaN(_geoLocation.heading)) _gpxFile.writeTextElement("hdg", _geoLocation.heading.toFixed(1))
-                if (!isNaN(_geoLocation.speed)) _gpxFile.writeTextElement("s", _geoLocation.speed.toFixed(1))
-                if (!isNaN(_geoLocation.vertSpeed)) _gpxFile.writeTextElement("vs", _geoLocation.vertSpeed.toFixed(1))
-                if (!isNaN(_geoLocation.horizAccuracy)) _gpxFile.writeTextElement("acc", _geoLocation.horizAccuracy.toFixed(2))
-                if (!isNaN(_geoLocation.vertAccuracy)) _gpxFile.writeTextElement("vacc", _geoLocation.vertAccuracy.toFixed(2))
-                _gpxFile.writeEndExtensions()
-                _gpxFile.writeEndTrackPoint()
+                return
             }
+            _gpxFile.writeStartTrackPoint(_geoLocation.latitude, _geoLocation.longitude)
+            if (!isNaN(_geoLocation.altitude)) _gpxFile.writeAltitude(_geoLocation.altitude)
+            _gpxFile.writeTimestamp(_geoLocation.timestamp)
+            if (!isNaN(_geoLocation.geoidHeight)) _gpxFile.writeGeoidHeight(_geoLocation.geoidHeight)
+            if (_geoLocation.numSatellitesUsed > 0) _gpxFile.writeNumSatellitesUsed(_geoLocation.numSatellitesUsed)
+            if (!isNaN(_geoLocation.hdop)) _gpxFile.writeHdop(_geoLocation.hdop)
+            if (!isNaN(_geoLocation.vdop)) _gpxFile.writeVdop(_geoLocation.vdop)
+            if (!isNaN(_geoLocation.pdop)) _gpxFile.writePdop(_geoLocation.pdop)
+            _gpxFile.writeStartExtensions()
+            if (!isNaN(_geoLocation.heading)) _gpxFile.writeTextElement("hdg", _geoLocation.heading.toFixed(1))
+            if (!isNaN(_geoLocation.speed)) _gpxFile.writeTextElement("s", _geoLocation.speed.toFixed(1))
+            if (!isNaN(_geoLocation.vertSpeed)) _gpxFile.writeTextElement("vs", _geoLocation.vertSpeed.toFixed(1))
+            if (!isNaN(_geoLocation.horizAccuracy)) _gpxFile.writeTextElement("acc", _geoLocation.horizAccuracy.toFixed(2))
+            if (!isNaN(_geoLocation.vertAccuracy)) _gpxFile.writeTextElement("vacc", _geoLocation.vertAccuracy.toFixed(2))
+            _gpxFile.writeEndExtensions()
+            _gpxFile.writeEndTrackPoint()
         }
 
         attachedObjects: [
