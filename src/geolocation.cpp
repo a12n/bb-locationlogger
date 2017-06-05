@@ -7,23 +7,28 @@
 
 #include "geolocation.hpp"
 
+GeoLocationData::GeoLocationData() :
+    latitude(NAN),
+    longitude(NAN),
+    altitude(NAN),
+    horizAccuracy(NAN),
+    vertAccuracy(NAN),
+    heading(NAN),
+    speed(NAN),
+    vertSpeed(NAN),
+    hdop(NAN),
+    vdop(NAN),
+    pdop(NAN),
+    geoidHeight(NAN),
+    timestamp(),
+    numSatellitesUsed(0),
+    numSatellitesTotal(0)
+{
+}
+
 GeoLocation::GeoLocation(QObject *parent) :
     QObject(parent),
-    latitude_(NAN),
-    longitude_(NAN),
-    altitude_(NAN),
-    horizAccuracy_(NAN),
-    vertAccuracy_(NAN),
-    heading_(NAN),
-    speed_(NAN),
-    vertSpeed_(NAN),
-    hdop_(NAN),
-    vdop_(NAN),
-    pdop_(NAN),
-    geoidHeight_(NAN),
-    timestamp_(),
-    numSatellitesUsed_(0),
-    numSatellitesTotal_(0),
+    data_(),
     filter_(0)
 {
     subscribe(geolocation_get_domain());
@@ -143,34 +148,37 @@ void GeoLocation::errorEvent(bps_event_t *event)
 
 void GeoLocation::infoEvent(bps_event_t *event)
 {
-    timestamp_.setMSecsSinceEpoch(geolocation_event_get_utc_time(event));
-    timestamp_.setTimeSpec(Qt::UTC);
-    latitude_ = geolocation_event_get_latitude(event);
-    longitude_ = geolocation_event_get_longitude(event);
-    altitude_ = geolocation_event_get_altitude(event);
-    horizAccuracy_ = geolocation_event_get_accuracy(event);
-    vertAccuracy_ = geolocation_event_get_altitude_accuracy(event);
-    heading_ = geolocation_event_get_heading(event);
-    speed_ = geolocation_event_get_speed(event);
-    vertSpeed_ = geolocation_event_get_vertical_speed(event);
-    numSatellitesUsed_ = geolocation_event_get_num_satellites_used(event);
-    numSatellitesTotal_ = geolocation_event_get_num_satellites_total(event);
-    hdop_ = geolocation_event_get_hdop(event);
-    vdop_ = geolocation_event_get_vdop(event);
-    pdop_ = geolocation_event_get_pdop(event);
-    geoidHeight_ = geolocation_event_get_geoid_height(event);
-    qDebug() << "timestamp" << timestamp_;
-    qDebug() << "coordinate" << latitude_ << longitude_ << altitude_;
-    qDebug() << "heading and speed" << heading_ << speed_ << vertSpeed_;
-    qDebug() << "accuracy" << horizAccuracy_ << vertAccuracy_;
-    qDebug() << "num satellites" << numSatellitesUsed_ << "/" << numSatellitesTotal_;
+    data_.timestamp.setMSecsSinceEpoch(geolocation_event_get_utc_time(event));
+    data_.timestamp.setTimeSpec(Qt::UTC);
+    data_.latitude = geolocation_event_get_latitude(event);
+    data_.longitude = geolocation_event_get_longitude(event);
+    data_.altitude = geolocation_event_get_altitude(event);
+    data_.horizAccuracy = geolocation_event_get_accuracy(event);
+    data_.vertAccuracy = geolocation_event_get_altitude_accuracy(event);
+    data_.heading = geolocation_event_get_heading(event);
+    data_.speed = geolocation_event_get_speed(event);
+    data_.vertSpeed = geolocation_event_get_vertical_speed(event);
+    data_.numSatellitesUsed = geolocation_event_get_num_satellites_used(event);
+    data_.numSatellitesTotal = geolocation_event_get_num_satellites_total(event);
+    data_.hdop = geolocation_event_get_hdop(event);
+    data_.vdop = geolocation_event_get_vdop(event);
+    data_.pdop = geolocation_event_get_pdop(event);
+    data_.geoidHeight = geolocation_event_get_geoid_height(event);
+    qDebug() << "timestamp" << data_.timestamp;
+    qDebug() << "coordinate" << data_.latitude << data_.longitude << data_.altitude;
+    qDebug() << "heading and speed" << data_.heading << data_.speed << data_.vertSpeed;
+    qDebug() << "accuracy" << data_.horizAccuracy << data_.vertAccuracy;
+    qDebug() << "num satellites" << data_.numSatellitesUsed << "/" << data_.numSatellitesTotal;
     if (filter_) {
-        filter_->update(timestamp_.toMSecsSinceEpoch(), latitude_, longitude_, horizAccuracy_, speed_);
-        latitude_ = filter_->latitude();
-        longitude_ = filter_->longitude();
-        horizAccuracy_ = filter_->accuracy();
-        qDebug() << "filter cooridnate " << latitude_ << longitude_;
-        qDebug() << "filter accuracy" << horizAccuracy_;
+        filter_->update(data_.timestamp.toMSecsSinceEpoch(),
+                        data_.latitude, data_.longitude,
+                        data_.horizAccuracy,
+                        data_.speed);
+        data_.latitude = filter_->latitude();
+        data_.longitude = filter_->longitude();
+        data_.horizAccuracy = filter_->accuracy();
+        qDebug() << "filter cooridnate " << data_.latitude << data_.longitude;
+        qDebug() << "filter accuracy" << data_.horizAccuracy;
     }
     emit dataChanged();
 }

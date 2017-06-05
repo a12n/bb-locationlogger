@@ -8,6 +8,28 @@
 
 #include "kalmanfilter.hpp"
 
+struct GeoLocationData
+{
+    GeoLocationData();
+
+    double latitude;
+    double longitude;
+    double altitude;
+    double horizAccuracy;
+    double vertAccuracy;
+    double heading;
+    double speed;
+    double vertSpeed;
+//    unsigned int ttff;
+    double hdop;
+    double vdop;
+    double pdop;
+    double geoidHeight;
+    QDateTime timestamp;
+    unsigned int numSatellitesUsed;
+    unsigned int numSatellitesTotal;
+};
+
 class GeoLocation : public QObject, public bb::AbstractBpsEventHandler
 {
     Q_OBJECT
@@ -38,21 +60,21 @@ public:
     Q_INVOKABLE void stopUpdates();
 
     // Data properties
-    double latitude() const { return latitude_; }
-    double longitude() const { return longitude_; }
-    double altitude() const { return altitude_; }
-    double horizAccuracy() const { return horizAccuracy_; }
-    double vertAccuracy() const { return vertAccuracy_; }
-    double heading() const { return heading_; }
-    double speed() const { return speed_; }
-    double vertSpeed() const { return vertSpeed_; }
-    QDateTime timestamp() const { return timestamp_; }
-    unsigned int numSatellitesUsed() const { return numSatellitesUsed_; }
-    unsigned int numSatellitesTotal() const { return numSatellitesTotal_; }
-    double hdop() const { return hdop_; }
-    double vdop() const { return vdop_; }
-    double pdop() const { return pdop_; }
-    double geoidHeight() const { return geoidHeight_; }
+    double latitude() const { return data_.latitude; }
+    double longitude() const { return data_.longitude; }
+    double altitude() const { return data_.altitude_; }
+    double horizAccuracy() const { return data_.horizAccuracy_; }
+    double vertAccuracy() const { return data_.vertAccuracy_; }
+    double heading() const { return data_.heading_; }
+    double speed() const { return data_.speed_; }
+    double vertSpeed() const { return data_.vertSpeed_; }
+    QDateTime timestamp() const { return data_.timestamp_; }
+    unsigned int numSatellitesUsed() const { return data_.numSatellitesUsed_; }
+    unsigned int numSatellitesTotal() const { return data_.numSatellitesTotal_; }
+    double hdop() const { return data_.hdop_; }
+    double vdop() const { return data_.vdop_; }
+    double pdop() const { return data_.pdop_; }
+    double geoidHeight() const { return data_.geoidHeight_; }
 
 signals:
     void dataChanged();
@@ -72,23 +94,7 @@ private:
     void infoEvent(bps_event_t *event);
     void statusEvent(bps_event_t *event);
 
-    double latitude_;
-    double longitude_;
-    double altitude_;
-    double horizAccuracy_;
-    double vertAccuracy_;
-    double heading_;
-    double speed_;
-    double vertSpeed_;
-//    unsigned int ttff_;
-    double hdop_;
-    double vdop_;
-    double pdop_;
-    double geoidHeight_;
-    QDateTime timestamp_;
-    unsigned int numSatellitesUsed_;
-    unsigned int numSatellitesTotal_;
-
+    GeoLocationData data_;
     KalmanFilter *filter_;
 };
 
