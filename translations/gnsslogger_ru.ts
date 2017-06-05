@@ -80,7 +80,7 @@
     </message>
     <message>
         <location filename="../assets/SettingsPage.qml" line="60"/>
-        <source>Smooth Location Data</source>
+        <source>Filter Location Data</source>
         <translation>Сглаживать данные</translation>
     </message>
     <message>

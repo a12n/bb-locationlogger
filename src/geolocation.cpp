@@ -96,7 +96,7 @@ void GeoLocation::setStationaryDetection(bool enabled)
     geolocation_set_stationary(enabled);
 }
 
-void GeoLocation::setSmoothData(bool enabled)
+void GeoLocation::setFilterData(bool enabled)
 {
     qDebug() << __FUNCTION__ << enabled;
     if (enabled) {

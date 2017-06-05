@@ -5,7 +5,7 @@ Page {
 
     property int period: 5
     property alias stationaryDetection: stationaryDetection.checked
-    property alias smoothData: smoothData.checked
+    property alias filterData: filterData.checked
     property alias saveOnMediaCard: saveOnMediaCard.checked
 
     titleBar: TitleBar {
@@ -56,8 +56,8 @@ Page {
         Divider {
         }
         LabelToggleButton {
-            id: smoothData
-            text: qsTr("Smooth Location Data")
+            id: filterData
+            text: qsTr("Filter Location Data")
             horizontalAlignment: HorizontalAlignment.Fill
         }
         Divider {

@@ -47,7 +47,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Smooth Location Data</source>
+        <source>Filter Location Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
