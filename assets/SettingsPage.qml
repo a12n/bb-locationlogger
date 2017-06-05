@@ -43,8 +43,9 @@ Page {
             onSelectedIndexChanged: {
                 var opts = [1, 2, 5, 10, 30, 60]
                 root.period = opts[selectedIndex]
+                _settings.setValue("udateIntervalIndex", selectedIndex)
             }
-            selectedIndex: 2
+            selectedIndex: _settings.value("updateInrevalIndex", 2)
         }
         Divider {
         }
@@ -52,6 +53,8 @@ Page {
             id: stationaryDetection
             text: qsTr("Stationary Detection")
             horizontalAlignment: HorizontalAlignment.Fill
+            checked: _settings.value("stationaryDetection", false)
+            onCheckedChanged: _settings.setValue("stationaryDetection", checked)
         }
         Divider {
         }
@@ -59,6 +62,8 @@ Page {
             id: filterData
             text: qsTr("Filter Location Data")
             horizontalAlignment: HorizontalAlignment.Fill
+            checked: _settings.value("filterData", false)
+            onCheckedChanged: _settings.setValue("filterData", checked)
         }
         Divider {
         }
@@ -66,6 +71,8 @@ Page {
             id: saveOnMediaCard
             text: qsTr("Save on Media Card")
             horizontalAlignment: HorizontalAlignment.Fill
+            checked: _settings.value("saveOnMediaCard", false)
+            onCheckedChanged: _settings.setValue("saveOnMediaCard", checked)
         }
     }
 }

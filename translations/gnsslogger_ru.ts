@@ -74,17 +74,17 @@
         <translation>мин</translation>
     </message>
     <message>
-        <location filename="../assets/SettingsPage.qml" line="53"/>
+        <location filename="../assets/SettingsPage.qml" line="54"/>
         <source>Stationary Detection</source>
         <translation>Исключать время остановок</translation>
     </message>
     <message>
-        <location filename="../assets/SettingsPage.qml" line="60"/>
+        <location filename="../assets/SettingsPage.qml" line="63"/>
         <source>Filter Location Data</source>
         <translation>Сглаживать данные</translation>
     </message>
     <message>
-        <location filename="../assets/SettingsPage.qml" line="67"/>
+        <location filename="../assets/SettingsPage.qml" line="72"/>
         <source>Save on Media Card</source>
         <translation>Сохранять на карту памяти</translation>
     </message>
