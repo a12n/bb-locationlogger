@@ -62,19 +62,19 @@ public:
     // Data properties
     double latitude() const { return data_.latitude; }
     double longitude() const { return data_.longitude; }
-    double altitude() const { return data_.altitude_; }
-    double horizAccuracy() const { return data_.horizAccuracy_; }
-    double vertAccuracy() const { return data_.vertAccuracy_; }
-    double heading() const { return data_.heading_; }
-    double speed() const { return data_.speed_; }
-    double vertSpeed() const { return data_.vertSpeed_; }
-    QDateTime timestamp() const { return data_.timestamp_; }
-    unsigned int numSatellitesUsed() const { return data_.numSatellitesUsed_; }
-    unsigned int numSatellitesTotal() const { return data_.numSatellitesTotal_; }
-    double hdop() const { return data_.hdop_; }
-    double vdop() const { return data_.vdop_; }
-    double pdop() const { return data_.pdop_; }
-    double geoidHeight() const { return data_.geoidHeight_; }
+    double altitude() const { return data_.altitude; }
+    double horizAccuracy() const { return data_.horizAccuracy; }
+    double vertAccuracy() const { return data_.vertAccuracy; }
+    double heading() const { return data_.heading; }
+    double speed() const { return data_.speed; }
+    double vertSpeed() const { return data_.vertSpeed; }
+    QDateTime timestamp() const { return data_.timestamp; }
+    unsigned int numSatellitesUsed() const { return data_.numSatellitesUsed; }
+    unsigned int numSatellitesTotal() const { return data_.numSatellitesTotal; }
+    double hdop() const { return data_.hdop; }
+    double vdop() const { return data_.vdop; }
+    double pdop() const { return data_.pdop; }
+    double geoidHeight() const { return data_.geoidHeight; }
 
 signals:
     void dataChanged();
