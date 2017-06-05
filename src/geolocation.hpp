@@ -31,6 +31,13 @@ struct GeoLocationData
     unsigned int numSatellitesTotal;
 };
 
+class GeoLocationDataFilter
+{
+public:
+    virtual ~GeoLocationDataFilter();
+    virtual bool eval(GeoLocationData&) = 0;
+};
+
 class GeoLocation : public QObject, public bb::AbstractBpsEventHandler
 {
     Q_OBJECT

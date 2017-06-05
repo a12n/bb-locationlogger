@@ -46,6 +46,10 @@ GeoLocationData::GeoLocationData(bps_event_t *event) :
     timestamp.setTimeSpec(Qt::UTC);
 }
 
+GeoLocationDataFilter::~GeoLocationDataFilter()
+{
+}
+
 GeoLocation::GeoLocation(QObject *parent) :
     QObject(parent),
     data_(),
