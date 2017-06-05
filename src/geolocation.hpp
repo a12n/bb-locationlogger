@@ -11,6 +11,7 @@
 struct GeoLocationData
 {
     GeoLocationData();
+    explicit GeoLocationData(bps_event_t *event);
 
     double latitude;
     double longitude;
