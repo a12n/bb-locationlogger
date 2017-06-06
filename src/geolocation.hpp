@@ -6,8 +6,6 @@
 #include <QDateTime>
 #include <QObject>
 
-#include "kalmanfilter.hpp"
-
 struct GeoLocationData
 {
     GeoLocationData();
