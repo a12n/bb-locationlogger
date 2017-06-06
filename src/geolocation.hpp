@@ -105,7 +105,7 @@ private:
     void statusEvent(bps_event_t *event);
 
     GeoLocationData data_;
-    KalmanFilter *filter_;
+    GeoLocationDataFilter *filter_;
 };
 
 #endif

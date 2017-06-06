@@ -162,7 +162,7 @@ void GeoLocation::setFilterData(bool enabled)
     qDebug() << __FUNCTION__ << enabled;
     if (enabled) {
         if (!filter_)
-            filter_ = new KalmanFilter();
+            filter_ = new SimpleFilter();
     } else {
         if (filter_) {
             delete filter_;
@@ -212,18 +212,14 @@ void GeoLocation::infoEvent(bps_event_t *event)
     qDebug() << "raw accuracy" << newData.horizAccuracy << newData.vertAccuracy;
     qDebug() << "raw num satellites" << newData.numSatellitesUsed << "/" << newData.numSatellitesTotal;
     if (filter_) {
-        filter_->update(newData.timestamp.toMSecsSinceEpoch(),
-                        newData.latitude, newData.longitude,
-                        newData.horizAccuracy,
-                        newData.speed);
-        newData.latitude = filter_->latitude();
-        newData.longitude = filter_->longitude();
-        newData.horizAccuracy = filter_->accuracy();
+        changed = filter_->eval(newData);
         qDebug() << "filter cooridnate " << newData.latitude << newData.longitude;
         qDebug() << "filter accuracy" << newData.horizAccuracy;
     }
-    data_ = newData;
-    emit dataChanged();
+    if (changed) {
+        data_ = newData;
+        emit dataChanged();
+    }
 }
 
 void GeoLocation::statusEvent(bps_event_t *event)
