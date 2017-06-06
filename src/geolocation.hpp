@@ -13,6 +13,8 @@ struct GeoLocationData
     GeoLocationData();
     explicit GeoLocationData(bps_event_t *event);
 
+    double distanceTo(const GeoLocationData&) const;
+
     double latitude;
     double longitude;
     double altitude;

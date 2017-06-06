@@ -46,6 +46,20 @@ GeoLocationData::GeoLocationData(bps_event_t *event) :
     timestamp.setTimeSpec(Qt::UTC);
 }
 
+double GeoLocationData::distanceTo(const GeoLocationData& other) const
+{
+    const double earth = 6371007.2;
+    const double rad = M_PI / 180;
+
+    const double a = sin(rad * (latitude - other.latitude) / 2);
+    const double b = sin(rad * (longitude - other.longitude) / 2);
+    const double d = 2 * asin(sqrt(a * a + cos(rad * latitude) * cos(rad * other.latitude) * b * b));
+
+    return d * earth;
+}
+
+//----------------------------------------------------------------------------
+
 GeoLocationDataFilter::~GeoLocationDataFilter()
 {
 }
