@@ -48,6 +48,11 @@ GeoLocationData::GeoLocationData(bps_event_t *event) :
 
 double GeoLocationData::distanceTo(const GeoLocationData& other) const
 {
+    using std::asin;
+    using std::cos;
+    using std::sin;
+    using std::sqrt;
+
     const double earth = 6371007.2;
     const double rad = M_PI / 180;
 
