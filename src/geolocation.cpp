@@ -64,6 +64,24 @@ GeoLocationDataFilter::~GeoLocationDataFilter()
 {
 }
 
+struct SimpleFilter : public GeoLocationDataFilter
+{
+    virtual bool eval(GeoLocationData& next)
+    {
+        const double dist = prev.distanceTo(next);
+        if (isnan(dist) || dist > (prev.horizAccuracy + next.horizAccuracy)) {
+            prev = next;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    GeoLocationData prev;
+};
+
+//----------------------------------------------------------------------------
+
 GeoLocation::GeoLocation(QObject *parent) :
     QObject(parent),
     data_(),
