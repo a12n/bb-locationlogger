@@ -222,6 +222,7 @@ Page {
         Label {
             id: statusLabel
             horizontalAlignment: HorizontalAlignment.Fill
+            textStyle.textAlign: TextAlign.Center
             function setError(err) {
                 text = err
             }
