@@ -4,20 +4,15 @@
 <context>
     <name>MainPage</name>
     <message>
-        <location filename="../assets/MainPage.qml" line="45"/>
-        <location filename="../assets/MainPage.qml" line="47"/>
-        <location filename="../assets/MainPage.qml" line="48"/>
-        <location filename="../assets/MainPage.qml" line="154"/>
-        <location filename="../assets/MainPage.qml" line="172"/>
-        <location filename="../assets/MainPage.qml" line="180"/>
+        <location filename="../assets/MainPage.qml" line="164"/>
+        <location filename="../assets/MainPage.qml" line="189"/>
+        <location filename="../assets/MainPage.qml" line="199"/>
         <source>m</source>
         <translation>м</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="46"/>
-        <location filename="../assets/MainPage.qml" line="49"/>
-        <location filename="../assets/MainPage.qml" line="161"/>
-        <location filename="../assets/MainPage.qml" line="187"/>
+        <location filename="../assets/MainPage.qml" line="175"/>
+        <location filename="../assets/MainPage.qml" line="210"/>
         <source>m/s</source>
         <translation>м/с</translation>
     </message>

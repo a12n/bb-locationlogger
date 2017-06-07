@@ -40,14 +40,14 @@ Page {
     }
 
     function onDataChangedUi() {
-        latLabel.text = _geoLocation.latitude.toFixed(8) + "°"
-        lonLabel.text = _geoLocation.longitude.toFixed(8) + "°"
-        accuracyLabel.text = "±" + _geoLocation.horizAccuracy.toFixed(2) + " " + qsTr("m")
-        speedLabel.text = _geoLocation.speed.toFixed(1) + " " + qsTr("m/s")
-        altLabel.text = _geoLocation.altitude.toFixed(2) + " " + qsTr("m")
-        vertAccuracyLabel.text = "±" + _geoLocation.vertAccuracy.toFixed(2) + " " + qsTr("m")
-        vertSpeedLabel.text = _geoLocation.vertSpeed.toFixed(1) + " " + qsTr("m/s")
-        numSatLabel.text = _geoLocation.numSatellitesUsed + "/" + _geoLocation.numSatellitesTotal
+        latLabel.setTextFrom(_geoLocation.latitude)
+        lonLabel.setTextFrom(_geoLocation.longitude)
+        accuracyLabel.setTextFrom(_geoLocation.horizAccuracy)
+        speedLabel.setTextFrom(_geoLocation.speed)
+        altLabel.setTextFrom(_geoLocation.altitude)
+        vertAccuracyLabel.setTextFrom(_geoLocation.vertAccuracy)
+        vertSpeedLabel.setTextFrom(_geoLocation.vertSpeed)
+        numSatLabel.setTextFrom(_geoLocation.numSatellitesUsed, _geoLocation.numSatellitesTotal)
     }
 
     function onDataChangedFile() {
@@ -135,71 +135,95 @@ Page {
         bottomPadding: topPadding
         Label {
             id: latLabel
-            text: "N/A°"
             textStyle.fontSize: FontSize.XXLarge
             horizontalAlignment: HorizontalAlignment.Fill
             textStyle.textAlign: TextAlign.Center
             textStyle.fontFamily: "Monospace"
+            function setTextFrom(deg) {
+                text = (isNaN(deg) ? "N/A" : deg.toFixed(8)) + "°"
+            }
+            onCreationCompleted: setTextFrom(NaN)
         }
         Label {
             id: lonLabel
-            text: "N/A°"
             textStyle.fontSize: FontSize.XXLarge
             horizontalAlignment: HorizontalAlignment.Fill
             textStyle.textAlign: TextAlign.Center
             textStyle.fontFamily: "Monospace"
+            function setTextFrom(deg) {
+                text = (isNaN(deg) ? "N/A" : deg.toFixed(8)) + "°"
+            }
+            onCreationCompleted: setTextFrom(NaN)
         }
         Label {
             id: accuracyLabel
-            text: "±N/A " + qsTr("m")
             textStyle.textAlign: TextAlign.Center
             horizontalAlignment: HorizontalAlignment.Fill
             textStyle.fontFamily: "Monospace"
+            function setTextFrom(acc) {
+                text = "±" + (isNaN(acc) ? "N/A" : acc.toFixed(2)) + " " + qsTr("m")
+            }
+            onCreationCompleted: setTextFrom(NaN)
         }
         Label {
             id: speedLabel
-            text: "N/A " + qsTr("m/s")
             textStyle.fontSize: FontSize.Large
             textStyle.textAlign: TextAlign.Center
             horizontalAlignment: HorizontalAlignment.Fill
             textStyle.fontFamily: "Monospace"
+            function setTextFrom(s) {
+                text = (isNaN(s) ? "N/A" : s.toFixed(1)) + " " + qsTr("m/s")
+            }
+            onCreationCompleted: setTextFrom(NaN)
         }
         Divider {
             horizontalAlignment: HorizontalAlignment.Fill
         }
         Label {
             id: altLabel
-            text: "N/A " + qsTr("m")
             textStyle.fontSize: FontSize.Large
             textStyle.textAlign: TextAlign.Center
             horizontalAlignment: HorizontalAlignment.Fill
             textStyle.fontFamily: "Monospace"
+            function setTextFrom(alt) {
+                text = (isNaN(alt) ? "N/A" : alt.toFixed(2)) + " " + qsTr("m")
+            }
+            onCreationCompleted: setTextFrom(NaN)
         }
         Label {
             id: vertAccuracyLabel
-            text: "±N/A " + qsTr("m")
             textStyle.textAlign: TextAlign.Center
             horizontalAlignment: HorizontalAlignment.Fill
             textStyle.fontFamily: "Monospace"
+            function setTextFrom(vacc) {
+                text = "±" + (isNaN(vacc) ? "N/A" : vacc.toFixed(2)) + " " + qsTr("m")
+            }
+            onCreationCompleted: setTextFrom(NaN)
         }
         Label {
             id: vertSpeedLabel
-            text: "N/A " + qsTr("m/s")
             textStyle.fontSize: FontSize.Large
             textStyle.textAlign: TextAlign.Center
             horizontalAlignment: HorizontalAlignment.Fill
             textStyle.fontFamily: "Monospace"
+            function setTextFrom(vs) {
+                text = (isNaN(vs) ? "N/A" : vs.toFixed(1)) + " " + qsTr("m/s")
+            }
+            onCreationCompleted: setTextFrom(NaN)
         }
         Divider {
             horizontalAlignment: HorizontalAlignment.Fill
         }
         Label {
             id: numSatLabel
-            text: "0/0"
             textStyle.fontSize: FontSize.Large
             textStyle.textAlign: TextAlign.Center
             horizontalAlignment: HorizontalAlignment.Fill
             textStyle.fontFamily: "Monospace"
+            function setTextFrom(used, total) {
+                text = used + "/" + total
+            }
+            onCreationCompleted: setTextFrom(0, 0)
         }
         Divider {
             horizontalAlignment: HorizontalAlignment.Fill
