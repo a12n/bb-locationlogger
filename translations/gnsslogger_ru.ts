@@ -44,17 +44,17 @@
     <message>
         <location filename="../assets/MainPage.qml" line="137"/>
         <source>Location and Speed</source>
-        <translation type="unfinished"></translation>
+        <translation>Местоположение и скорость</translation>
     </message>
     <message>
         <location filename="../assets/MainPage.qml" line="183"/>
         <source>Altitude and Vertical Speed</source>
-        <translation type="unfinished"></translation>
+        <translation>Высота и вертикальная скорость</translation>
     </message>
     <message>
         <location filename="../assets/MainPage.qml" line="218"/>
         <source>Number of Satellites</source>
-        <translation type="unfinished"></translation>
+        <translation>Число спутников</translation>
     </message>
 </context>
 <context>
