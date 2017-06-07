@@ -42,10 +42,10 @@ Page {
     function onDataChangedUi() {
         latLabel.setTextFrom(_geoLocation.latitude)
         lonLabel.setTextFrom(_geoLocation.longitude)
-        accuracyLabel.setTextFrom(_geoLocation.horizAccuracy)
+        accLabel.setTextFrom(_geoLocation.horizAccuracy)
         speedLabel.setTextFrom(_geoLocation.speed)
         altLabel.setTextFrom(_geoLocation.altitude)
-        vertAccuracyLabel.setTextFrom(_geoLocation.vertAccuracy)
+        vertAccLabel.setTextFrom(_geoLocation.vertAccuracy)
         vertSpeedLabel.setTextFrom(_geoLocation.vertSpeed)
         numSatLabel.setTextFrom(_geoLocation.numSatellitesUsed, _geoLocation.numSatellitesTotal)
     }
@@ -156,7 +156,7 @@ Page {
             onCreationCompleted: setTextFrom(NaN)
         }
         Label {
-            id: accuracyLabel
+            id: accLabel
             textStyle.textAlign: TextAlign.Center
             horizontalAlignment: HorizontalAlignment.Fill
             textStyle.fontFamily: "Monospace"
@@ -191,7 +191,7 @@ Page {
             onCreationCompleted: setTextFrom(NaN)
         }
         Label {
-            id: vertAccuracyLabel
+            id: vertAccLabel
             textStyle.textAlign: TextAlign.Center
             horizontalAlignment: HorizontalAlignment.Fill
             textStyle.fontFamily: "Monospace"
