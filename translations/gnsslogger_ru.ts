@@ -4,57 +4,82 @@
 <context>
     <name>MainPage</name>
     <message>
-        <location filename="../assets/MainPage.qml" line="157"/>
-        <location filename="../assets/MainPage.qml" line="182"/>
-        <location filename="../assets/MainPage.qml" line="192"/>
+        <location filename="../assets/MainPage.qml" line="158"/>
+        <location filename="../assets/MainPage.qml" line="183"/>
+        <location filename="../assets/MainPage.qml" line="193"/>
         <source>m</source>
         <translation>м</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="168"/>
-        <location filename="../assets/MainPage.qml" line="203"/>
+        <location filename="../assets/MainPage.qml" line="169"/>
+        <location filename="../assets/MainPage.qml" line="204"/>
         <source>m/s</source>
         <translation>м/с</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="75"/>
+        <location filename="../assets/MainPage.qml" line="76"/>
         <source>Pause</source>
         <translation>Пауза</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="86"/>
+        <location filename="../assets/MainPage.qml" line="87"/>
         <source>Record</source>
         <translation>Запись</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="95"/>
+        <location filename="../assets/MainPage.qml" line="96"/>
         <source>Recording is active</source>
         <translation>Идёт запись</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="96"/>
+        <location filename="../assets/MainPage.qml" line="97"/>
         <source>The application records location data to a GPX file. File will be finalized and closed.</source>
         <translation>Приложение записывает данные в GPX файл. Запись будет остановлена и файл закрыт.</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="106"/>
+        <location filename="../assets/MainPage.qml" line="107"/>
         <source>Stop</source>
         <translation>Стоп</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="127"/>
+        <location filename="../assets/MainPage.qml" line="128"/>
         <source>Location and Speed</source>
         <translation>Местоположение и скорость</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="173"/>
+        <location filename="../assets/MainPage.qml" line="174"/>
         <source>Altitude and Vertical Speed</source>
         <translation>Высота и вертикальная скорость</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="208"/>
+        <location filename="../assets/MainPage.qml" line="209"/>
         <source>Number of Satellites</source>
         <translation>Число спутников</translation>
+    </message>
+    <message>
+        <location filename="../assets/MainPage.qml" line="234"/>
+        <source>Please enable location services and restart the application.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../assets/MainPage.qml" line="236"/>
+        <source>Unknown error in location services. Try to restart the application.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../assets/MainPage.qml" line="242"/>
+        <source>No location reported from location services.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../assets/MainPage.qml" line="244"/>
+        <source>Lost location tracking.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../assets/MainPage.qml" line="246"/>
+        <source>Device is stationary.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

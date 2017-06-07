@@ -43,6 +43,26 @@
         <source>Number of Satellites</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Please enable location services and restart the application.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown error in location services. Try to restart the application.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No location reported from location services.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lost location tracking.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Device is stationary.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsPage</name>

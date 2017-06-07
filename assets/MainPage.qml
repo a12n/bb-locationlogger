@@ -230,11 +230,24 @@ Page {
                 textStyle.color = undefined
             }
             function setError(err) {
-                text = err
+                if (err == "disabled") {
+                    text = qsTr("Please enable location services and restart the application.")
+                } else {
+                    text = qsTr("Unknown error in location services. Try to restart the application.")
+                }
                 textStyle.color = Color.create("#ffff3333")
             }
             function setWarning(warn) {
-                text = warn
+                if (warn == "timeout") {
+                    text = qsTr("No information reported from location services.")
+                } else if (warn == "lostTracking") {
+                    text = qsTr("Lost location tracking.")
+                } else if (warn == "stationary") {
+                    text = qsTr("Device is stationary.")
+                } else {
+                    // Unknown warning
+                    return
+                }
                 textStyle.color = Color.create("#ffdcd427")
             }
         }
