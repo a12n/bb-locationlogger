@@ -70,18 +70,21 @@ Container {
             imageSource: "asset:///images/ic_map.png"
             verticalAlignment: VerticalAlignment.Center
             horizontalAlignment: HorizontalAlignment.Center
+            filterColor: Color.create("#fff0f0f0")
         }
         Label {
             id: latLabel
             text: "N/A°"
             textStyle.fontSize: FontSize.Large
             horizontalAlignment: HorizontalAlignment.Center
+            textStyle.color: Color.create("#fff0f0f0")
         }
         Label {
             id: lonLabel
             text: "N/A°"
             textStyle.fontSize: FontSize.Large
             horizontalAlignment: HorizontalAlignment.Center
+            textStyle.color: Color.create("#fff0f0f0")
         }
     }
 }
