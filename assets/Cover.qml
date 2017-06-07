@@ -32,7 +32,7 @@ Container {
         if (_gpxFile.isOpen()) {
             image.filterColor = Color.create("#ff0092cc")
         } else {
-            image.filterColor.reset()
+            image.filterColor = Color.create("#fff0f0f0")
         }
         _geoLocation.error.connect(onError)
         _geoLocation.warning.connect(onWarning)
