@@ -226,9 +226,11 @@ Page {
             multiline: true
             function setError(err) {
                 text = err
+                textStyle.color = Color.create("#ffff3333")
             }
             function setWarning(warn) {
                 text = warn
+                textStyle.color = Color.create("#ffdcd427")
             }
         }
     }
