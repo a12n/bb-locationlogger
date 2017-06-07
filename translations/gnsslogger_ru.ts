@@ -59,7 +59,7 @@
     <message>
         <location filename="../assets/MainPage.qml" line="234"/>
         <source>Location services are disabled. Please enable location services and restart the application.</source>
-        <translation type="unfinished"></translation>
+        <translation>Службы определения местоположения отключены. Пожалуйста включите службы и перезапустите приложение.</translation>
     </message>
     <message>
         <location filename="../assets/MainPage.qml" line="242"/>
@@ -69,17 +69,17 @@
     <message>
         <location filename="../assets/MainPage.qml" line="244"/>
         <source>Satellite signal lost. Try to get to a place with more sky visible.</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет сигнала со спутников. Попробуйте выйти на более открытое место.</translation>
     </message>
     <message>
         <location filename="../assets/MainPage.qml" line="246"/>
         <source>The device is stationary.</source>
-        <translation type="unfinished"></translation>
+        <translation>Устройство неподвижно.</translation>
     </message>
     <message>
         <location filename="../assets/MainPage.qml" line="236"/>
         <source>Unknown error in location services. Try to restart the application.</source>
-        <translation type="unfinished"></translation>
+        <translation>Неизвестная ошибка в службах определения местоположения. Попробуйте перезапустить приложение.</translation>
     </message>
 </context>
 <context>
