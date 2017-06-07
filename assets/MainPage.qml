@@ -229,7 +229,6 @@ Page {
         Label {
             id: statusLabel
             horizontalAlignment: HorizontalAlignment.Fill
-            textStyle.textAlign: TextAlign.Center
         }
     }
 }
