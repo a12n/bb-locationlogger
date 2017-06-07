@@ -228,12 +228,6 @@ Page {
         Divider {
             horizontalAlignment: HorizontalAlignment.Fill
         }
-        ImageView {
-            id: statusImage
-            imageSource: "asset:///images/ic_map.png"
-            scalingMethod: ScalingMethod.AspectFill
-            horizontalAlignment: HorizontalAlignment.Center
-        }
         Label {
             id: statusLabel
             horizontalAlignment: HorizontalAlignment.Fill
