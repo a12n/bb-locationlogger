@@ -38,6 +38,7 @@ Page {
         vertAccLabel.setTextFrom(_geoLocation.vertAccuracy)
         vertSpeedLabel.setTextFrom(_geoLocation.vertSpeed)
         numSatLabel.setTextFrom(_geoLocation.numSatellitesUsed, _geoLocation.numSatellitesTotal)
+        statusLabel.clearStatus()
     }
 
     function onDataChangedFile() {
@@ -224,6 +225,10 @@ Page {
             horizontalAlignment: HorizontalAlignment.Fill
             textStyle.textAlign: TextAlign.Center
             multiline: true
+            function clearStatus() {
+                text = undefined
+                textStyle.color = undefined
+            }
             function setError(err) {
                 text = err
                 textStyle.color = Color.create("#ffff3333")
