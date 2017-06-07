@@ -4,15 +4,15 @@
 <context>
     <name>MainPage</name>
     <message>
-        <location filename="../assets/MainPage.qml" line="164"/>
-        <location filename="../assets/MainPage.qml" line="189"/>
-        <location filename="../assets/MainPage.qml" line="199"/>
+        <location filename="../assets/MainPage.qml" line="167"/>
+        <location filename="../assets/MainPage.qml" line="192"/>
+        <location filename="../assets/MainPage.qml" line="202"/>
         <source>m</source>
         <translation>м</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="175"/>
-        <location filename="../assets/MainPage.qml" line="210"/>
+        <location filename="../assets/MainPage.qml" line="178"/>
+        <location filename="../assets/MainPage.qml" line="213"/>
         <source>m/s</source>
         <translation>м/с</translation>
     </message>
@@ -40,6 +40,21 @@
         <location filename="../assets/MainPage.qml" line="116"/>
         <source>Stop</source>
         <translation>Стоп</translation>
+    </message>
+    <message>
+        <location filename="../assets/MainPage.qml" line="137"/>
+        <source>Location and Speed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../assets/MainPage.qml" line="183"/>
+        <source>Altitude and Vertical Speed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../assets/MainPage.qml" line="218"/>
+        <source>Number of Satellites</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

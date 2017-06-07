@@ -131,6 +131,9 @@ Page {
         leftPadding: topPadding
         rightPadding: leftPadding
         bottomPadding: topPadding
+        Header {
+            title: qsTr("Location and Speed")
+        }
         Label {
             id: latLabel
             textStyle.fontSize: FontSize.XXLarge
@@ -174,8 +177,8 @@ Page {
             }
             onCreationCompleted: setTextFrom(NaN)
         }
-        Divider {
-            horizontalAlignment: HorizontalAlignment.Fill
+        Header {
+            title: qsTr("Altitude and Vertical Speed")
         }
         Label {
             id: altLabel
@@ -209,8 +212,8 @@ Page {
             }
             onCreationCompleted: setTextFrom(NaN)
         }
-        Divider {
-            horizontalAlignment: HorizontalAlignment.Fill
+        Header {
+            title: qsTr("Number of Satellites")
         }
         Label {
             id: numSatLabel
@@ -223,9 +226,7 @@ Page {
             }
             onCreationCompleted: setTextFrom(0, 0)
         }
-        Divider {
-            horizontalAlignment: HorizontalAlignment.Fill
-        }
+        
         Label {
             id: statusLabel
             horizontalAlignment: HorizontalAlignment.Fill

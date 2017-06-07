@@ -31,6 +31,18 @@
         <source>Pause</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Location and Speed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Altitude and Vertical Speed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of Satellites</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsPage</name>
