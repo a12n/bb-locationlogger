@@ -31,12 +31,10 @@ Page {
 
     function onError(err) {
         statusLabel.text = err
-        statusImage.filterColor = Color.create("#ffff3333")
     }
 
     function onWarning(warn) {
         statusLabel.text = warn
-        statusImage.filterColor = Color.create("#ffdcd427")
     }
 
     function onDataChangedUi() {
