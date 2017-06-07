@@ -4,55 +4,55 @@
 <context>
     <name>MainPage</name>
     <message>
-        <location filename="../assets/MainPage.qml" line="165"/>
-        <location filename="../assets/MainPage.qml" line="190"/>
-        <location filename="../assets/MainPage.qml" line="200"/>
+        <location filename="../assets/MainPage.qml" line="157"/>
+        <location filename="../assets/MainPage.qml" line="182"/>
+        <location filename="../assets/MainPage.qml" line="192"/>
         <source>m</source>
         <translation>м</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="176"/>
-        <location filename="../assets/MainPage.qml" line="211"/>
+        <location filename="../assets/MainPage.qml" line="168"/>
+        <location filename="../assets/MainPage.qml" line="203"/>
         <source>m/s</source>
         <translation>м/с</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="83"/>
+        <location filename="../assets/MainPage.qml" line="75"/>
         <source>Pause</source>
         <translation>Пауза</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="94"/>
+        <location filename="../assets/MainPage.qml" line="86"/>
         <source>Record</source>
         <translation>Запись</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="103"/>
+        <location filename="../assets/MainPage.qml" line="95"/>
         <source>Recording is active</source>
         <translation>Идёт запись</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="104"/>
+        <location filename="../assets/MainPage.qml" line="96"/>
         <source>The application records location data to a GPX file. File will be finalized and closed.</source>
         <translation>Приложение записывает данные в GPX файл. Запись будет остановлена и файл закрыт.</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="114"/>
+        <location filename="../assets/MainPage.qml" line="106"/>
         <source>Stop</source>
         <translation>Стоп</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="135"/>
+        <location filename="../assets/MainPage.qml" line="127"/>
         <source>Location and Speed</source>
         <translation>Местоположение и скорость</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="181"/>
+        <location filename="../assets/MainPage.qml" line="173"/>
         <source>Altitude and Vertical Speed</source>
         <translation>Высота и вертикальная скорость</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="216"/>
+        <location filename="../assets/MainPage.qml" line="208"/>
         <source>Number of Satellites</source>
         <translation>Число спутников</translation>
     </message>
