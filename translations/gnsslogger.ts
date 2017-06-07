@@ -44,23 +44,23 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Please enable location services and restart the application.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Unknown error in location services. Try to restart the application.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>No location reported from location services.</source>
+        <source>Location services are disabled. Please enable location services and restart the application.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Lost location tracking.</source>
+        <source>No information reported from location services.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Device is stationary.</source>
+        <source>Satellite signal lost. Try to get to a place with more sky visible.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The device is stationary.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

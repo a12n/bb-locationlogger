@@ -231,7 +231,7 @@ Page {
             }
             function setError(err) {
                 if (err == "disabled") {
-                    text = qsTr("Please enable location services and restart the application.")
+                    text = qsTr("Location services are disabled. Please enable location services and restart the application.")
                 } else {
                     text = qsTr("Unknown error in location services. Try to restart the application.")
                 }
@@ -241,9 +241,9 @@ Page {
                 if (warn == "timeout") {
                     text = qsTr("No information reported from location services.")
                 } else if (warn == "lostTracking") {
-                    text = qsTr("Lost location tracking.")
+                    text = qsTr("Satellite signal lost. Try to get to a place with more sky visible.")
                 } else if (warn == "stationary") {
-                    text = qsTr("Device is stationary.")
+                    text = qsTr("The device is stationary.")
                 } else {
                     // Unknown warning
                     return

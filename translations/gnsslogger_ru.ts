@@ -58,27 +58,27 @@
     </message>
     <message>
         <location filename="../assets/MainPage.qml" line="234"/>
-        <source>Please enable location services and restart the application.</source>
+        <source>Location services are disabled. Please enable location services and restart the application.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../assets/MainPage.qml" line="242"/>
+        <source>No information reported from location services.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../assets/MainPage.qml" line="244"/>
+        <source>Satellite signal lost. Try to get to a place with more sky visible.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../assets/MainPage.qml" line="246"/>
+        <source>The device is stationary.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../assets/MainPage.qml" line="236"/>
         <source>Unknown error in location services. Try to restart the application.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../assets/MainPage.qml" line="242"/>
-        <source>No location reported from location services.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../assets/MainPage.qml" line="244"/>
-        <source>Lost location tracking.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../assets/MainPage.qml" line="246"/>
-        <source>Device is stationary.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
