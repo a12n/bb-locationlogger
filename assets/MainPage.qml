@@ -11,8 +11,8 @@ Page {
     property int state: 0
 
     onCreationCompleted: {
-        _geoLocation.error.connect(onError)
-        _geoLocation.warning.connect(onWarning)
+        _geoLocation.error.connect(statusLabel.setError)
+        _geoLocation.warning.connect(statusLabel.setWarning)
         _geoLocation.setPeriod(5)
         _geoLocation.startUpdates()
         Application.autoExit = true
@@ -27,14 +27,6 @@ Page {
 
     function onThumbnail() {
         _geoLocation.dataChanged.disconnect(onDataChangedUi)
-    }
-
-    function onError(err) {
-        statusLabel.text = err
-    }
-
-    function onWarning(warn) {
-        statusLabel.text = warn
     }
 
     function onDataChangedUi() {
@@ -230,6 +222,12 @@ Page {
         Label {
             id: statusLabel
             horizontalAlignment: HorizontalAlignment.Fill
+            function setError(err) {
+                text = err
+            }
+            function setWarning(warn) {
+                text = warn
+            }
         }
     }
 }
