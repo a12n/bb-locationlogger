@@ -223,6 +223,7 @@ Page {
             id: statusLabel
             horizontalAlignment: HorizontalAlignment.Fill
             textStyle.textAlign: TextAlign.Center
+            multiline: true
             function setError(err) {
                 text = err
             }
