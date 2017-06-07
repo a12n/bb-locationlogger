@@ -53,8 +53,15 @@ Container {
             repeat: true
             triggeredOnStart: true
             onTriggered: {
-                latLabel.text = latitudeToString(_geoLocation.latitude)
-                lonLabel.text = longitudeToString(_geoLocation.longitude)
+                if (!isNaN(_geoLocation.latitude) &&
+                    !isNaN(_geoLocation.longitude))
+                {
+                    latLabel.text = latitudeToString(_geoLocation.latitude)
+                    lonLabel.text = longitudeToString(_geoLocation.longitude)
+                } else {
+                    latLabel.text = "N/A°"
+                    lonLabel.text = "N/A°"
+                }
             }
         }
     ]
