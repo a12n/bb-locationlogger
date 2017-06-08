@@ -38,7 +38,11 @@ Page {
         vertAccLabel.setTextFrom(_geoLocation.vertAccuracy)
         vertSpeedLabel.setTextFrom(_geoLocation.vertSpeed)
         numSatLabel.setTextFrom(_geoLocation.numSatellitesUsed, _geoLocation.numSatellitesTotal)
-        statusLabel.clearStatus()
+        if (!isNaN(_geoLocation.latitude) &&
+            !isNaN(_geoLocation.longitude))
+        {
+            statusLabel.clearStatus()
+        }
     }
 
     function onDataChangedFile() {
@@ -219,7 +223,7 @@ Page {
             }
             onCreationCompleted: setTextFrom(0, 0)
         }
-        
+
         Label {
             id: statusLabel
             horizontalAlignment: HorizontalAlignment.Fill
