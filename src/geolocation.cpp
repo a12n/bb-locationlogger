@@ -11,7 +11,7 @@ GeoLocationData::GeoLocationData() :
     latitude(NAN),
     longitude(NAN),
     altitude(NAN),
-    horizAccuracy(NAN),
+    accuracy(NAN),
     vertAccuracy(NAN),
     heading(NAN),
     speed(NAN),
@@ -30,7 +30,7 @@ GeoLocationData::GeoLocationData(bps_event_t *event) :
     latitude(geolocation_event_get_latitude(event)),
     longitude(geolocation_event_get_longitude(event)),
     altitude(geolocation_event_get_altitude(event)),
-    horizAccuracy(geolocation_event_get_accuracy(event)),
+    accuracy(geolocation_event_get_accuracy(event)),
     vertAccuracy(geolocation_event_get_altitude_accuracy(event)),
     heading(geolocation_event_get_heading(event)),
     speed(geolocation_event_get_speed(event)),
@@ -74,7 +74,7 @@ struct SimpleFilter : public GeoLocationDataFilter
     virtual bool eval(GeoLocationData& next)
     {
         const double dist = prev.distanceTo(next);
-        if (isnan(dist) || dist > (prev.horizAccuracy + next.horizAccuracy)) {
+        if (isnan(dist) || dist > (prev.accuracy + next.accuracy)) {
             prev = next;
             return true;
         } else {
@@ -214,12 +214,12 @@ void GeoLocation::infoEvent(bps_event_t *event)
     qDebug() << "raw timestamp" << newData.timestamp;
     qDebug() << "raw coordinate" << newData.latitude << newData.longitude << newData.altitude;
     qDebug() << "raw heading and speed" << newData.heading << newData.speed << newData.vertSpeed;
-    qDebug() << "raw accuracy" << newData.horizAccuracy << newData.vertAccuracy;
+    qDebug() << "raw accuracy" << newData.accuracy << newData.vertAccuracy;
     qDebug() << "raw num satellites" << newData.numSatellitesUsed << "/" << newData.numSatellitesTotal;
     if (filter_) {
         changed = filter_->eval(newData);
         qDebug() << "filter cooridnate " << newData.latitude << newData.longitude;
-        qDebug() << "filter accuracy" << newData.horizAccuracy;
+        qDebug() << "filter accuracy" << newData.accuracy;
     }
     if (changed) {
         data_ = newData;

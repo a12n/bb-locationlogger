@@ -32,7 +32,7 @@ Page {
     function onDataChangedUi() {
         latLabel.setTextFrom(_geoLocation.latitude)
         lonLabel.setTextFrom(_geoLocation.longitude)
-        accLabel.setTextFrom(_geoLocation.horizAccuracy)
+        accLabel.setTextFrom(_geoLocation.accuracy)
         speedLabel.setTextFrom(_geoLocation.speed)
         altLabel.setTextFrom(_geoLocation.altitude)
         vertAccLabel.setTextFrom(_geoLocation.vertAccuracy)
@@ -59,7 +59,7 @@ Page {
         if (!isNaN(_geoLocation.heading)) _gpxFile.writeTextElement("hdg", _geoLocation.heading.toFixed(1))
         if (!isNaN(_geoLocation.speed)) _gpxFile.writeTextElement("s", _geoLocation.speed.toFixed(1))
         if (!isNaN(_geoLocation.vertSpeed)) _gpxFile.writeTextElement("vs", _geoLocation.vertSpeed.toFixed(1))
-        if (!isNaN(_geoLocation.horizAccuracy)) _gpxFile.writeTextElement("acc", _geoLocation.horizAccuracy.toFixed(2))
+        if (!isNaN(_geoLocation.accuracy)) _gpxFile.writeTextElement("acc", _geoLocation.accuracy.toFixed(2))
         if (!isNaN(_geoLocation.vertAccuracy)) _gpxFile.writeTextElement("vacc", _geoLocation.vertAccuracy.toFixed(2))
         _gpxFile.writeEndExtensions()
         _gpxFile.writeEndTrackPoint()

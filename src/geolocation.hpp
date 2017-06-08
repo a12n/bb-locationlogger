@@ -16,7 +16,7 @@ struct GeoLocationData
     double latitude;
     double longitude;
     double altitude;
-    double horizAccuracy;
+    double accuracy;
     double vertAccuracy;
     double heading;
     double speed;
@@ -45,7 +45,7 @@ class GeoLocation : public QObject, public bb::AbstractBpsEventHandler
     Q_PROPERTY(double latitude READ latitude NOTIFY dataChanged)
     Q_PROPERTY(double longitude READ longitude NOTIFY dataChanged)
     Q_PROPERTY(double altitude READ altitude NOTIFY dataChanged)
-    Q_PROPERTY(double horizAccuracy READ horizAccuracy NOTIFY dataChanged)
+    Q_PROPERTY(double accuracy READ accuracy NOTIFY dataChanged)
     Q_PROPERTY(double vertAccuracy READ vertAccuracy NOTIFY dataChanged)
     Q_PROPERTY(double heading READ heading NOTIFY dataChanged)
     Q_PROPERTY(double speed READ speed NOTIFY dataChanged)
@@ -71,7 +71,7 @@ public:
     double latitude() const { return data_.latitude; }
     double longitude() const { return data_.longitude; }
     double altitude() const { return data_.altitude; }
-    double horizAccuracy() const { return data_.horizAccuracy; }
+    double accuracy() const { return data_.accuracy; }
     double vertAccuracy() const { return data_.vertAccuracy; }
     double heading() const { return data_.heading; }
     double speed() const { return data_.speed; }
