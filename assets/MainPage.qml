@@ -142,7 +142,7 @@ Page {
             horizontalAlignment: HorizontalAlignment.Fill
             textStyle.textAlign: TextAlign.Center
             function setTextFrom(deg) {
-                text = (isNaN(deg) ? "N/A" : _app.formatReal(deg, 8)) + "°"
+                text = (isNaN(deg) ? "N/A" : _app.formatReal(deg, 7)) + "°"
             }
             onCreationCompleted: setTextFrom(NaN)
         }
@@ -152,7 +152,7 @@ Page {
             horizontalAlignment: HorizontalAlignment.Fill
             textStyle.textAlign: TextAlign.Center
             function setTextFrom(deg) {
-                text = (isNaN(deg) ? "N/A" : _app.formatReal(deg, 8)) + "°"
+                text = (isNaN(deg) ? "N/A" : _app.formatReal(deg, 7)) + "°"
             }
             onCreationCompleted: setTextFrom(NaN)
         }

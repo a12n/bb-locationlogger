@@ -41,8 +41,8 @@ void GpxFile::writeStartTrackPoint(double latitude, double longitude)
         return;
 
     xml.writeStartElement("trkpt");
-    xml.writeAttribute("lat", QString::number(latitude, 'f', 8));
-    xml.writeAttribute("lon", QString::number(longitude, 'f', 8));
+    xml.writeAttribute("lat", QString::number(latitude, 'f', 7));
+    xml.writeAttribute("lon", QString::number(longitude, 'f', 7));
 
     checkError();
 }
