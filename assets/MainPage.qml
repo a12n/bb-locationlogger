@@ -1,5 +1,6 @@
 import bb.cascades 1.3
 import bb.system 1.0
+import QtQuick 1.0
 
 Page {
     id: root
@@ -71,6 +72,11 @@ Page {
     attachedObjects: [
         SystemToast {
             id: saveToast
+        },
+        Timer {
+            id: retryTimer
+            interval: 5000
+            onTriggered: _geoLocation.startUpdates()
         }
     ]
 
@@ -235,6 +241,7 @@ Page {
             function setError(err) {
                 if (err == "disabled") {
                     text = qsTr("Location services are disabled. Please enable location services and restart the application.")
+                    retryTimer.restart()
                 } else {
                     text = qsTr("Unknown error in location services. Try to restart the application.")
                 }
