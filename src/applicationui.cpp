@@ -36,6 +36,7 @@ ApplicationUI::ApplicationUI() :
     // to ensure the document gets destroyed properly at shut down.
     QmlDocument *qml = QmlDocument::create("asset:///main.qml").parent(this);
 
+    qml->setContextProperty("_app", this);
     qml->setContextProperty("_geoLocation", geoLocation);
     qml->setContextProperty("_gpxFile", gpxFile);
     qml->setContextProperty("_settings", settings);
@@ -47,6 +48,7 @@ ApplicationUI::ApplicationUI() :
     // Create application cover
     QmlDocument *qmlCover = QmlDocument::create("asset:///Cover.qml").parent(this);
 
+    qmlCover->setContextProperty("_app", this);
     qmlCover->setContextProperty("_geoLocation", geoLocation);
     qmlCover->setContextProperty("_gpxFile", gpxFile);
     qmlCover->setContextProperty("_settings", settings);
@@ -57,6 +59,16 @@ ApplicationUI::ApplicationUI() :
     // Create a SceneCover and set the application cover
     SceneCover *sceneCover = SceneCover::create().content(coverContainer);
     Application::instance()->setCover(sceneCover);
+}
+
+QString ApplicationUI::formatInteger(int n) const
+{
+    return QLocale().toString(n);
+}
+
+QString ApplicationUI::formatReal(double x, int prec) const
+{
+    return QLocale().toString(x, 'f', prec);
 }
 
 void ApplicationUI::onSystemLanguageChanged()

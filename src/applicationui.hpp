@@ -20,6 +20,9 @@ class ApplicationUI : public QObject
 public:
     ApplicationUI();
 
+    Q_INVOKABLE QString formatInteger(int n) const;
+    Q_INVOKABLE QString formatReal(double x, int prec) const;
+
 private slots:
     void onSystemLanguageChanged();
 
