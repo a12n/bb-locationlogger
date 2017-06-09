@@ -22,7 +22,7 @@
        GNSS Logger
        <text xml:lang="ru">GNSS &#x440;&#x435;&#x433;&#x438;&#x441;&#x442;&#x440;&#x430;&#x442;&#x43e;&#x440;</text>
     </name>
-    <versionNumber>0.14.4</versionNumber>
+    <versionNumber>0.14.5</versionNumber>
     <buildId>1</buildId>
     <packageLocale>ru</packageLocale>
     <!-- <versionLabel></versionLabel> -->

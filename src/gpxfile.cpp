@@ -172,6 +172,7 @@ void GpxFile::close()
     if (!isOpen())
         return;
 
+    qDebug() << "closing" << file->fileName();
     writeEndGpx();
     xml.setDevice(0);
     file->close();
@@ -179,6 +180,7 @@ void GpxFile::close()
 
 void GpxFile::setSaveOnMediaCard(bool enabled)
 {
+    qDebug() << __FUNCTION__ << enabled;
     saveOnMediaCard = enabled;
 }
 
