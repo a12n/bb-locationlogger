@@ -142,7 +142,7 @@ Page {
             horizontalAlignment: HorizontalAlignment.Fill
             textStyle.textAlign: TextAlign.Center
             function setTextFrom(deg) {
-                text = (isNaN(deg) ? "N/A" : deg.toFixed(8)) + "°"
+                text = (isNaN(deg) ? "N/A" : _app.formatReal(deg, 8)) + "°"
             }
             onCreationCompleted: setTextFrom(NaN)
         }
@@ -152,7 +152,7 @@ Page {
             horizontalAlignment: HorizontalAlignment.Fill
             textStyle.textAlign: TextAlign.Center
             function setTextFrom(deg) {
-                text = (isNaN(deg) ? "N/A" : deg.toFixed(8)) + "°"
+                text = (isNaN(deg) ? "N/A" : _app.formatReal(deg, 8)) + "°"
             }
             onCreationCompleted: setTextFrom(NaN)
         }
@@ -161,7 +161,7 @@ Page {
             textStyle.textAlign: TextAlign.Center
             horizontalAlignment: HorizontalAlignment.Fill
             function setTextFrom(acc) {
-                text = "±" + (isNaN(acc) ? "N/A" : acc.toFixed(2)) + " " + qsTr("m")
+                text = "±" + (isNaN(acc) ? "N/A" : _app.formatReal(acc, 2)) + " " + qsTr("m")
             }
             onCreationCompleted: setTextFrom(NaN)
         }
@@ -171,7 +171,7 @@ Page {
             textStyle.textAlign: TextAlign.Center
             horizontalAlignment: HorizontalAlignment.Fill
             function setTextFrom(s) {
-                text = (isNaN(s) ? "N/A" : s.toFixed(1)) + " " + qsTr("m/s")
+                text = (isNaN(s) ? "N/A" : _app.formatReal(s, 1)) + " " + qsTr("m/s")
             }
             onCreationCompleted: setTextFrom(NaN)
         }
@@ -184,7 +184,7 @@ Page {
             textStyle.textAlign: TextAlign.Center
             horizontalAlignment: HorizontalAlignment.Fill
             function setTextFrom(alt) {
-                text = (isNaN(alt) ? "N/A" : alt.toFixed(2)) + " " + qsTr("m")
+                text = (isNaN(alt) ? "N/A" : _app.formatReal(alt, 2)) + " " + qsTr("m")
             }
             onCreationCompleted: setTextFrom(NaN)
         }
@@ -193,7 +193,7 @@ Page {
             textStyle.textAlign: TextAlign.Center
             horizontalAlignment: HorizontalAlignment.Fill
             function setTextFrom(vacc) {
-                text = "±" + (isNaN(vacc) ? "N/A" : vacc.toFixed(2)) + " " + qsTr("m")
+                text = "±" + (isNaN(vacc) ? "N/A" : _app.formatReal(vacc, 2)) + " " + qsTr("m")
             }
             onCreationCompleted: setTextFrom(NaN)
         }
@@ -203,7 +203,7 @@ Page {
             textStyle.textAlign: TextAlign.Center
             horizontalAlignment: HorizontalAlignment.Fill
             function setTextFrom(vs) {
-                text = (isNaN(vs) ? "N/A" : vs.toFixed(1)) + " " + qsTr("m/s")
+                text = (isNaN(vs) ? "N/A" : _app.formatReal(vs, 1)) + " " + qsTr("m/s")
             }
             onCreationCompleted: setTextFrom(NaN)
         }
