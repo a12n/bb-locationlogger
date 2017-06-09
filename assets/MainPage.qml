@@ -141,7 +141,6 @@ Page {
             textStyle.fontSize: FontSize.XXLarge
             horizontalAlignment: HorizontalAlignment.Fill
             textStyle.textAlign: TextAlign.Center
-            textStyle.fontFamily: "Monospace"
             function setTextFrom(deg) {
                 text = (isNaN(deg) ? "N/A" : deg.toFixed(8)) + "°"
             }
@@ -152,7 +151,6 @@ Page {
             textStyle.fontSize: FontSize.XXLarge
             horizontalAlignment: HorizontalAlignment.Fill
             textStyle.textAlign: TextAlign.Center
-            textStyle.fontFamily: "Monospace"
             function setTextFrom(deg) {
                 text = (isNaN(deg) ? "N/A" : deg.toFixed(8)) + "°"
             }
@@ -162,7 +160,6 @@ Page {
             id: accLabel
             textStyle.textAlign: TextAlign.Center
             horizontalAlignment: HorizontalAlignment.Fill
-            textStyle.fontFamily: "Monospace"
             function setTextFrom(acc) {
                 text = "±" + (isNaN(acc) ? "N/A" : acc.toFixed(2)) + " " + qsTr("m")
             }
@@ -173,7 +170,6 @@ Page {
             textStyle.fontSize: FontSize.Large
             textStyle.textAlign: TextAlign.Center
             horizontalAlignment: HorizontalAlignment.Fill
-            textStyle.fontFamily: "Monospace"
             function setTextFrom(s) {
                 text = (isNaN(s) ? "N/A" : s.toFixed(1)) + " " + qsTr("m/s")
             }
@@ -187,7 +183,6 @@ Page {
             textStyle.fontSize: FontSize.Large
             textStyle.textAlign: TextAlign.Center
             horizontalAlignment: HorizontalAlignment.Fill
-            textStyle.fontFamily: "Monospace"
             function setTextFrom(alt) {
                 text = (isNaN(alt) ? "N/A" : alt.toFixed(2)) + " " + qsTr("m")
             }
@@ -197,7 +192,6 @@ Page {
             id: vertAccLabel
             textStyle.textAlign: TextAlign.Center
             horizontalAlignment: HorizontalAlignment.Fill
-            textStyle.fontFamily: "Monospace"
             function setTextFrom(vacc) {
                 text = "±" + (isNaN(vacc) ? "N/A" : vacc.toFixed(2)) + " " + qsTr("m")
             }
@@ -208,7 +202,6 @@ Page {
             textStyle.fontSize: FontSize.Large
             textStyle.textAlign: TextAlign.Center
             horizontalAlignment: HorizontalAlignment.Fill
-            textStyle.fontFamily: "Monospace"
             function setTextFrom(vs) {
                 text = (isNaN(vs) ? "N/A" : vs.toFixed(1)) + " " + qsTr("m/s")
             }
@@ -222,7 +215,6 @@ Page {
             textStyle.fontSize: FontSize.Large
             textStyle.textAlign: TextAlign.Center
             horizontalAlignment: HorizontalAlignment.Fill
-            textStyle.fontFamily: "Monospace"
             function setTextFrom(used, total) {
                 text = used + "/" + total
             }

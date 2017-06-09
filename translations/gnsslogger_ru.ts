@@ -4,15 +4,15 @@
 <context>
     <name>MainPage</name>
     <message>
-        <location filename="../assets/MainPage.qml" line="167"/>
-        <location filename="../assets/MainPage.qml" line="192"/>
-        <location filename="../assets/MainPage.qml" line="202"/>
+        <location filename="../assets/MainPage.qml" line="164"/>
+        <location filename="../assets/MainPage.qml" line="187"/>
+        <location filename="../assets/MainPage.qml" line="196"/>
         <source>m</source>
         <translation>м</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="178"/>
-        <location filename="../assets/MainPage.qml" line="213"/>
+        <location filename="../assets/MainPage.qml" line="174"/>
+        <location filename="../assets/MainPage.qml" line="206"/>
         <source>m/s</source>
         <translation>м/с</translation>
     </message>
@@ -47,17 +47,17 @@
         <translation>Местоположение и скорость</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="183"/>
+        <location filename="../assets/MainPage.qml" line="179"/>
         <source>Altitude and Vertical Speed</source>
         <translation>Высота и вертикальная скорость</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="218"/>
+        <location filename="../assets/MainPage.qml" line="211"/>
         <source>Number of Satellites</source>
         <translation>Число спутников</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="243"/>
+        <location filename="../assets/MainPage.qml" line="235"/>
         <source>Location services are disabled. Please enable location services.</source>
         <translation>Службы определения местоположения отключены. Пожалуйста включите службы в настройках.</translation>
     </message>
@@ -66,22 +66,22 @@
         <translation type="obsolete">Службы определения местоположения отключены. Пожалуйста включите службы и перезапустите приложение.</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="252"/>
+        <location filename="../assets/MainPage.qml" line="244"/>
         <source>No information reported from location services.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="254"/>
+        <location filename="../assets/MainPage.qml" line="246"/>
         <source>Satellite signal lost. Try to get to a place with more sky visible.</source>
         <translation>Нет сигнала со спутников. Попробуйте выйти на более открытое место.</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="256"/>
+        <location filename="../assets/MainPage.qml" line="248"/>
         <source>The device is stationary.</source>
         <translation>Устройство неподвижно.</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="246"/>
+        <location filename="../assets/MainPage.qml" line="238"/>
         <source>Unknown error in location services. Try to restart the application.</source>
         <translation>Неизвестная ошибка в службах определения местоположения. Попробуйте перезапустить приложение.</translation>
     </message>
