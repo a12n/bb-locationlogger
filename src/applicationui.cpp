@@ -49,7 +49,7 @@ ApplicationUI::ApplicationUI() :
 
     qmlCover->setContextProperty("_geoLocation", geoLocation);
     qmlCover->setContextProperty("_gpxFile", gpxFile);
-    qml->setContextProperty("_settings", settings);
+    qmlCover->setContextProperty("_settings", settings);
 
     // Create the QML Container from using the QMLDocument.
     Container *coverContainer = qmlCover->createRootObject<Container>();
