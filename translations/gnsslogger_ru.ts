@@ -4,80 +4,84 @@
 <context>
     <name>MainPage</name>
     <message>
-        <location filename="../assets/MainPage.qml" line="161"/>
-        <location filename="../assets/MainPage.qml" line="186"/>
-        <location filename="../assets/MainPage.qml" line="196"/>
+        <location filename="../assets/MainPage.qml" line="167"/>
+        <location filename="../assets/MainPage.qml" line="192"/>
+        <location filename="../assets/MainPage.qml" line="202"/>
         <source>m</source>
         <translation>м</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="172"/>
-        <location filename="../assets/MainPage.qml" line="207"/>
+        <location filename="../assets/MainPage.qml" line="178"/>
+        <location filename="../assets/MainPage.qml" line="213"/>
         <source>m/s</source>
         <translation>м/с</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="79"/>
+        <location filename="../assets/MainPage.qml" line="85"/>
         <source>Pause</source>
         <translation>Пауза</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="90"/>
+        <location filename="../assets/MainPage.qml" line="96"/>
         <source>Record</source>
         <translation>Запись</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="99"/>
+        <location filename="../assets/MainPage.qml" line="105"/>
         <source>Recording is active</source>
         <translation>Идёт запись</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="100"/>
+        <location filename="../assets/MainPage.qml" line="106"/>
         <source>The application records location data to a GPX file. File will be finalized and closed.</source>
         <translation>Приложение записывает данные в GPX файл. Запись будет остановлена и файл закрыт.</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="110"/>
+        <location filename="../assets/MainPage.qml" line="116"/>
         <source>Stop</source>
         <translation>Стоп</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="131"/>
+        <location filename="../assets/MainPage.qml" line="137"/>
         <source>Location and Speed</source>
         <translation>Местоположение и скорость</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="177"/>
+        <location filename="../assets/MainPage.qml" line="183"/>
         <source>Altitude and Vertical Speed</source>
         <translation>Высота и вертикальная скорость</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="212"/>
+        <location filename="../assets/MainPage.qml" line="218"/>
         <source>Number of Satellites</source>
         <translation>Число спутников</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="237"/>
-        <source>Location services are disabled. Please enable location services and restart the application.</source>
-        <translation>Службы определения местоположения отключены. Пожалуйста включите службы и перезапустите приложение.</translation>
+        <location filename="../assets/MainPage.qml" line="243"/>
+        <source>Location services are disabled. Please enable location services.</source>
+        <translation>Службы определения местоположения отключены. Пожалуйста включите службы в настройках.</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="245"/>
+        <source>Location services are disabled. Please enable location services and restart the application.</source>
+        <translation type="obsolete">Службы определения местоположения отключены. Пожалуйста включите службы и перезапустите приложение.</translation>
+    </message>
+    <message>
+        <location filename="../assets/MainPage.qml" line="252"/>
         <source>No information reported from location services.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="247"/>
+        <location filename="../assets/MainPage.qml" line="254"/>
         <source>Satellite signal lost. Try to get to a place with more sky visible.</source>
         <translation>Нет сигнала со спутников. Попробуйте выйти на более открытое место.</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="249"/>
+        <location filename="../assets/MainPage.qml" line="256"/>
         <source>The device is stationary.</source>
         <translation>Устройство неподвижно.</translation>
     </message>
     <message>
-        <location filename="../assets/MainPage.qml" line="239"/>
+        <location filename="../assets/MainPage.qml" line="246"/>
         <source>Unknown error in location services. Try to restart the application.</source>
         <translation>Неизвестная ошибка в службах определения местоположения. Попробуйте перезапустить приложение.</translation>
     </message>

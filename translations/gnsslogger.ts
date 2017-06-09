@@ -48,10 +48,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Location services are disabled. Please enable location services and restart the application.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>No information reported from location services.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -61,6 +57,10 @@
     </message>
     <message>
         <source>The device is stationary.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Location services are disabled. Please enable location services.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

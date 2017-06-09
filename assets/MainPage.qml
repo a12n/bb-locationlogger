@@ -240,7 +240,7 @@ Page {
             }
             function setError(err) {
                 if (err == "disabled") {
-                    text = qsTr("Location services are disabled. Please enable location services and restart the application.")
+                    text = qsTr("Location services are disabled. Please enable location services.")
                     retryTimer.restart()
                 } else {
                     text = qsTr("Unknown error in location services. Try to restart the application.")
