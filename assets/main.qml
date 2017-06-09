@@ -14,8 +14,6 @@ NavigationPane {
     ]
 
     Menu.definition: MenuDefinition {
-        helpAction: HelpActionItem {
-        }
         settingsAction: SettingsActionItem {
             onTriggered: {
                 navPane.push(settingsPage)
