@@ -4,7 +4,8 @@
 
 #include "gpxfile.hpp"
 
-#define GNSSLOGGER_NS "urn:gnsslogger:hdg=heading,s=speed,vs=vertSpeed,acc=accuracy,vacc=vertAccuracy"
+#define LOCATIONLOGGER_NS                                               \
+    "urn:locationlogger:hdg=heading,s=speed,vs=vertSpeed,acc=accuracy,vacc=vertAccuracy"
 
 GpxFile::GpxFile(QObject *parent) :
     QObject(parent),
@@ -142,7 +143,7 @@ void GpxFile::writeTextElement(const QString& name, const QString& text)
     if (!isOpen())
         return;
 
-    xml.writeTextElement(GNSSLOGGER_NS, name, text);
+    xml.writeTextElement(LOCATIONLOGGER_NS, name, text);
 
     checkError();
 }
@@ -189,9 +190,9 @@ void GpxFile::writeStartGpx()
     xml.writeStartDocument("1.0");
     xml.writeStartElement("gpx");
     xml.writeDefaultNamespace("http://www.topografix.com/GPX/1/1");
-    xml.writeNamespace(GNSSLOGGER_NS, "x");
+    xml.writeNamespace(LOCATIONLOGGER_NS, "x");
     xml.writeAttribute("version", "1.1");
-    xml.writeAttribute("creator", "gnsslogger");
+    xml.writeAttribute("creator", "locationlogger");
     xml.writeStartElement("trk");
     xml.writeStartElement("trkseg");
 }

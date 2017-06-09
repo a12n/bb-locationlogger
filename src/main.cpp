@@ -26,7 +26,7 @@ Q_DECL_EXPORT int main(int argc, char **argv)
 
     app.setOrganizationName("a12n");
     app.setOrganizationDomain("a12n.bitbucket.org");
-    app.setApplicationName("gnsslogger");
+    app.setApplicationName("locationlogger");
 
     ApplicationUI appui;
 

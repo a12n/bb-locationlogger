@@ -1,1 +1,0 @@
-include (../gnsslogger.pro)

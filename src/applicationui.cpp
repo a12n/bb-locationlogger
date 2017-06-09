@@ -76,7 +76,7 @@ void ApplicationUI::onSystemLanguageChanged()
     QCoreApplication::instance()->removeTranslator(translator);
     // Initiate, load and install the application translation files.
     QString localeString = QLocale().name();
-    QString fileName = QString("gnsslogger_%1").arg(localeString);
+    QString fileName = QString("locationlogger_%1").arg(localeString);
     if (translator->load(fileName, "app/native/qm")) {
         QCoreApplication::instance()->installTranslator(translator);
     }

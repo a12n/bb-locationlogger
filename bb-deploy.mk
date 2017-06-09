@@ -1,5 +1,5 @@
 DEV ?= 169.254.0.1
-PGK ?= arm/o.le-v7/gnsslogger.so.bar
+PGK ?= arm/o.le-v7/locationlogger.so.bar
 
 
 .PHONY: deploy install launch terminate uninstall

@@ -1,4 +1,4 @@
-QMAKE_TARGET  = gnsslogger
+QMAKE_TARGET  = locationlogger
 LUPDATE       = $(QNX_HOST)/usr/bin/lupdate
 LRELEASE      = $(QNX_HOST)/usr/bin/lrelease
 
