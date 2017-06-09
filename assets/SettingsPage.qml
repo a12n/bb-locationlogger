@@ -3,7 +3,7 @@ import bb.cascades 1.3
 Page {
     id: root
 
-    property int period: 5
+    property int updatePeriod: 5
     property alias stationaryDetection: stationaryDetection.checked
     property alias filterData: filterData.checked
     property alias saveOnMediaCard: saveOnMediaCard.checked
@@ -40,12 +40,18 @@ Page {
                     text: "1 " + qsTr("min")
                 }
             ]
-            onSelectedIndexChanged: {
+            function setUpdatePeriod() {
                 var opts = [1, 2, 5, 10, 30, 60]
-                root.period = opts[selectedIndex]
-                _settings.setValue("udateIntervalIndex", selectedIndex)
+                root.updatePeriod = opts[selectedIndex]
             }
-            selectedIndex: _settings.value("updateInrevalIndex", 2)
+            onSelectedIndexChanged: {
+                setUpdatePeriod()
+                _settings.setValue("updatePeriodIndex", selectedIndex)
+            }
+            onCreationCompleted: {
+                selectedIndex = _settings.value("updatePeriodIndex", 2)
+                setUpdatePeriod()
+            }
         }
         Divider {
         }

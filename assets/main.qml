@@ -6,7 +6,7 @@ NavigationPane {
     attachedObjects: [
         SettingsPage {
             id: settingsPage
-            onPeriodChanged: _geoLocation.setPeriod(period)
+            onUpdatePeriodChanged: _geoLocation.setPeriod(updatePeriod)
             onFilterDataChanged: _geoLocation.setFilterData(filterData)
             onStationaryDetectionChanged: _geoLocation.setStationaryDetection(stationaryDetection)
             onSaveOnMediaCardChanged: _gpxFile.setSaveOnMediaCard(saveOnMediaCard)
