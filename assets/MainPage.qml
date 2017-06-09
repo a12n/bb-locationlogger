@@ -13,7 +13,6 @@ Page {
     onCreationCompleted: {
         _geoLocation.error.connect(statusLabel.setError)
         _geoLocation.warning.connect(statusLabel.setWarning)
-        _geoLocation.setPeriod(5)
         _geoLocation.startUpdates()
         Application.autoExit = true
         Application.aboutToQuit.connect(_gpxFile.close)

@@ -98,6 +98,7 @@ GeoLocation::GeoLocation(QObject *parent) :
     geolocation_set_provider(GEOLOCATION_PROVIDER_GNSS);
     geolocation_set_background(true);
     geolocation_set_report_satellite_info(true);
+    setPeriod(5);
 }
 
 GeoLocation::~GeoLocation()
