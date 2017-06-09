@@ -22,7 +22,7 @@
        Location Logger
        <text xml:lang="ru">&#x420;&#x435;&#x433;&#x438;&#x441;&#x442;&#x440;&#x430;&#x442;&#x43e;&#x440; &#x43c;&#x435;&#x441;&#x442;&#x43e;&#x43f;&#x43e;&#x43b;&#x43e;&#x436;&#x435;&#x43d;&#x438;&#x44f;</text>
     </name>
-    <versionNumber>0.21.0</versionNumber>
+    <versionNumber>0.22.0</versionNumber>
     <buildId>1</buildId>
     <packageLocale>ru</packageLocale>
     <!-- <versionLabel></versionLabel> -->
