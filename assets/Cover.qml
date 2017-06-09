@@ -13,12 +13,12 @@ Container {
 
     function latitudeToString(lat) {
         // TODO: format as degrees, minutes and seconds
-        return lat.toFixed(3) + "°"
+        return _app.formatReal(lat, 3) + "°"
     }
 
     function longitudeToString(lon) {
         // TODO: format as degrees, minutes and seconds
-        return lon.toFixed(3) + "°"
+        return _app.formatReal(lon, 3) + "°"
     }
 
     function onNonThumbnail() {
